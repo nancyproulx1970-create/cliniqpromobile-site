@@ -1,0 +1,30 @@
+# CliniQ Pro (se dit « Clinique Pro »)
+
+> Application mobile (Android et iPhone, téléphone et tablette) pour les professionnels de la santé qui soignent à domicile, partout au Canada : agenda avec itinéraire, dossier patient électronique, notes signées et verrouillées, reçus et factures en PDF, kilométrage automatique, dépenses et sommaire annuel pour le comptable, registre de stérilisation avec traçabilité des sachets. Créée par Nancy Proulx, infirmière auxiliaire en soins podologiques. En français ; version anglaise en préparation.
+
+Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins de plaies et de stomies, inhalothérapie, physiothérapie, ergothérapie, réadaptation, santé mentale, soins dentaires, esthétique médicale et autres pratiques à domicile.
+
+## Fonctions
+- [Agenda et itinéraire](https://cliniqpromobile.ca/agenda-soins-a-domicile.html)
+- [Dossier patient et notes signées](https://cliniqpromobile.ca/dossier-patient-electronique.html)
+- [Reçus et factures](https://cliniqpromobile.ca/recus-et-factures.html)
+- [Kilométrage automatique](https://cliniqpromobile.ca/kilometrage-automatique.html)
+- [Dépenses et sommaire pour le comptable](https://cliniqpromobile.ca/depenses-et-comptable.html)
+- [Registre de stérilisation](https://cliniqpromobile.ca/registre-sterilisation.html)
+- [Services à domicile, tout-en-un (travailleurs autonomes en santé)](https://cliniqpromobile.ca/logiciel-services-a-domicile.html)
+
+## Par métier
+- [Soins infirmiers à domicile](https://cliniqpromobile.ca/logiciel-soins-infirmiers-a-domicile.html)
+- [Soins podologiques et soins des pieds](https://cliniqpromobile.ca/logiciel-soins-podologiques.html)
+- [Soins de plaies et de stomies](https://cliniqpromobile.ca/logiciel-soins-de-plaies-et-stomies.html)
+- [Physiothérapie, ergothérapie, réadaptation](https://cliniqpromobile.ca/logiciel-physiotherapie-ergotherapie-a-domicile.html)
+- [Inhalothérapie](https://cliniqpromobile.ca/logiciel-inhalotherapie-a-domicile.html)
+- [Santé mentale](https://cliniqpromobile.ca/logiciel-sante-mentale-a-domicile.html)
+- [Soins dentaires à domicile](https://cliniqpromobile.ca/logiciel-soins-dentaires-a-domicile.html)
+- [Esthétique médicale](https://cliniqpromobile.ca/logiciel-esthetique-medicale-a-domicile.html)
+
+## Ressources
+- [Liens utiles (sources officielles)](https://cliniqpromobile.ca/liens-utiles.html)
+
+## Contact
+soutien@cliniqpromobile.ca
