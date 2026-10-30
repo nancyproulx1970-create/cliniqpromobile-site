@@ -72,10 +72,15 @@ a[href="#contenu"]:focus{left:8px !important}
 <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: #0B6E69">Application mobile pour les soins et services de santé à domicile</span>
 <h1 class="disp" style="margin: 0; font-size: clamp(36px, 6vw, 64px); line-height: 1.12; font-weight: 800; letter-spacing: -0.5px; color: #0B2D55">Votre tournée de soins, du premier rendez-vous au dernier kilomètre.</h1>
 <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3B5250; max-width: 34em">Agenda, dossier patient, notes signées, reçus, dépenses, kilométrage et registre de stérilisation, dans une seule application. Faite par une infirmière auxiliaire en soins podologiques qui fait la route elle aussi.</p>
+<div id="decompte" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #FFFFFF; border: 1px solid #D7E2E0; border-radius: 18px; padding: 14px 18px; max-width: 34em; box-sizing: border-box">
+<span aria-hidden="true" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 76px; padding: 8px 10px; background: #0B6E69; color: #FFFFFF; border-radius: 14px; line-height: 1"><strong id="decompte-nb" class="disp" style="font-size: 30px; font-weight: 800">63</strong><span id="decompte-unite" style="font-size: 13px; font-weight: 700; margin-top: 4px">jours</span></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><strong id="decompte-titre" class="disp" style="font-size: 19px; color: #0B2D55">Lancement le 1er janvier 2027</strong><span id="decompte-texte" style="font-size: 15px; color: #3B5250">Plus que <span id="decompte-nb2">63</span> <span id="decompte-unite2">jours</span>.</span></span>
+</div>
 <div style="display: flex; gap: 12px; flex-wrap: wrap">
-<a href="#liste" style="text-decoration: none; background: #0B2D55; color: #FFFFFF; font-weight: 700; font-size: 17px; padding: 17px 28px; border-radius: 999px">Nous joindre</a>
+<a href="mailto:soutien@cliniqpromobile.ca?subject=Je%20r%C3%A9serve%20ma%20place&body=Nom%20%3A%20%0AMon%20t%C3%A9l%C3%A9phone%20%3A%20iPhone%20ou%20Android%0A" style="text-decoration: none; background: #0B2D55; color: #FFFFFF; font-weight: 700; font-size: 17px; padding: 17px 28px; border-radius: 999px">Réservez votre place</a>
 <a href="#journee" style="text-decoration: none; color: #0B2D55; font-weight: 700; font-size: 17px; padding: 17px 24px; border-radius: 999px; border: 2px solid #0B2D55">Suivre une journée</a>
 </div>
+<p style="margin: -8px 0 0; font-size: 14px; color: #3B5250; max-width: 34em">Nous vous écrirons avant le lancement, avec le guide pour bien démarrer. Vos coordonnées servent seulement à vous écrire au sujet de CliniQ Pro.</p>
 <p style="margin: 0; font-size: 14px; color: #56666A">Pour Android et iPhone, en préparation. En français.</p>
 </div>
 
@@ -361,5 +366,6 @@ a[href="#contenu"]:focus{left:8px !important}
 
 </div>
 <script>if(!location.hash){addEventListener('load',function(){document.body.scrollIntoView({block:'start'})})}</script>
+<script>(function(){try{var f=new Date(2027,0,1),a=new Date();a=new Date(a.getFullYear(),a.getMonth(),a.getDate());var n=Math.round((f-a)/864e5),b=document.getElementById('decompte');if(!b)return;if(n<=0){b.innerHTML='<strong class="disp" style="font-size: 19px; color: #0B2D55">CliniQ Pro est lancée !</strong>';return;}var u=n>1?'jours':'jour';['decompte-nb','decompte-nb2'].forEach(function(i){document.getElementById(i).textContent=n});['decompte-unite','decompte-unite2'].forEach(function(i){document.getElementById(i).textContent=u});}catch(e){}})();</script>
 </body>
 </html>
