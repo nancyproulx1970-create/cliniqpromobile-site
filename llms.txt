@@ -1,6 +1,6 @@
 # CliniQ Pro (se dit « Clinique Pro »)
 
-> Application mobile (Android et iPhone, téléphone et tablette) pour les professionnels de la santé qui soignent à domicile, partout au Canada : agenda avec itinéraire, dossier patient électronique, notes signées et verrouillées, reçus et factures en PDF, kilométrage automatique, dépenses et sommaire annuel pour le comptable, registre de stérilisation avec traçabilité des sachets. Créée par Nancy Proulx, infirmière auxiliaire en soins podologiques. En français ; version anglaise en préparation.
+> Application mobile (Android et iPhone, téléphone et tablette) pour les professionnels de la santé qui soignent à domicile, à leur clinique ou les deux, partout au Canada : agenda avec itinéraire, rappels automatiques par texto, dossier patient électronique, notes signées et verrouillées, reçus et factures en PDF, kilométrage automatique, dépenses et sommaire annuel pour le comptable, registre de stérilisation avec traçabilité des sachets, PTI pour les infirmières, double vérification, et fonctions de base sans réseau. Créée par Nancy Proulx, infirmière auxiliaire en soins podologiques. En français et en anglais.
 
 Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins de plaies et de stomies, inhalothérapie, physiothérapie, ergothérapie, réadaptation, santé mentale, soins dentaires, esthétique médicale et autres pratiques à domicile.
 
