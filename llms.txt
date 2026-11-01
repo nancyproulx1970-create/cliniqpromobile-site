@@ -24,6 +24,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Esthétique médicale](https://www.cliniqpromobile.ca/logiciel-esthetique-medicale-a-domicile.html)
 
 ## Ressources
+- [Questions et réponses (toute l'aide de l'app)](https://www.cliniqpromobile.ca/faq.html)
+- [Questions and answers (English)](https://www.cliniqpromobile.ca/en/faq.html)
 - [Liens utiles (sources officielles)](https://www.cliniqpromobile.ca/liens-utiles.html)
 
 ## Contact
