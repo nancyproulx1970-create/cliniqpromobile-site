@@ -255,6 +255,33 @@ a[href="#contenu"]:focus{left:8px !important}
 </div>
 </section>
 
+<section id="ecrans" aria-label="L'app, écran par écran" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 56px">
+<h2 class="disp" style="margin: 0 0 8px; font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.2px; color: #0B2D55">L'app, écran par écran</h2>
+<p style="margin: 0 0 24px; font-size: 17px; line-height: 1.6; color: #3B5250">Prenez le temps de regarder chaque écran. Touchez une image pour l'agrandir. (Compte de test, patients fictifs.)</p>
+<style>
+#ecrans .rangee{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;-webkit-overflow-scrolling:touch}
+#ecrans .ecran{flex:0 0 min(260px,72vw);margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px}
+#ecrans .ecran-btn{padding:0;border:0;background:none;cursor:zoom-in;border-radius:22px}
+#ecrans .ecran-btn:focus-visible{outline:3px solid #F2A93B;outline-offset:3px}
+#ecrans .ecran img{width:100%;height:auto;display:block;border-radius:22px}
+#ecrans figcaption{display:flex;flex-direction:column;gap:2px;font-size:16px;line-height:1.4;color:#3B5250}
+#ecrans figcaption strong{font-size:17px;color:#0B2D55}
+#loupe-ecran{position:fixed;inset:0;background:rgba(11,45,85,.92);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+#loupe-ecran.ouvert{display:flex}
+#loupe-ecran img{max-width:100%;max-height:calc(100vh - 90px);width:auto;height:auto;border-radius:22px}
+#loupe-ecran button{position:absolute;top:14px;right:14px;font:inherit;font-weight:700;font-size:17px;padding:10px 18px;border-radius:999px;border:0;background:#fff;color:#0B2D55;cursor:pointer}
+</style>
+<div class="rangee"><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/accueil.jpg" aria-label="L'accueil"><img src="img/accueil.jpg" alt="L'accueil — Votre journée et ce qui reste à compléter." width="545" height="1000" loading="lazy"></button><figcaption><strong>L'accueil</strong><span>Votre journée et ce qui reste à compléter.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/agenda-semaine.jpg" aria-label="L'agenda"><img src="img/agenda-semaine.jpg" alt="L'agenda — La semaine, avec « Trouver un créneau »." width="545" height="1000" loading="lazy"></button><figcaption><strong>L'agenda</strong><span>La semaine, avec « Trouver un créneau ».</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/dossier-patient.jpg" aria-label="Le dossier patient"><img src="img/dossier-patient.jpg" alt="Le dossier patient — Coordonnées, bilan, consentements et visites." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le dossier patient</strong><span>Coordonnées, bilan, consentements et visites.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/note-signee.jpg" aria-label="La note"><img src="img/note-signee.jpg" alt="La note — Relue, signée, puis verrouillée." width="545" height="1000" loading="lazy"></button><figcaption><strong>La note</strong><span>Relue, signée, puis verrouillée.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/recu.jpg" aria-label="Le reçu"><img src="img/recu.jpg" alt="Le reçu — En PDF, remis sur place." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le reçu</strong><span>En PDF, remis sur place.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/depenses.jpg" aria-label="Les dépenses"><img src="img/depenses.jpg" alt="Les dépenses — Une photo du reçu suffit." width="545" height="1000" loading="lazy"></button><figcaption><strong>Les dépenses</strong><span>Une photo du reçu suffit.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/comptable.jpg" aria-label="Pour le comptable"><img src="img/comptable.jpg" alt="Pour le comptable — Les lignes d'impôt, sans nom de patient." width="545" height="1000" loading="lazy"></button><figcaption><strong>Pour le comptable</strong><span>Les lignes d'impôt, sans nom de patient.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/sterilisation.jpg" aria-label="La stérilisation"><img src="img/sterilisation.jpg" alt="La stérilisation — Chaque sachet relié à la visite." width="545" height="1000" loading="lazy"></button><figcaption><strong>La stérilisation</strong><span>Chaque sachet relié à la visite.</span></figcaption></figure></div>
+<div id="loupe-ecran" role="dialog" aria-modal="true" aria-label="L'app, écran par écran"><button type="button">Fermer</button><img alt=""></div>
+<script>
+(function(){var l=document.getElementById('loupe-ecran');if(!l)return;var im=l.querySelector('img');
+function fermer(){l.classList.remove('ouvert');im.removeAttribute('src');}
+document.querySelectorAll('#ecrans .ecran-btn').forEach(function(b){b.addEventListener('click',function(){im.src=b.dataset.src;im.alt=b.getAttribute('aria-label');l.classList.add('ouvert');l.querySelector('button').focus();});});
+l.addEventListener('click',function(e){if(e.target!==im)fermer();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});})();
+</script>
+</section>
+
 <section id="videos" aria-label="CliniQ Pro en vidéo" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 88px">
 <h2 class="disp" style="margin: 0 0 8px; font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.2px; color: #0B2D55">CliniQ Pro en vidéo</h2>
 <p style="margin: 0 0 28px; font-size: 17px; line-height: 1.6; color: #3B5250">Cinq courtes vidéos de 30 à 60 secondes, faites avec un compte de test (patients fictifs).</p>
