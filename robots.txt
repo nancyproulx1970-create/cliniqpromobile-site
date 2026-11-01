@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cliniqpromobile.ca/sitemap.xml
+Sitemap: https://www.cliniqpromobile.ca/sitemap.xml
