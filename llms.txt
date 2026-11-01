@@ -13,6 +13,12 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Registre de stérilisation](https://www.cliniqpromobile.ca/registre-sterilisation.html)
 - [Services à domicile, tout-en-un (travailleurs autonomes en santé)](https://www.cliniqpromobile.ca/logiciel-services-a-domicile.html)
 
+## Clinique et sécurité
+- [Logiciel de gestion de clinique (pros de la santé qui exercent seuls)](https://www.cliniqpromobile.ca/logiciel-clinique-sante.html)
+- [Sécurité des dossiers patients et Loi 25](https://www.cliniqpromobile.ca/securite-loi-25.html)
+- [Clinic management software (English)](https://www.cliniqpromobile.ca/en/clinic-software.html)
+- [Patient records security and privacy (English)](https://www.cliniqpromobile.ca/en/security-privacy.html)
+
 ## Par métier
 - [Soins infirmiers à domicile](https://www.cliniqpromobile.ca/logiciel-soins-infirmiers-a-domicile.html)
 - [Soins podologiques et soins des pieds](https://www.cliniqpromobile.ca/logiciel-soins-podologiques.html)
