@@ -32,6 +32,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 ## Ressources
 - [Questions et réponses (toute l'aide de l'app)](https://www.cliniqpromobile.ca/faq.html)
 - [Questions and answers (English)](https://www.cliniqpromobile.ca/en/faq.html)
+- [Tarifs (44,95 $/mois ou 449,50 $/an, essai 14 jours sans carte)](https://www.cliniqpromobile.ca/tarifs.html)
+- [Pricing (English)](https://www.cliniqpromobile.ca/en/pricing.html)
 - [Liens utiles (sources officielles)](https://www.cliniqpromobile.ca/liens-utiles.html)
 
 ## Contact
