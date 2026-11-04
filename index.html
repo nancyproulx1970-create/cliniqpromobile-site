@@ -51,7 +51,7 @@ a[href="#contenu"]:focus{left:8px !important}
 
 <a href="#contenu" style="position: absolute; left: -9999px; top: 8px; background: #0E5E5C; color: #FFFFFF; padding: 12px 16px; border-radius: 10px">Aller au contenu</a>
 
-<header style="position: sticky; top: 0; z-index: 5; background: rgba(242,246,245,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #DCE8E5">
+<header style="position: sticky; top: 0; z-index: 5; background: rgba(251,249,246,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #DCE8E5">
 <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 24px">
 <a href="#haut" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #15302F; min-height: 44px">
 <img src="img/logo.png" alt="" style="width: 38px; height: 38px; border-radius: 10px">
@@ -68,63 +68,11 @@ a[href="#contenu"]:focus{left:8px !important}
 </header>
 
 <main id="contenu">
-
-<section id="ecrans" aria-label="L'app, écran par écran" style="max-width: 1200px; margin: 0 auto; padding: 20px 24px 32px">
-<div id="decompte-haut" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#0E5E5C;color:#FFFFFF;border-radius:18px;padding:12px 16px;margin:0 0 22px">
-<span style="display:flex;align-items:center;gap:12px"><strong id="decompte-haut-nb" class="disp" style="font-size:28px;font-weight:800;line-height:1">63</strong><span style="display:flex;flex-direction:column;line-height:1.3"><strong class="disp" style="font-size:16px">Lancement le 1er janvier 2027</strong><span style="font-size:14px;opacity:.9">Plus que <span id="decompte-haut-nb2">63</span> <span id="decompte-haut-unite">jours</span>.</span></span></span>
-<a href="inscription.html" style="text-decoration:none;background:#FFFFFF;color:#15302F;font-weight:700;font-size:15px;padding:10px 18px;border-radius:999px;white-space:nowrap">Réservez votre place</a>
-</div>
-<h1 class="disp" style="margin: 0 0 8px; font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.2px; color: #15302F">Le logiciel des professionnels de la santé, à domicile et en clinique</h1>
-<p style="margin: 6px 0 8px; font-size: 20px; font-weight: 700; color: #0E5E5C">L'app, écran par écran</p>
-<p style="margin: 0 0 24px; font-size: 17px; line-height: 1.6; color: #56666A">Prenez le temps de regarder chaque écran. Touchez une image pour l'agrandir. (Compte de test, patients fictifs.)</p>
-<style>
-#ecrans .rangee{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;-webkit-overflow-scrolling:touch}
-#ecrans .ecran{flex:0 0 min(260px,72vw);margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px}
-#ecrans .ecran-btn{padding:0;border:0;background:none;cursor:zoom-in;border-radius:22px}
-#ecrans .ecran-btn:focus-visible{outline:3px solid #F39C12;outline-offset:3px}
-#ecrans .ecran img{width:100%;height:auto;display:block;border-radius:22px}
-#ecrans figcaption{display:flex;flex-direction:column;gap:2px;font-size:16px;line-height:1.4;color:#56666A}
-#ecrans figcaption strong{font-size:17px;color:#15302F}
-#ecrans .points{display:flex;justify-content:center;gap:8px;margin-top:4px}#ecrans .points span{width:8px;height:8px;border-radius:50%;background:#DCE8E5}#ecrans .points span.actif{background:#0E5E5C}
-#loupe-ecran{position:fixed;inset:0;background:rgba(21,48,47,.92);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
-#loupe-ecran.ouvert{display:flex}
-#loupe-ecran img{max-width:100%;max-height:calc(100vh - 90px);width:auto;height:auto;border-radius:22px}
-#loupe-ecran button{position:absolute;top:14px;right:14px;font:inherit;font-weight:700;font-size:17px;padding:10px 18px;border-radius:999px;border:0;background:#fff;color:#15302F;cursor:pointer}
-</style>
-<div class="rangee"><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/accueil-v2.jpg" aria-label="L'accueil"><img src="img/accueil-v2.jpg" alt="L'accueil — Votre journée et ce qui reste à compléter." width="545" height="1000" fetchpriority="high"></button><figcaption><strong>L'accueil</strong><span>Votre journée et ce qui reste à compléter.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/menu.jpg" aria-label="Le menu"><img src="img/menu.jpg" alt="Le menu — Tout ce que l'app contient, à un toucher." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le menu</strong><span>Tout ce que l'app contient, à un toucher.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/agenda-semaine-v2.jpg" aria-label="L'agenda"><img src="img/agenda-semaine-v2.jpg" alt="L'agenda — La semaine, avec « Trouver un créneau »." width="545" height="1000" loading="lazy"></button><figcaption><strong>L'agenda</strong><span>La semaine, avec « Trouver un créneau ».</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/rendez-vous-v2.jpg" aria-label="Le rendez-vous détaillé"><img src="img/rendez-vous-v2.jpg" alt="Le rendez-vous détaillé — Bilan, sachets, photos et note, sur une page." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le rendez-vous détaillé</strong><span>Bilan, sachets, photos et note, sur une page.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/dossier-patient-v2.jpg" aria-label="Le dossier patient"><img src="img/dossier-patient-v2.jpg" alt="Le dossier patient — Coordonnées, bilan, consentements et visites." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le dossier patient</strong><span>Coordonnées, bilan, consentements et visites.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/menu-dossier.jpg" aria-label="Le menu du dossier"><img src="img/menu-dossier.jpg" alt="Le menu du dossier — Note, note tardive, document reçu, copies." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le menu du dossier</strong><span>Note, note tardive, document reçu, copies.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/note-signee.jpg" aria-label="La note"><img src="img/note-signee.jpg" alt="La note — Relue, signée, puis verrouillée." width="545" height="1000" loading="lazy"></button><figcaption><strong>La note</strong><span>Relue, signée, puis verrouillée.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/recu.jpg" aria-label="Le reçu"><img src="img/recu.jpg" alt="Le reçu — En PDF, remis sur place." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le reçu</strong><span>En PDF, remis sur place.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/depenses.jpg" aria-label="Les dépenses"><img src="img/depenses.jpg" alt="Les dépenses — Une photo du reçu suffit." width="545" height="1000" loading="lazy"></button><figcaption><strong>Les dépenses</strong><span>Une photo du reçu suffit.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/kilometrage-v2.jpg" aria-label="Le kilométrage"><img src="img/kilometrage-v2.jpg" alt="Le kilométrage — Vos trajets calculés, journée par journée." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le kilométrage</strong><span>Vos trajets calculés, journée par journée.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/comptable-v2.jpg" aria-label="Pour le comptable"><img src="img/comptable-v2.jpg" alt="Pour le comptable — Les lignes d'impôt, sans nom de patient." width="545" height="1000" loading="lazy"></button><figcaption><strong>Pour le comptable</strong><span>Les lignes d'impôt, sans nom de patient.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/sterilisation.jpg" aria-label="La stérilisation"><img src="img/sterilisation.jpg" alt="La stérilisation — Chaque sachet relié à la visite." width="545" height="1000" loading="lazy"></button><figcaption><strong>La stérilisation</strong><span>Chaque sachet relié à la visite.</span></figcaption></figure></div>
-<div class="points" aria-hidden="true"></div>
-<div id="loupe-ecran" role="dialog" aria-modal="true" aria-label="L'app, écran par écran"><button type="button">Fermer</button><img alt=""></div>
-<script>
-(function(){var l=document.getElementById('loupe-ecran');if(!l)return;var im=l.querySelector('img');
-function fermer(){l.classList.remove('ouvert');im.removeAttribute('src');}
-document.querySelectorAll('#ecrans .ecran-btn').forEach(function(b){b.addEventListener('click',function(){im.src=b.dataset.src;im.alt=b.getAttribute('aria-label');l.classList.add('ouvert');l.querySelector('button').focus();});});
-l.addEventListener('click',function(e){if(e.target!==im)fermer();});
-var r=document.querySelector('#ecrans .rangee'),pts=document.querySelector('#ecrans .points'),n=r.children.length;for(var i=0;i<n;i++){pts.appendChild(document.createElement('span'));}
-function maj(){var w=r.children[0].getBoundingClientRect().width+20,k=Math.min(n-1,Math.round(r.scrollLeft/w));[].forEach.call(pts.children,function(s,j){s.className=j===k?'actif':'';});}r.addEventListener('scroll',maj,{passive:true});maj();
-document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});})();
-</script>
-</section>
-<section id="telecharger" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px">
-<div style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 28px; padding: clamp(24px, 5vw, 48px); display: flex; flex-direction: column; gap: 18px">
-<h2 class="disp" style="margin: 0; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 800; color: #15302F">Téléchargez CliniQ Pro en toute sécurité</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #56666A; max-width: 40em">CliniQ Pro s'installe seulement à partir des boutiques officielles, Google Play et l'App Store, comme toutes vos autres applications. Aucun fichier à télécharger depuis un site, aucun réglage à changer sur votre téléphone.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
-<span style="display: inline-flex; flex-direction: column; background: #0E5E5C; color: #FFFFFF; border-radius: 16px; padding: 14px 24px; min-width: 220px"><span style="font-size: 14px; opacity: .85">Android · bientôt sur</span><span style="font-size: 22px; font-weight: 800">Google Play</span></span>
-<span style="display: inline-flex; flex-direction: column; background: #15302F; color: #FFFFFF; border-radius: 16px; padding: 14px 24px; min-width: 220px"><span style="font-size: 14px; opacity: .85">iPhone · bientôt sur</span><span style="font-size: 22px; font-weight: 800">l'App Store</span></span>
-</div>
-<ul style="margin: 0; padding-left: 22px; font-size: 17px; line-height: 1.7; color: #15302F">
-<li>Google et Apple vérifient chaque application avant de l'offrir dans leur boutique.</li>
-<li>Les mises à jour arrivent toutes seules, par la boutique.</li>
-<li>Vous pouvez la désinstaller en tout temps, comme n'importe quelle application.</li>
-</ul>
-</div>
-</section>
-
-<section id="haut" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px; align-items: center">
+<section id="haut" style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px; align-items: center">
 <div style="display: flex; flex-direction: column; gap: 24px">
-<span style="font-size: 15px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: #0E5E5C">Application mobile pour les pros de la santé, à domicile et en clinique</span>
-<h2 class="disp" style="margin: 0; font-size: clamp(36px, 6vw, 64px); line-height: 1.12; font-weight: 800; letter-spacing: -0.5px; color: #15302F">Votre tournée de soins, du premier rendez-vous au dernier kilomètre.</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #56666A; max-width: 34em">Agenda, dossier patient, notes signées, reçus, dépenses, kilométrage et registre de stérilisation, dans une seule application. Faite par une infirmière auxiliaire en soins podologiques qui fait la route elle aussi.</p>
+<span style="font-size: 15px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: #0E5E5C">Agenda, dossier patient et facturation</span>
+<h1 class="disp" style="margin: 0; font-size: clamp(34px, 5vw, 54px); line-height: 1.12; font-weight: 800; letter-spacing: -0.5px; color: #15302F">Le logiciel des professionnels de la santé, à domicile et en clinique</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #56666A; max-width: 34em">Agenda, dossier patient, notes signées, reçus et factures, dépenses et kilométrage, dans une seule application. Pour les professionnels de la santé à leur compte : soins infirmiers, soins podologiques, réadaptation, santé mentale et bien d'autres. Créée par une infirmière auxiliaire qui l'utilise chaque jour.</p>
 <div id="decompte" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 18px; padding: 14px 18px; max-width: 34em; box-sizing: border-box">
 <span aria-hidden="true" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 76px; padding: 8px 10px; background: #0E5E5C; color: #FFFFFF; border-radius: 14px; line-height: 1"><strong id="decompte-nb" class="disp" style="font-size: 30px; font-weight: 800">63</strong><span id="decompte-unite" style="font-size: 13px; font-weight: 700; margin-top: 4px">jours</span></span>
 <span style="display: flex; flex-direction: column; gap: 2px"><strong id="decompte-titre" class="disp" style="font-size: 19px; color: #15302F">Lancement le 1er janvier 2027</strong><span id="decompte-texte" style="font-size: 15px; color: #56666A">Plus que <span id="decompte-nb2">63</span> <span id="decompte-unite2">jours</span>.</span></span>
@@ -166,7 +114,36 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 </div>
 </div>
 </section>
-
+<section id="ecrans" aria-label="L'app, écran par écran" style="max-width: 1200px; margin: 0 auto; padding: 8px 24px 32px">
+<h2 class="disp" style="margin: 0 0 8px; font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.2px; color: #15302F">L'app, écran par écran</h2>
+<p style="margin: 0 0 24px; font-size: 17px; line-height: 1.6; color: #56666A">Prenez le temps de regarder chaque écran. Touchez une image pour l'agrandir. (Compte de test, patients fictifs.)</p>
+<style>
+#ecrans .rangee{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 16px;-webkit-overflow-scrolling:touch}
+#ecrans .ecran{flex:0 0 min(260px,72vw);margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px}
+#ecrans .ecran-btn{padding:0;border:0;background:none;cursor:zoom-in;border-radius:22px}
+#ecrans .ecran-btn:focus-visible{outline:3px solid #F39C12;outline-offset:3px}
+#ecrans .ecran img{width:100%;height:auto;display:block;border-radius:22px}
+#ecrans figcaption{display:flex;flex-direction:column;gap:2px;font-size:16px;line-height:1.4;color:#56666A}
+#ecrans figcaption strong{font-size:17px;color:#15302F}
+#ecrans .points{display:flex;justify-content:center;gap:8px;margin-top:4px}#ecrans .points span{width:8px;height:8px;border-radius:50%;background:#DCE8E5}#ecrans .points span.actif{background:#0E5E5C}
+#loupe-ecran{position:fixed;inset:0;background:rgba(21,48,47,.92);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+#loupe-ecran.ouvert{display:flex}
+#loupe-ecran img{max-width:100%;max-height:calc(100vh - 90px);width:auto;height:auto;border-radius:22px}
+#loupe-ecran button{position:absolute;top:14px;right:14px;font:inherit;font-weight:700;font-size:17px;padding:10px 18px;border-radius:999px;border:0;background:#fff;color:#15302F;cursor:pointer}
+</style>
+<div class="rangee"><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/accueil-v2.jpg" aria-label="L'accueil"><img src="img/accueil-v2.jpg" alt="L'accueil — Votre journée et ce qui reste à compléter." width="545" height="1000" fetchpriority="high"></button><figcaption><strong>L'accueil</strong><span>Votre journée et ce qui reste à compléter.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/menu.jpg" aria-label="Le menu"><img src="img/menu.jpg" alt="Le menu — Tout ce que l'app contient, à un toucher." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le menu</strong><span>Tout ce que l'app contient, à un toucher.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/agenda-semaine-v2.jpg" aria-label="L'agenda"><img src="img/agenda-semaine-v2.jpg" alt="L'agenda — La semaine, avec « Trouver un créneau »." width="545" height="1000" loading="lazy"></button><figcaption><strong>L'agenda</strong><span>La semaine, avec « Trouver un créneau ».</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/rendez-vous-v2.jpg" aria-label="Le rendez-vous détaillé"><img src="img/rendez-vous-v2.jpg" alt="Le rendez-vous détaillé — Bilan, sachets, photos et note, sur une page." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le rendez-vous détaillé</strong><span>Bilan, sachets, photos et note, sur une page.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/dossier-patient-v2.jpg" aria-label="Le dossier patient"><img src="img/dossier-patient-v2.jpg" alt="Le dossier patient — Coordonnées, bilan, consentements et visites." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le dossier patient</strong><span>Coordonnées, bilan, consentements et visites.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/menu-dossier.jpg" aria-label="Le menu du dossier"><img src="img/menu-dossier.jpg" alt="Le menu du dossier — Note, note tardive, document reçu, copies." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le menu du dossier</strong><span>Note, note tardive, document reçu, copies.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/note-signee.jpg" aria-label="La note"><img src="img/note-signee.jpg" alt="La note — Relue, signée, puis verrouillée." width="545" height="1000" loading="lazy"></button><figcaption><strong>La note</strong><span>Relue, signée, puis verrouillée.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/recu.jpg" aria-label="Le reçu"><img src="img/recu.jpg" alt="Le reçu — En PDF, remis sur place." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le reçu</strong><span>En PDF, remis sur place.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/depenses.jpg" aria-label="Les dépenses"><img src="img/depenses.jpg" alt="Les dépenses — Une photo du reçu suffit." width="545" height="1000" loading="lazy"></button><figcaption><strong>Les dépenses</strong><span>Une photo du reçu suffit.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/kilometrage-v2.jpg" aria-label="Le kilométrage"><img src="img/kilometrage-v2.jpg" alt="Le kilométrage — Vos trajets calculés, journée par journée." width="545" height="1000" loading="lazy"></button><figcaption><strong>Le kilométrage</strong><span>Vos trajets calculés, journée par journée.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/comptable-v2.jpg" aria-label="Pour le comptable"><img src="img/comptable-v2.jpg" alt="Pour le comptable — Les lignes d'impôt, sans nom de patient." width="545" height="1000" loading="lazy"></button><figcaption><strong>Pour le comptable</strong><span>Les lignes d'impôt, sans nom de patient.</span></figcaption></figure><figure class="ecran"><button type="button" class="ecran-btn" data-src="img/sterilisation.jpg" aria-label="La stérilisation"><img src="img/sterilisation.jpg" alt="La stérilisation — Chaque sachet relié à la visite." width="545" height="1000" loading="lazy"></button><figcaption><strong>La stérilisation</strong><span>Chaque sachet relié à la visite.</span></figcaption></figure></div>
+<div class="points" aria-hidden="true"></div>
+<div id="loupe-ecran" role="dialog" aria-modal="true" aria-label="L'app, écran par écran"><button type="button">Fermer</button><img alt=""></div>
+<script>
+(function(){var l=document.getElementById('loupe-ecran');if(!l)return;var im=l.querySelector('img');
+function fermer(){l.classList.remove('ouvert');im.removeAttribute('src');}
+document.querySelectorAll('#ecrans .ecran-btn').forEach(function(b){b.addEventListener('click',function(){im.src=b.dataset.src;im.alt=b.getAttribute('aria-label');l.classList.add('ouvert');l.querySelector('button').focus();});});
+l.addEventListener('click',function(e){if(e.target!==im)fermer();});
+var r=document.querySelector('#ecrans .rangee'),pts=document.querySelector('#ecrans .points'),n=r.children.length;for(var i=0;i<n;i++){pts.appendChild(document.createElement('span'));}
+function maj(){var w=r.children[0].getBoundingClientRect().width+20,k=Math.min(n-1,Math.round(r.scrollLeft/w));[].forEach.call(pts.children,function(s,j){s.className=j===k?'actif':'';});}r.addEventListener('scroll',maj,{passive:true});maj();
+document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});})();
+</script>
+</section>
 <section aria-label="Les outils que CliniQ Pro remplace" style="background: #FFFFFF; border-top: 1px solid #DCE8E5; border-bottom: 1px solid #DCE8E5">
 <div style="max-width: 1200px; margin: 0 auto; padding: 44px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 20px 48px; align-items: center">
 <h2 class="disp" style="margin: 0; font-size: clamp(28px, 4.5vw, 44px); line-height: 1.05; font-weight: 800; letter-spacing: -0.2px; color: #15302F">Avant, six outils. Maintenant, une seule app.</h2>
@@ -180,7 +157,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 </ul>
 </div>
 </section>
-
 <section id="lieu" aria-label="À domicile, en clinique ou les deux" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 0">
 <div style="max-width: 760px; display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px">
 <h2 class="disp" style="margin: 0; font-size: clamp(28px, 4.5vw, 44px); line-height: 1.1; font-weight: 800; letter-spacing: -0.2px; color: #15302F">À domicile, à votre clinique, ou les deux.</h2>
@@ -189,7 +165,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 18px"><div style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 class="disp" style="margin: 0; font-size: 21px; font-weight: 800; color: #15302F">Chez mes patients</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #56666A">La tournée complète : itinéraire en un toucher, trajets calculés et kilométrage tenu pour vous.</p></div><div style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 class="disp" style="margin: 0; font-size: 21px; font-weight: 800; color: #15302F">Mes patients viennent à moi</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #56666A">Les mêmes outils : agenda, dossiers, notes signées, reçus, dépenses, registre de stérilisation et sommaire pour le comptable. Sans route à faire, pas de kilométrage à tenir.</p></div><div style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><h3 class="disp" style="margin: 0; font-size: 21px; font-weight: 800; color: #15302F">Les deux</h3><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #56666A">Chaque patient indique où vous le voyez, à domicile ou à la clinique. Seuls les déplacements chez vos patients à domicile comptent dans votre kilométrage.</p></div></div>
 <p style="margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: #56666A; max-width: 52em">Votre clinique est chez vous ? Un bouton reprend votre adresse : rien à recopier.</p>
 </section>
-
 <section id="journee" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 40px">
 <div style="max-width: 760px; display: flex; flex-direction: column; gap: 14px; margin-bottom: 56px">
 <h2 class="disp" style="margin: 0; font-size: clamp(34px, 6vw, 60px); line-height: 1.15; font-weight: 800; letter-spacing: -0.3px; color: #15302F">Une journée avec CliniQ Pro</h2>
@@ -297,7 +272,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 
 </ol>
 </section>
-
 <section aria-label="Autres fonctions" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 88px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
 <div style="background: #E1EFEE; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 8px; grid-column: 1 / -1"><h3 class="disp" style="margin: 0; font-size: 24px; font-weight: 800; color: #15302F">Vos données vous suivent, dans les deux sens</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: #15302F; max-width: 46em">Arrivez avec votre liste de patients d'un seul coup : un fichier CSV tiré d'Excel ou de votre outil actuel. Et gardez une copie quand vous voulez : votre liste de patients s'exporte en CSV, et vos reçus de dépenses en PDF et en CSV, avec leurs photos.</p></div>
@@ -307,15 +281,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 <div style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp" style="margin: 0; font-size: 19px; font-weight: 800; color: #15302F">PTI pour les infirmières</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #56666A">Plan thérapeutique infirmier : constats et directives, envoyé en PDF à l'infirmière auxiliaire ou au médecin, avec les photos de la dernière visite.</p></div><div style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 6px"><h3 class="disp" style="margin: 0; font-size: 19px; font-weight: 800; color: #15302F">Aide dans l'app</h3><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #56666A">Une page entière de questions fréquentes, avec recherche, et un assistant (IA) qui répond à vos questions sur l'application.</p></div>
 </div>
 </section>
-
-
-
-<section id="videos" aria-label="CliniQ Pro en vidéo" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 88px">
-<h2 class="disp" style="margin: 0 0 8px; font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.2px; color: #15302F">CliniQ Pro en vidéo</h2>
-<p style="margin: 0 0 28px; font-size: 17px; line-height: 1.6; color: #56666A">Cinq courtes vidéos de 30 à 60 secondes, faites avec un compte de test (patients fictifs).</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 28px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/journee.mp4" poster="video/journee.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">Votre journée</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/dossier.mp4" poster="video/dossier.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">Le dossier et les notes</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/argent.mp4" poster="video/argent.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">L’argent</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/sterilisation.mp4" poster="video/sterilisation.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">La stérilisation</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/securite-v2.mp4" poster="video/securite-v2.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">Vos patients, protégés</figcaption></figure></div>
-</section>
-
 <section id="securite" style="background: #0E5E5C; color: #FFFFFF">
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 44px">
 <div style="max-width: 760px; display: flex; flex-direction: column; gap: 14px">
@@ -332,7 +297,26 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 </div>
 </div>
 </section>
-
+<section id="videos" aria-label="CliniQ Pro en vidéo" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 88px">
+<h2 class="disp" style="margin: 0 0 8px; font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.2px; color: #15302F">CliniQ Pro en vidéo</h2>
+<p style="margin: 0 0 28px; font-size: 17px; line-height: 1.6; color: #56666A">Cinq courtes vidéos de 30 à 60 secondes, faites avec un compte de test (patients fictifs).</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 28px"><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/journee.mp4" poster="video/journee.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">Votre journée</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/dossier.mp4" poster="video/dossier.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">Le dossier et les notes</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/argent.mp4" poster="video/argent.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">L’argent</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/sterilisation.mp4" poster="video/sterilisation.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">La stérilisation</figcaption></figure><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/securite-v2.mp4" poster="video/securite-v2.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 17px; font-weight: 700; color: #15302F">Vos patients, protégés</figcaption></figure></div>
+</section>
+<section id="telecharger" style="max-width: 1200px; margin: 0 auto; padding: 56px 24px">
+<div style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 28px; padding: clamp(24px, 5vw, 48px); display: flex; flex-direction: column; gap: 18px">
+<h2 class="disp" style="margin: 0; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 800; color: #15302F">Téléchargez CliniQ Pro en toute sécurité</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #56666A; max-width: 40em">CliniQ Pro s'installe seulement à partir des boutiques officielles, Google Play et l'App Store, comme toutes vos autres applications. Aucun fichier à télécharger depuis un site, aucun réglage à changer sur votre téléphone.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<span style="display: inline-flex; flex-direction: column; background: #0E5E5C; color: #FFFFFF; border-radius: 16px; padding: 14px 24px; min-width: 220px"><span style="font-size: 14px; opacity: .85">Android · bientôt sur</span><span style="font-size: 22px; font-weight: 800">Google Play</span></span>
+<span style="display: inline-flex; flex-direction: column; background: #15302F; color: #FFFFFF; border-radius: 16px; padding: 14px 24px; min-width: 220px"><span style="font-size: 14px; opacity: .85">iPhone · bientôt sur</span><span style="font-size: 22px; font-weight: 800">l'App Store</span></span>
+</div>
+<ul style="margin: 0; padding-left: 22px; font-size: 17px; line-height: 1.7; color: #15302F">
+<li>Google et Apple vérifient chaque application avant de l'offrir dans leur boutique.</li>
+<li>Les mises à jour arrivent toutes seules, par la boutique.</li>
+<li>Vous pouvez la désinstaller en tout temps, comme n'importe quelle application.</li>
+</ul>
+</div>
+</section>
 <section id="apropos" aria-label="À propos de moi" style="max-width: 1000px; margin: 0 auto; padding: 96px 24px 0"><h2 class="disp" style="margin: 0 0 28px; font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.2px; color: #15302F">À propos de moi</h2><figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><video src="video/histoire.mp4" poster="video/histoire.jpg" controls preload="none" playsinline width="1280" height="720" style="width: 100%; height: auto; border-radius: 18px; background: #0E5E5C"></video><figcaption style="font-size: 19px; font-weight: 800; color: #15302F">Mon histoire : pourquoi j’ai créé CliniQ Pro</figcaption></figure></section>
 <section aria-label="La créatrice" style="max-width: 1000px; margin: 0 auto; padding: 48px 24px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 40px; align-items: center">
 <img src="img/nancy-proulx.jpg" alt="Nancy Proulx, créatrice de CliniQ Pro" style="width: 100%; max-width: 300px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 8px solid #D8EEE9; justify-self: center">
@@ -341,14 +325,12 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 <p style="margin: 0; font-size: 17px; font-weight: 700; color: #0E5E5C">Nancy Proulx, créatrice de CliniQ Pro</p>
 </div>
 </section>
-
 <section aria-label="Pour qui" style="background: #FFFFFF; border-top: 1px solid #DCE8E5; border-bottom: 1px solid #DCE8E5">
 <div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 12px">
 <h2 class="disp" style="margin: 0; font-size: 24px; font-weight: 800; color: #15302F">Pour les soins de santé à domicile, partout au Canada</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #56666A; max-width: 52em">Soins infirmiers, soins podologiques (soins des pieds), soins de plaies et de stomies, inhalothérapie, réadaptation, physiothérapie et ergothérapie, santé mentale, soins dentaires, esthétique médicale et d'autres pratiques à domicile. Votre profil indique votre métier et votre ordre professionnel. L'application est offerte partout au Canada, dans toutes les provinces.</p>
 </div>
 </section>
-
 <section id="faq" style="max-width: 860px; margin: 0 auto; padding: 72px 24px 24px; display: flex; flex-direction: column; gap: 12px">
 <h2 class="disp" style="margin: 0 0 12px; font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -0.2px; color: #15302F">Questions fréquentes</h2>
 <div style="background: #0E5E5C; color: #FFFFFF; border-radius: 26px; padding: 28px; display: flex; flex-direction: column; gap: 12px; margin: 8px 0 10px">
@@ -387,7 +369,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 <h3 class="disp" style="margin: 22px 0 2px; font-size: 22px; font-weight: 800; color: #15302F">Sécurité</h3>
 <details style="background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 18px; padding: 18px 22px"><summary style="font-size: 17px; font-weight: 700; cursor: pointer; min-height: 28px">Que se passe-t-il si je perds mon téléphone ?</summary><p style="margin: 10px 0 0; font-size: 16px; line-height: 1.6; color: #56666A">L'application se verrouille d'elle-même et demande votre mot de passe pour rouvrir. À partir d'un autre appareil, vous pouvez changer votre mot de passe et déconnecter vos autres appareils.</p></details>
 </section>
-
 <section id="liste" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 96px">
 <div style="background: #D8EEE9; border-radius: 36px; padding: clamp(32px, 6vw, 72px); display: flex; flex-direction: column; gap: 18px; align-items: flex-start">
 <h2 class="disp" style="margin: 0; font-size: clamp(34px, 6vw, 64px); line-height: 1.15; font-weight: 800; letter-spacing: -0.3px; color: #15302F; max-width: 14em">Ça vous intéresse ? Écrivez-nous.</h2>
@@ -395,7 +376,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 <a href="mailto:soutien@cliniqpromobile.ca" style="align-self: flex-start; text-decoration: none; background: #0E5E5C; color: #FFFFFF; font-weight: 700; font-size: 17px; padding: 17px 28px; border-radius: 999px; margin-top: 20px; display: inline-block">Écrire au soutien</a>
 </div>
 </section>
-
 </main>
 
 <footer id="soutien" style="background: #0E5E5C; color: #D8EEE9">
@@ -422,6 +402,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 
 </div>
 <script>if(!location.hash){addEventListener('load',function(){document.body.scrollIntoView({block:'start'})})}</script>
-<script>(function(){try{var f=new Date(2027,0,1),a=new Date();a=new Date(a.getFullYear(),a.getMonth(),a.getDate());var n=Math.round((f-a)/864e5),b=document.getElementById('decompte');if(!b)return;if(n<=0){var hh=document.getElementById('decompte-haut');if(hh)hh.remove();b.innerHTML='<strong class="disp" style="font-size: 19px; color: #15302F">CliniQ Pro est lancée !</strong>';return;}var u=n>1?'jours':'jour';['decompte-nb','decompte-nb2','decompte-haut-nb','decompte-haut-nb2'].forEach(function(i){document.getElementById(i).textContent=n});['decompte-unite','decompte-unite2','decompte-haut-unite'].forEach(function(i){document.getElementById(i).textContent=u});}catch(e){}})();</script>
+<script>(function(){try{var f=new Date(2027,0,1),a=new Date();a=new Date(a.getFullYear(),a.getMonth(),a.getDate());var n=Math.round((f-a)/864e5),b=document.getElementById('decompte');if(!b)return;if(n<=0){var hh=document.getElementById('decompte-haut');if(hh)hh.remove();b.innerHTML='<strong class="disp" style="font-size: 19px; color: #15302F">CliniQ Pro est lancée !</strong>';return;}var u=n>1?'jours':'jour';['decompte-nb','decompte-nb2','decompte-haut-nb','decompte-haut-nb2'].forEach(function(i){var e=document.getElementById(i);if(e)e.textContent=n});['decompte-unite','decompte-unite2','decompte-haut-unite'].forEach(function(i){var e=document.getElementById(i);if(e)e.textContent=u});}catch(e){}})();</script>
 </body>
 </html>
