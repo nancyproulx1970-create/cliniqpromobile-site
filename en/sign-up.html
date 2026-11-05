@@ -73,6 +73,7 @@ form.ins button[disabled]{opacity:.6}
 <label>Your profession<input type="text" name="profession" placeholder="e.g. nurse, physiotherapist, massage therapist" required maxlength="120"></label>
 <label>Your province<select name="province" required><option value="">Choose</option><option>Quebec</option><option>Ontario</option><option>New Brunswick</option><option>Nova Scotia</option><option>Prince Edward Island</option><option>Newfoundland and Labrador</option><option>Manitoba</option><option>Saskatchewan</option><option>Alberta</option><option>British Columbia</option><option>Yukon</option><option>Northwest Territories</option><option>Nunavut</option></select></label>
 <label>Your phone<select name="telephone"><option value="">Choose</option><option value="iPhone">iPhone</option><option value="Android">Android</option><option value="Les deux">Both</option><option value="Je ne sais pas">Not sure</option></select></label>
+<label>How did you hear about CliniQ Pro? (optional)<select name="source"><option value="">Choose</option><option value="Facebook">Facebook</option><option value="YouTube">YouTube</option><option value="Instagram">Instagram</option><option value="Google">Google</option><option value="Collègue">A colleague</option><option value="Carte ou affiche">A card or a poster</option><option value="Autre">Other</option></select></label>
 <div class="miel" aria-hidden="true"><label>Site<input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
 <label class="case"><input type="checkbox" name="consentement" required><span>I agree that CliniQ Pro may email me about the app's launch. My details are used only for that, and I can ask for them to be deleted at any time at soutien@cliniqpromobile.ca. <a href="privacy.html">Privacy policy</a></span></label>
 <button type="submit">Reserve my spot</button>
@@ -91,7 +92,7 @@ if(f.site.value){m.className='ok';m.textContent='Thank you! Your spot is reserve
 if(!f.checkValidity()){f.reportValidity();return;}
 b.disabled=true;
 fetch('https://anzgkxmxkcetzbtjttuh.supabase.co/rest/v1/inscriptions_site',{method:'POST',headers:{'apikey':'sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW','Content-Type':'application/json','Prefer':'return=minimal'},
-body:JSON.stringify({nom:f.nom.value.trim(),courriel:f.courriel.value.trim(),profession:f.profession.value.trim(),province:f.province.value,telephone:f.telephone.value||null,langue:'en',consentement:true,page:(document.referrer||'').slice(0,200)})})
+body:JSON.stringify({nom:f.nom.value.trim(),courriel:f.courriel.value.trim(),profession:f.profession.value.trim(),province:f.province.value,telephone:f.telephone.value||null,langue:'en',consentement:true,page:(document.referrer||'').slice(0,200),source:f.source.value||null})})
 .then(function(r){if(!r.ok)throw 0;f.reset();m.className='ok';m.textContent='Thank you! Your spot is reserved. We will write to you before January 1.';})
 .catch(function(){m.className='err';m.textContent="Oops, that didn't go through. Please try again, or email us at soutien@cliniqpromobile.ca.";})
 .finally(function(){b.disabled=false;});});})();
