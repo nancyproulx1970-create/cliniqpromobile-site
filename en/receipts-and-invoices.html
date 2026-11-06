@@ -23,32 +23,38 @@ body{margin:0;background:#FBF9F6;color:#15302F;font-family:'Plus Jakarta Sans',s
 a{color:#0E5E5C}a:hover{color:#15302F}
 :focus-visible{outline:3px solid #F39C12;outline-offset:3px;border-radius:6px}
 .w{max-width:880px;margin:0 auto;padding-left:24px;padding-right:24px}
-header{position:sticky;top:0;z-index:5;background:rgba(251,249,246,.94);border-bottom:1px solid #DCE8E5}
-header .w{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px}
-.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15302F;font-weight:800;font-size:21px;min-height:44px}
+header{position:sticky;top:0;z-index:5;background:rgba(251,249,246,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid #DCE8E5}
+header .w{display:flex;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#15302F;font-weight:800;font-size:22px;letter-spacing:-.4px;min-height:44px}
 .btn{text-decoration:none;background:#0E5E5C;color:#FFFFFF;font-weight:700;font-size:16px;padding:12px 20px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
 .btn:hover{color:#FFFFFF;background:#0E5E5C}
 .logo,.btn{white-space:nowrap}
+header .btn{font-size:15px}
+header a[lang]{min-height:40px;box-sizing:border-box;display:inline-flex;align-items:center}
 @media (max-width:480px){header .w{gap:10px;padding-left:16px;padding-right:16px}header .btn{padding:10px 14px;font-size:15px}header a[lang]{padding:6px 12px !important}}
 nav.fil{font-size:15px;padding-top:18px}
-h1{font-size:clamp(32px,6vw,52px);line-height:1.12;color:#15302F;margin:18px 0 14px;letter-spacing:-.4px}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.12;color:#15302F;margin:18px 0 14px;letter-spacing:-.5px}
 .intro{font-size:20px;color:#56666A;margin:0 0 28px}
-h2{font-size:24px;color:#15302F;margin:36px 0 6px}
+h2{font-size:24px;line-height:1.25;letter-spacing:-.2px;color:#15302F;margin:36px 0 8px}
 p{margin:0 0 12px}
 figure{margin:28px 0;text-align:center}
-figure img{width:min(280px,70%);height:auto;border-radius:18px;box-shadow:0 12px 30px rgba(21,48,47,.18)}
+figure img{width:min(280px,70%);height:auto;border-radius:22px}
 figcaption{font-size:14px;color:#56666A;margin-top:8px}
 .faq{margin-top:44px;background:#FFFFFF;border:1px solid #DCE8E5;border-radius:18px;padding:8px 24px 20px}
-.faq h3{font-size:19px;color:#15302F;margin:18px 0 4px}
+.faq h3{font-size:19px;line-height:1.35;color:#15302F;margin:18px 0 4px}
 .cta{margin:44px 0;background:#0E5E5C;color:#FFFFFF;border-radius:22px;padding:28px}
 .cta h2{color:#FFFFFF;margin-top:0}
-.cta a.btn{background:#D8EEE9;color:#15302F}
+.cta a.btn{font-size:17px;padding:14px 26px;background:#D8EEE9;color:#15302F}
+.cta a.btn:hover{background:#FFFFFF;color:#15302F}
+.cta a.btn[href$="#ecrans"]{background:transparent;color:#FFFFFF;border:2px solid #D8EEE9}
+.cta a.btn[href$="#ecrans"]:hover{background:rgba(255,255,255,.12);color:#FFFFFF}
 .voir{margin:0 0 60px}
 .voir ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:10px}
-.voir a{display:block;background:#FFFFFF;border:1px solid #DCE8E5;border-radius:14px;padding:14px 16px;text-decoration:none;color:#15302F;font-weight:700}
-.voir a:hover{border-color:#0E5E5C}
+.voir li a{display:block;background:#FFFFFF;border:1px solid #DCE8E5;border-radius:14px;padding:14px 16px;text-decoration:none;color:#15302F;font-weight:700}
+.voir li a:hover{border-color:#0E5E5C}
 footer{background:#0E5E5C;color:#D8EEE9;font-size:14px}
-footer .w{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;gap:6px 26px}
+main.w>p:last-child{margin-bottom:60px}
+footer .w{padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:6px 26px}
 footer a{color:#FFFFFF;padding:10px 0}
 </style>
 <meta name="twitter:card" content="summary_large_image">

@@ -12,25 +12,53 @@
 <link rel="icon" type="image/png" href="img/logo.png">
 <style>
 @font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
-body{margin:0;background:#FBF9F6;color:#15302F;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:17px;line-height:1.65}
+body{margin:0;background:#FBF9F6;color:#15302F;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:18px;line-height:1.65}
 a{color:#0E5E5C}a:hover{color:#15302F}
 :focus-visible{outline:3px solid #F39C12;outline-offset:3px;border-radius:6px}
-.disp{font-family:'Plus Jakarta Sans',system-ui,sans-serif}
-header,main,footer div{max-width:760px;margin:0 auto;padding-left:24px;padding-right:24px}
-header{padding-top:22px;padding-bottom:22px}
-header a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#15302F;font-weight:800;font-size:20px;padding:6px 0}
-h1{font-size:clamp(30px,6vw,44px);line-height:1.15;color:#15302F;margin:24px 0 8px}
-h2{font-size:22px;color:#15302F;margin:36px 0 8px}
-main{padding-bottom:72px}
-.avis{background:#F6DDD2;border:1px solid #E9967A;border-radius:14px;padding:16px 18px;margin:20px 0}
+.w{max-width:880px;margin:0 auto;padding-left:24px;padding-right:24px}
+header{position:sticky;top:0;z-index:5;background:rgba(251,249,246,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid #DCE8E5}
+header .w{display:flex;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#15302F;font-weight:800;font-size:22px;letter-spacing:-.4px;min-height:44px}
+.btn{text-decoration:none;background:#0E5E5C;color:#FFFFFF;font-weight:700;font-size:16px;padding:12px 20px;border-radius:999px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center}
+.btn:hover{color:#FFFFFF;background:#0E5E5C}
+.logo,.btn{white-space:nowrap}
+header .btn{font-size:15px}
+header a[lang]{min-height:40px;box-sizing:border-box;display:inline-flex;align-items:center}
+@media (max-width:480px){header .w{gap:10px;padding-left:16px;padding-right:16px}header .btn{padding:10px 14px;font-size:15px}header a[lang]{padding:6px 12px !important}}
+nav.fil{font-size:15px;padding-top:18px}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.12;color:#15302F;margin:18px 0 14px;letter-spacing:-.5px}
+.intro{font-size:20px;color:#56666A;margin:0 0 28px}
+h2{font-size:24px;line-height:1.25;letter-spacing:-.2px;color:#15302F;margin:36px 0 8px}
+p{margin:0 0 12px}
+figure{margin:28px 0;text-align:center}
+figure img{width:min(280px,70%);height:auto;border-radius:22px}
+figcaption{font-size:14px;color:#56666A;margin-top:8px}
+.faq{margin-top:44px;background:#FFFFFF;border:1px solid #DCE8E5;border-radius:18px;padding:8px 24px 20px}
+.faq h3{font-size:19px;line-height:1.35;color:#15302F;margin:18px 0 4px}
+.cta{margin:44px 0;background:#0E5E5C;color:#FFFFFF;border-radius:22px;padding:28px}
+.cta h2{color:#FFFFFF;margin-top:0}
+.cta a.btn{font-size:17px;padding:14px 26px;background:#D8EEE9;color:#15302F}
+.cta a.btn:hover{background:#FFFFFF;color:#15302F}
+.cta a.btn[href$="#ecrans"]{background:transparent;color:#FFFFFF;border:2px solid #D8EEE9}
+.cta a.btn[href$="#ecrans"]:hover{background:rgba(255,255,255,.12);color:#FFFFFF}
+.voir{margin:0 0 60px}
+.voir ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:10px}
+.voir li a{display:block;background:#FFFFFF;border:1px solid #DCE8E5;border-radius:14px;padding:14px 16px;text-decoration:none;color:#15302F;font-weight:700}
+.voir li a:hover{border-color:#0E5E5C}
 footer{background:#0E5E5C;color:#D8EEE9;font-size:14px}
-footer div{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;gap:6px 26px}
+main.w>p:last-child{margin-bottom:60px}
+footer .w{padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:6px 26px}
 footer a{color:#FFFFFF;padding:10px 0}
+.avis{background:#F6DDD2;border:1px solid #E9967A;border-radius:14px;padding:16px 18px;margin:20px 0}
 </style>
 </head>
 <body>
-<header><a href="index.html" class="disp"><img src="img/logo.png" alt="" width="38" height="38" style="border-radius:10px">CliniQ Pro</a> <a href="en/terms.html" lang="en" style="float:right;font-size:16px;font-weight:600;color:#15302F" aria-label="English">EN</a></header>
-<main>
+<header><div class="w">
+<a class="logo" href="index.html"><img src="img/logo.png" alt="" width="38" height="38" style="border-radius:10px">CliniQ Pro</a>
+<a href="en/terms.html" lang="en" aria-label="English" title="English" style="margin-left:auto;margin-right:6px;text-decoration:none;color:#15302F;font-weight:700;font-size:14px;padding:8px 14px;border:1.5px solid #0E5E5C;border-radius:999px;white-space:nowrap">EN</a>
+<a class="btn" href="mailto:soutien@cliniqpromobile.ca">Nous joindre</a>
+</div></header>
+<main class="w">
 <h1 class="disp">Conditions d'utilisation</h1>
 <div class="avis"><strong>Texte en préparation.</strong> Les conditions d'utilisation de l'application sont rédigées avec notre avocate. Elles seront publiées ici, mot pour mot comme dans l'application, avant que CliniQ Pro soit offerte à d'autres professionnels.</div>
 <h2 class="disp">Ce que les conditions couvriront</h2>
@@ -43,7 +71,7 @@ footer a{color:#FFFFFF;padding:10px 0}
 </ul>
 <p style="margin-top:40px"><a href="index.html">Retour à l'accueil</a></p>
 </main>
-<footer><div>
+<footer><div class="w">
 <a href="confidentialite.html">Politique de confidentialité</a>
 <a href="conditions.html">Conditions d'utilisation</a>
 <a href="fermeture-compte.html">Fermer mon compte</a>
