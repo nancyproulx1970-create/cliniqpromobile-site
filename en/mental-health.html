@@ -74,9 +74,14 @@ footer a{color:#FFFFFF;padding:10px 0}
 <a href="terms.html">Terms of use</a>
 <a href="close-account.html">Close my account</a>
 <a href="useful-links.html">Useful links</a>
-<span style="padding:10px 0">This site sets no cookies and uses no tracking tools.</span>
+<span style="padding:10px 0">This site sets no cookies. It counts visits anonymously, with no IP address or identifier.</span>
 <span style="margin-left:auto;padding:10px 0">CliniQ Pro (pronounced “Clinique Pro”), Made in Canada. CliniQ Pro is operated by 18325006 Canada Inc. © 2026</span>
 </div></footer>
 <script>if(!location.hash){addEventListener('load',function(){document.body.scrollIntoView({block:'start'})})}</script>
+<script>/* Compteur de visites anonyme : aucun témoin, aucune adresse IP, aucun identifiant. */
+(function(){try{if(navigator.webdriver)return;var q=new URLSearchParams(location.search),s=q.get('utm_source')||q.get('src'),r=document.referrer,h='';
+if(!s){if(!r)s='direct';else{h=new URL(r).hostname.replace(/^www\./,'');if(h===location.hostname.replace(/^www\./,''))s='interne';else if(/google\./.test(h))s='google';else if(/bing\./.test(h))s='bing';else if(/youtube\.|youtu\.be/.test(h))s='youtube';else if(/facebook\.|fb\.|messenger\./.test(h))s='facebook';else if(/instagram\./.test(h))s='instagram';else if(/linkedin\.|lnkd\./.test(h))s='linkedin';else if(/chatgpt\.|openai\./.test(h))s='chatgpt';else s=h;}}
+fetch('https://anzgkxmxkcetzbtjttuh.supabase.co/rest/v1/visites_site',{method:'POST',keepalive:true,headers:{'apikey':'sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW','Content-Type':'application/json','Prefer':'return=minimal'},
+body:JSON.stringify({page:location.pathname.slice(0,200),source:String(s).toLowerCase().slice(0,100),langue:location.pathname.indexOf('/en/')===0?'en':'fr',appareil:(/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)||matchMedia('(max-width: 820px)').matches)?'mobile':'ordinateur'})}).catch(function(){});}catch(e){}})();</script>
 </body>
 </html>
