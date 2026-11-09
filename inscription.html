@@ -94,12 +94,12 @@ form.ins button[disabled]{opacity:.6}
 <script>
 (function(){var f=document.getElementById('f'),m=document.getElementById('msg'),b=f.querySelector('button');
 f.addEventListener('submit',function(e){e.preventDefault();m.className='';m.textContent='';
-if(f.site.value){m.className='ok';m.textContent='Merci ! Votre place est réservée. Un courriel de confirmation vient de partir : s'il n'est pas dans votre boîte de réception, regardez dans les courriers indésirables.';return;}
+if(f.site.value){m.className='ok';m.textContent='Merci ! Votre place est réservée. Un courriel de confirmation vient de partir : s’il n’est pas dans votre boîte de réception, regardez dans les courriers indésirables.';return;}
 if(!f.checkValidity()){f.reportValidity();return;}
 b.disabled=true;
 fetch('https://anzgkxmxkcetzbtjttuh.supabase.co/rest/v1/inscriptions_site',{method:'POST',headers:{'apikey':'sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW','Content-Type':'application/json','Prefer':'return=minimal'},
 body:JSON.stringify({nom:f.nom.value.trim(),courriel:f.courriel.value.trim(),profession:f.profession.value.trim(),province:f.province.value,telephone:f.telephone.value||null,langue:'fr',consentement:true,page:(document.referrer||'').slice(0,200),source:f.source.value||null})})
-.then(function(r){if(!r.ok)throw 0;f.reset();m.className='ok';m.textContent='Merci ! Votre place est réservée. Un courriel de confirmation vient de partir : s'il n'est pas dans votre boîte de réception, regardez dans les courriers indésirables.';})
+.then(function(r){if(!r.ok)throw 0;f.reset();m.className='ok';m.textContent='Merci ! Votre place est réservée. Un courriel de confirmation vient de partir : s’il n’est pas dans votre boîte de réception, regardez dans les courriers indésirables.';})
 .catch(function(){m.className='err';m.textContent="Oups, l'envoi n'a pas fonctionné. Réessayez, ou écrivez-nous à soutien@cliniqpromobile.ca.";})
 .finally(function(){b.disabled=false;});});})();
 </script>

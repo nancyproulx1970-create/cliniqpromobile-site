@@ -94,12 +94,12 @@ form.ins button[disabled]{opacity:.6}
 <script>
 (function(){var f=document.getElementById('f'),m=document.getElementById('msg'),b=f.querySelector('button');
 f.addEventListener('submit',function(e){e.preventDefault();m.className='';m.textContent='';
-if(f.site.value){m.className='ok';m.textContent='Thank you! Your spot is reserved. A confirmation email is on its way: if you don't see it in your inbox, please check your junk or spam folder.';return;}
+if(f.site.value){m.className='ok';m.textContent='Thank you! Your spot is reserved. A confirmation email is on its way: if you don’t see it in your inbox, please check your junk or spam folder.';return;}
 if(!f.checkValidity()){f.reportValidity();return;}
 b.disabled=true;
 fetch('https://anzgkxmxkcetzbtjttuh.supabase.co/rest/v1/inscriptions_site',{method:'POST',headers:{'apikey':'sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW','Content-Type':'application/json','Prefer':'return=minimal'},
 body:JSON.stringify({nom:f.nom.value.trim(),courriel:f.courriel.value.trim(),profession:f.profession.value.trim(),province:f.province.value,telephone:f.telephone.value||null,langue:'en',consentement:true,page:(document.referrer||'').slice(0,200),source:f.source.value||null})})
-.then(function(r){if(!r.ok)throw 0;f.reset();m.className='ok';m.textContent='Thank you! Your spot is reserved. A confirmation email is on its way: if you don't see it in your inbox, please check your junk or spam folder.';})
+.then(function(r){if(!r.ok)throw 0;f.reset();m.className='ok';m.textContent='Thank you! Your spot is reserved. A confirmation email is on its way: if you don’t see it in your inbox, please check your junk or spam folder.';})
 .catch(function(){m.className='err';m.textContent="Oops, that didn't go through. Please try again, or email us at soutien@cliniqpromobile.ca.";})
 .finally(function(){b.disabled=false;});});})();
 </script>
