@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe | CliniQ Pro</title>
+<meta name="description" content="Subscribe to CliniQ Pro: $44.95 + tax per month or $449.50 + tax per year. Secure payment by Stripe.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.cliniqpromobile.ca/en/subscribe.html">
+<link rel="alternate" hreflang="fr-CA" href="https://www.cliniqpromobile.ca/abonnement.html">
+<link rel="alternate" hreflang="en-CA" href="https://www.cliniqpromobile.ca/en/subscribe.html">
+<link rel="icon" type="image/png" href="../img/logo.png">
+<style>
+@font-face{font-family:'Plus Jakarta Sans';src:url(../fonts/plus-jakarta-sans.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
+body{margin:0;background:#F2F6F5;color:#15302F;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:17px;line-height:1.65}
+a{color:#0B6E69}a:hover{color:#0B2D55}
+:focus-visible{outline:3px solid #F2A93B;outline-offset:3px;border-radius:6px}
+header,main,footer div{max-width:760px;margin:0 auto;padding-left:24px;padding-right:24px}
+header{padding-top:22px;padding-bottom:22px}
+header a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#0B2D55;font-weight:800;font-size:20px;padding:6px 0}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.15;color:#0B2D55;margin:24px 0 8px}
+h2{font-size:22px;color:#0B2D55;margin:28px 0 8px}
+main{padding-bottom:72px}
+.carte{background:#fff;border:1px solid #D5E2DF;border-radius:16px;padding:22px;margin:20px 0}
+.avis{background:#FFF4E2;border:1px solid #F2A93B;border-radius:14px;padding:16px 18px;margin:20px 0}
+.ok{background:#E3F4EE;border:1px solid #0B6E69;border-radius:14px;padding:16px 18px;margin:20px 0}
+label{display:block;font-weight:700;margin:14px 0 6px}
+input{box-sizing:border-box;width:100%;font:inherit;padding:14px;border:1px solid #9FB5B1;border-radius:12px;background:#fff;color:#15302F}
+button,.bouton{display:block;box-sizing:border-box;width:100%;font:inherit;font-weight:800;text-align:center;text-decoration:none;cursor:pointer;border:0;border-radius:14px;padding:16px;margin-top:18px;background:#0B6E69;color:#fff}
+button:hover,.bouton:hover{background:#0B2D55;color:#fff}
+button[disabled]{opacity:.6;cursor:wait}
+.formules{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.formules{grid-template-columns:1fr}}
+.formule{background:#fff;border:1px solid #D5E2DF;border-radius:16px;padding:20px}
+.prix{font-size:30px;font-weight:800;color:#0B2D55;line-height:1.2}
+.petit{font-size:15px;color:#4A6461}
+.erreur{color:#A3261B;font-weight:700;margin-top:12px}
+[hidden]{display:none!important}
+footer{background:#0B2D55;color:#C6D3E4;font-size:14px}
+footer div{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;gap:6px 26px}
+footer a{color:#FFFFFF;padding:10px 0}
+</style>
+</head>
+<body>
+<header><a href="index.html"><img src="../img/logo.png" alt="" width="38" height="38" style="border-radius:10px">CliniQ Pro</a> <a href="../abonnement.html" lang="fr" style="float:right;font-size:16px;font-weight:600;color:#15302F" aria-label="Français">FR</a></header>
+<main>
+<h1>Subscribe to CliniQ Pro</h1>
+
+<div id="merci" class="ok" hidden>
+<strong>Thank you, your payment was received!</strong><br>
+Your subscription will be active in your account within a few moments. Your receipt is on its way by email. You can go back to the app.
+</div>
+
+<section id="connexion">
+<p>Sign in with the email and password of your CliniQ Pro account, so we know which account to activate.</p>
+<form id="form" class="carte" novalidate>
+<label for="courriel">Account email</label>
+<input id="courriel" type="email" autocomplete="username" required>
+<label for="mdp">Password</label>
+<input id="mdp" type="password" autocomplete="current-password" required>
+<button id="btn" type="submit">Continue</button>
+<p id="err" class="erreur" role="alert" hidden></p>
+</form>
+<p class="petit">Your password goes straight to CliniQ Pro's secure server. It is never kept on this site. Forgot your password? Change it in the app, on the sign-in screen.</p>
+<p class="petit">No account yet? Install CliniQ Pro and create your account: the trial is free for 14 days, no card needed.</p>
+</section>
+
+<section id="etat" hidden>
+<p id="bonjour"></p>
+<div id="msg-offert" class="ok" hidden>Your account is complimentary: you have nothing to pay.</div>
+<div id="msg-actif" class="ok" hidden>Your subscription is active. <span id="prochain"></span><br>To change your card or cancel, write to <a href="mailto:soutien@cliniqpromobile.ca">soutien@cliniqpromobile.ca</a>.</div>
+<div id="choix" hidden>
+<p id="msg-essai" class="avis" hidden></p>
+<p id="msg-termine" class="avis" hidden>Your trial has ended. Your records are still there: subscribe to keep adding appointments, notes and receipts.</p>
+<h2>Choose your plan</h2>
+<div class="formules">
+<div class="formule">
+<div>Monthly</div>
+<div class="prix">$44.95</div>
+<div class="petit">+ tax, per month</div>
+<a id="lien-mensuel" class="bouton" href="#">Pay monthly</a>
+</div>
+<div class="formule">
+<div>Yearly <strong>— 2 months free</strong></div>
+<div class="prix">$449.50</div>
+<div class="petit">+ tax, per year</div>
+<a id="lien-annuel" class="bouton" href="#">Pay yearly</a>
+</div>
+</div>
+<p class="petit">Payment is made on Stripe's secure page. Your province's taxes are calculated from your address. Your subscription starts when you pay and renews automatically. You can stop it at any time: you keep access until the end of the paid period. Have a promo code? Enter it on the payment page.</p>
+</div>
+<p><a href="#" id="autre">This is not my account</a></p>
+</section>
+
+<p style="margin-top:40px"><a href="index.html">Back to home</a></p>
+</main>
+<footer><div>
+<a href="privacy.html">Privacy policy</a>
+<a href="terms.html">Terms of use</a>
+<a href="close-account.html">Close my account</a>
+<span style="padding:10px 0">This site sets no cookies and uses no tracking tools.</span>
+<span style="margin-left:auto;padding:10px 0">CliniQ Pro, Made in Canada. CliniQ Pro is operated by 18325006 Canada Inc. © 2026</span>
+</div></footer>
+<script>
+(function () {
+  // ABONNEMENT-STRIPE-1. Aucune donnée gardée dans le navigateur (ni témoin ni stockage) : la session vit dans cette page seulement.
+  var SB = 'https://anzgkxmxkcetzbtjttuh.supabase.co';
+  var CLE = 'sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW';
+  var LIENS = { // Liens de paiement Stripe (bac à sable — à remplacer par ceux du vrai compte au lancement)
+    mensuel: 'https://buy.stripe.com/test_3cIcN7boVatFgPq4xT4gg02',
+    annuel: 'https://buy.stripe.com/test_28E28t1Ol1X99mYd4p4gg03'
+  };
+  var T = {
+    vide: 'Enter your email and password.',
+    refus: 'Incorrect email or password.',
+    reseau: 'Unable to connect right now. Check your Internet connection and try again.',
+    bonjour: 'Account: ',
+    essai: function (j) { return j > 0 ? 'You have ' + j + (j > 1 ? ' days' : ' day') + ' of free trial left. You can subscribe now or when the trial ends.' : 'Your free trial ends today.'; },
+    prochain: function (d) { return 'Next renewal: ' + d + '.'; },
+    locale: 'en-CA'
+  };
+  var $ = function (id) { return document.getElementById(id); };
+  if (/[?&](paye|paid)=1/.test(location.search)) { $('merci').hidden = false; $('connexion').hidden = true; return; }
+
+  function erreur(t) { $('err').textContent = t; $('err').hidden = !t; }
+
+  $('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    erreur('');
+    var c = $('courriel').value.trim(), m = $('mdp').value;
+    if (!c || !m) { erreur(T.vide); return; }
+    $('btn').disabled = true;
+    fetch(SB + '/auth/v1/token?grant_type=password', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', apikey: CLE },
+      body: JSON.stringify({ email: c, password: m })
+    }).then(function (r) {
+      return r.json().then(function (j) { if (!r.ok || !j.access_token || !j.user) throw { refus: true }; return j; });
+    }).then(function (s) {
+      $('mdp').value = '';
+      return fetch(SB + '/rest/v1/rpc/etat_abonnement', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', apikey: CLE, Authorization: 'Bearer ' + s.access_token }, body: '{}'
+      }).then(function (r) { if (!r.ok) throw {}; return r.json(); })
+        .then(function (etat) { afficher(s.user, etat); });
+    }).catch(function (x) { erreur(x && x.refus ? T.refus : T.reseau); })
+      .then(function () { $('btn').disabled = false; });
+  });
+
+  function afficher(user, etat) {
+    $('connexion').hidden = true; $('etat').hidden = false;
+    $('bonjour').textContent = T.bonjour + (user.email || '');
+    var s = etat && etat.statut;
+    if (s === 'offert') { $('msg-offert').hidden = false; return; }
+    if (s === 'actif' && etat.peut_ecrire) {
+      $('msg-actif').hidden = false;
+      if (etat.periode_fin) $('prochain').textContent = T.prochain(new Date(etat.periode_fin).toLocaleDateString(T.locale, { day: 'numeric', month: 'long', year: 'numeric' }));
+      return;
+    }
+    $('choix').hidden = false;
+    if (s === 'essai' && etat.peut_ecrire) { $('msg-essai').textContent = T.essai(etat.jours_restants || 0); $('msg-essai').hidden = false; }
+    else { $('msg-termine').hidden = false; }
+    var ref = '?client_reference_id=' + encodeURIComponent(user.id);
+    $('lien-mensuel').href = LIENS.mensuel + ref;
+    $('lien-annuel').href = LIENS.annuel + ref;
+  }
+
+  $('autre').addEventListener('click', function (e) { e.preventDefault(); location.reload(); });
+})();
+</script>
+</body>
+</html>
