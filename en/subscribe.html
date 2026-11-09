@@ -34,6 +34,7 @@ button[disabled]{opacity:.6;cursor:wait}
 .formule{background:#fff;border:1px solid #D5E2DF;border-radius:16px;padding:20px}
 .prix{font-size:30px;font-weight:800;color:#0B2D55;line-height:1.2}
 .petit{font-size:15px;color:#4A6461}
+.mdp-zone{position:relative}.mdp-zone input{padding-right:56px}.oeil{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:44px;height:44px;margin:0;padding:10px;border-radius:10px;background:transparent;color:#0B6E69}.oeil:hover{background:#E3F4EE;color:#0B2D55}
 .erreur{color:#A3261B;font-weight:700;margin-top:12px}
 [hidden]{display:none!important}
 footer{background:#0B2D55;color:#C6D3E4;font-size:14px}
@@ -57,7 +58,7 @@ Your subscription will be active in your account within a few moments. Your rece
 <label for="courriel">Account email</label>
 <input id="courriel" type="email" autocomplete="username" required>
 <label for="mdp">Password</label>
-<input id="mdp" type="password" autocomplete="current-password" required>
+<div class="mdp-zone"><input id="mdp" type="password" autocomplete="current-password" required><button type="button" id="oeil" class="oeil" aria-label="Show password" aria-pressed="false" data-show="Show password" data-hide="Hide password"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><line id="barre" style="display:none" x1="3" y1="21" x2="21" y2="3" stroke="currentColor" stroke-width="2"/></svg></button></div>
 <button id="btn" type="submit">Continue</button>
 <p id="err" class="erreur" role="alert" hidden></p>
 </form>
@@ -136,7 +137,7 @@ Your subscription will be active in your account within a few moments. Your rece
     }).then(function (r) {
       return r.json().then(function (j) { if (!r.ok || !j.access_token || !j.user) throw { refus: true }; return j; });
     }).then(function (s) {
-      $('mdp').value = '';
+      $('mdp').value = ''; $('mdp').type = 'password'; document.getElementById('barre').style.display = 'none';
       return fetch(SB + '/rest/v1/rpc/etat_abonnement', {
         method: 'POST', headers: { 'Content-Type': 'application/json', apikey: CLE, Authorization: 'Bearer ' + s.access_token }, body: '{}'
       }).then(function (r) { if (!r.ok) throw {}; return r.json(); })
@@ -163,6 +164,13 @@ Your subscription will be active in your account within a few moments. Your rece
     $('lien-annuel').href = LIENS.annuel + ref;
   }
 
+  $('oeil').addEventListener('click', function () {
+    var m = $('mdp'), b = $('oeil'), voir = m.type === 'password';
+    m.type = voir ? 'text' : 'password';
+    b.setAttribute('aria-pressed', voir ? 'true' : 'false');
+    b.setAttribute('aria-label', voir ? b.dataset.hide : b.dataset.show);
+    document.getElementById('barre').style.display = voir ? '' : 'none';
+  });
   $('autre').addEventListener('click', function (e) { e.preventDefault(); location.reload(); });
 })();
 </script>
