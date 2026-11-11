@@ -34,7 +34,7 @@ section{scroll-margin-top:84px}
 @media (max-width:760px){
 nav[aria-label="Menu principal"]{display:none !important}
 header > div{gap:10px !important;padding-left:16px !important;padding-right:16px !important}
-header a[href="#liste"]{padding:10px 14px !important;white-space:nowrap;font-size:14px !important}
+header a.btn-haut{padding:10px 14px !important;white-space:nowrap;font-size:14px !important}
 header a[href="/"] .disp{font-size:20px !important}
 header a[lang]{padding:6px 12px !important}
 .etape{grid-template-columns:28px minmax(0,1fr);column-gap:14px}
@@ -42,6 +42,23 @@ header a[lang]{padding:6px 12px !important}
 .heure-mobile{display:block}
 }
 a[href="#contenu"]:focus{left:8px !important}
+.haut-ecrans{display:flex;gap:10px;max-width:34em}
+.haut-ecrans a{flex:1 1 0;display:block}
+.haut-ecrans img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 6px 18px rgba(21,48,47,.18)}
+.haut-essai{margin:-8px 0 0;font-size:16px;font-weight:700;color:#0E5E5C}
+.haut-g>*{order:10}.haut-g>span:first-child{order:1}.haut-g>h1{order:2}.haut-cta{order:3}.haut-essai{order:4}.haut-ecrans{order:5}.haut-intro{order:6}#decompte{order:7}
+@media (max-width:760px){
+.haut-g{gap:16px !important}
+.haut-g>*{order:10}
+.haut-g>span:first-child{order:1}
+.haut-g>h1{order:2}
+.haut-ecrans{order:3}
+.haut-cta{order:4}
+.haut-essai{order:5;margin:0}
+.haut-intro{order:6;font-size:17px !important}
+#decompte{order:7}
+#haut{padding-top:20px !important}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "CliniQ Pro", "url": "https://www.cliniqpromobile.ca/", "logo": "https://www.cliniqpromobile.ca/img/logo.png", "email": "soutien@cliniqpromobile.ca"}</script>
 <meta name="twitter:card" content="summary_large_image">
@@ -63,24 +80,26 @@ a[href="#contenu"]:focus{left:8px !important}
 <a href="#apropos" style="text-decoration: none; color: #15302F; padding: 12px 12px">À propos</a><a href="#faq" style="text-decoration: none; color: #15302F; padding: 12px 12px">Questions</a><a href="tarifs.html" style="text-decoration: none; color: #15302F; padding: 12px 12px">Tarifs</a>
 </nav>
 <a href="en/index.html" lang="en" aria-label="English" title="English" style="margin-left: auto; margin-right: 6px; text-decoration: none; color: #15302F; font-weight: 700; font-size: 14px; padding: 8px 14px; border: 1.5px solid #0E5E5C; border-radius: 999px; min-height: 40px; box-sizing: border-box; display: inline-flex; align-items: center; white-space: nowrap">EN</a>
-<a href="#liste" style="margin-left: 0; text-decoration: none; background: #0E5E5C; color: #FFFFFF; font-weight: 700; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Nous joindre</a>
+<a href="inscription.html" class="btn-haut" style="margin-left: 0; text-decoration: none; background: #0E5E5C; color: #FFFFFF; font-weight: 700; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Réserver ma place</a>
 </div>
 </header>
 
 <main id="contenu">
 <section id="haut" style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px; align-items: center">
-<div style="display: flex; flex-direction: column; gap: 24px">
+<div class="haut-g" style="display: flex; flex-direction: column; gap: 24px">
 <span style="font-size: 15px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: #0E5E5C">Agenda, dossier patient et facturation</span>
 <h1 class="disp" style="margin: 0; font-size: clamp(34px, 5vw, 54px); line-height: 1.12; font-weight: 800; letter-spacing: -0.5px; color: #15302F">Le logiciel des professionnels de la santé, à domicile et en clinique</h1>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #56666A; max-width: 34em">Agenda, dossier patient, notes signées, reçus et factures, dépenses et kilométrage, dans une seule application. Pour les professionnels de la santé à leur compte : soins infirmiers, soins podologiques, réadaptation, santé mentale et bien d'autres. Créée par une infirmière auxiliaire qui l'utilise chaque jour.</p>
+<div class="haut-ecrans"><a href="#journee"><img src="img/accueil-v2.jpg" alt="Écran d'accueil : votre journée et ce qui reste à compléter (patients fictifs)" width="545" height="1000" fetchpriority="high"></a><a href="#journee"><img src="img/agenda-semaine-v2.jpg" alt="Agenda de la semaine (patients fictifs)" width="545" height="1000" fetchpriority="high"></a><a href="#journee"><img src="img/dossier-patient-v2.jpg" alt="Dossier patient (patient fictif)" width="545" height="1000" fetchpriority="high"></a></div>
+<p class="haut-intro" style="margin: 0; font-size: 19px; line-height: 1.6; color: #56666A; max-width: 34em">Agenda, dossier patient, notes signées, reçus et factures, dépenses et kilométrage, dans une seule application. Pour les professionnels de la santé à leur compte : soins infirmiers, soins podologiques, réadaptation, santé mentale et bien d'autres. Créée par une infirmière auxiliaire qui l'utilise chaque jour.</p>
 <div id="decompte" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #FFFFFF; border: 1px solid #DCE8E5; border-radius: 18px; padding: 14px 18px; max-width: 34em; box-sizing: border-box">
 <span aria-hidden="true" style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 76px; padding: 8px 10px; background: #0E5E5C; color: #FFFFFF; border-radius: 14px; line-height: 1"><strong id="decompte-nb" class="disp" style="font-size: 30px; font-weight: 800">63</strong><span id="decompte-unite" style="font-size: 13px; font-weight: 700; margin-top: 4px">jours</span></span>
 <span style="display: flex; flex-direction: column; gap: 2px"><strong id="decompte-titre" class="disp" style="font-size: 19px; color: #15302F">Lancement le 1er janvier 2027</strong><span id="decompte-texte" style="font-size: 15px; color: #56666A">Plus que <span id="decompte-nb2">63</span> <span id="decompte-unite2">jours</span>.</span></span>
 </div>
-<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<div class="haut-cta" style="display: flex; gap: 12px; flex-wrap: wrap">
 <a href="inscription.html" style="text-decoration: none; background: #0E5E5C; color: #FFFFFF; font-weight: 700; font-size: 17px; padding: 17px 28px; border-radius: 999px">Réservez votre place</a>
 <a href="#journee" style="text-decoration: none; color: #15302F; font-weight: 700; font-size: 17px; padding: 17px 24px; border-radius: 999px; border: 2px solid #0E5E5C">Suivre une journée</a>
 </div>
+<p class="haut-essai">Au lancement : essai gratuit de 14 jours, sans carte de crédit.</p>
 <p style="margin: -8px 0 0; font-size: 14px; color: #56666A; max-width: 34em">Nous vous écrirons avant le lancement, avec le guide pour bien démarrer. Vos coordonnées servent seulement à vous écrire au sujet de CliniQ Pro.</p>
 <p style="margin: 0; font-size: 14px; color: #56666A">Pour Android et iPhone, en préparation. En français et en anglais.</p>
 </div>
