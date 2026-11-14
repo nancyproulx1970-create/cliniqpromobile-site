@@ -32,6 +32,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Massage therapy (English)](https://www.cliniqpromobile.ca/en/massage-therapy.html)
 - [Orthophonie et audiologie](https://www.cliniqpromobile.ca/logiciel-orthophonie-a-domicile.html)
 - [Speech therapy and audiology (English)](https://www.cliniqpromobile.ca/en/speech-therapy.html)
+- [Travail social](https://www.cliniqpromobile.ca/logiciel-travail-social.html)
+- [Social work (English)](https://www.cliniqpromobile.ca/en/social-work.html)
 
 ## Ressources
 - [TPS, TVH, TVQ pour les pros de la santé à leur compte au Canada : guide 2026](https://www.cliniqpromobile.ca/tps-tvh-tvq-professionnels-sante-autonomes.html)
