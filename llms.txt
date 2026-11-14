@@ -2,7 +2,7 @@
 
 > Application mobile (Android et iPhone, téléphone et tablette) pour les professionnels de la santé qui soignent à domicile, à leur clinique ou les deux, partout au Canada : agenda avec itinéraire, rappels automatiques par texto, dossier patient électronique, notes signées et verrouillées, reçus et factures en PDF, kilométrage automatique, dépenses et sommaire annuel pour le comptable, registre de stérilisation avec traçabilité des sachets, PTI pour les infirmières, double vérification, et fonctions de base sans réseau. Créée par Nancy Proulx, infirmière auxiliaire en soins podologiques. En français et en anglais.
 
-Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins de plaies et de stomies, inhalothérapie, physiothérapie, ergothérapie, réadaptation, santé mentale, soins dentaires, esthétique médicale et autres pratiques à domicile.
+Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins de plaies et de stomies, inhalothérapie, physiothérapie, ergothérapie, réadaptation, santé mentale, soins dentaires, esthétique médicale, massothérapie et autres pratiques à domicile.
 
 ## Fonctions
 - [Agenda et itinéraire](https://www.cliniqpromobile.ca/agenda-soins-a-domicile.html)
@@ -28,6 +28,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Santé mentale](https://www.cliniqpromobile.ca/logiciel-sante-mentale-a-domicile.html)
 - [Soins dentaires à domicile](https://www.cliniqpromobile.ca/logiciel-soins-dentaires-a-domicile.html)
 - [Esthétique médicale](https://www.cliniqpromobile.ca/logiciel-esthetique-medicale-a-domicile.html)
+- [Massothérapie](https://www.cliniqpromobile.ca/logiciel-massotherapie-a-domicile.html)
+- [Massage therapy (English)](https://www.cliniqpromobile.ca/en/massage-therapy.html)
 
 ## Ressources
 - [Questions et réponses (toute l'aide de l'app)](https://www.cliniqpromobile.ca/faq.html)
