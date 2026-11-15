@@ -44,6 +44,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Clinical documentation software (English)](https://www.cliniqpromobile.ca/en/clinical-documentation-software.html)
 - [Alternatives à Jane App au Canada](https://www.cliniqpromobile.ca/alternatives-jane-app-canada.html)
 - [Jane App alternatives in Canada (English)](https://www.cliniqpromobile.ca/en/jane-app-alternatives-canada.html)
+- [Reçu d'assurance et facture de travailleur autonome en santé](https://www.cliniqpromobile.ca/recu-assurance-facture-travailleur-autonome-sante.html)
+- [Insurance receipts for self-employed health practitioners (English)](https://www.cliniqpromobile.ca/en/insurance-receipt-self-employed-health.html)
 - [Kinésiologie](https://www.cliniqpromobile.ca/logiciel-kinesiologie.html)
 - [Kinesiology (English)](https://www.cliniqpromobile.ca/en/kinesiology.html)
 - [Ostéopathie](https://www.cliniqpromobile.ca/logiciel-osteopathie.html)
