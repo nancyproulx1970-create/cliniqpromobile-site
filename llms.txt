@@ -48,6 +48,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Insurance receipts for self-employed health practitioners (English)](https://www.cliniqpromobile.ca/en/insurance-receipt-self-employed-health.html)
 - [Passer d'un autre logiciel à CliniQ Pro : importer vos patients](https://www.cliniqpromobile.ca/passer-a-cliniq-pro-importer-patients.html)
 - [Switch to CliniQ Pro: import your patients (English)](https://www.cliniqpromobile.ca/en/switch-to-cliniq-pro-import-patients.html)
+- [Prélèvements à domicile](https://www.cliniqpromobile.ca/logiciel-prelevements-a-domicile.html)
+- [Mobile blood draws (English)](https://www.cliniqpromobile.ca/en/mobile-blood-draw.html)
 - [Kinésiologie](https://www.cliniqpromobile.ca/logiciel-kinesiologie.html)
 - [Kinesiology (English)](https://www.cliniqpromobile.ca/en/kinesiology.html)
 - [Ostéopathie](https://www.cliniqpromobile.ca/logiciel-osteopathie.html)
