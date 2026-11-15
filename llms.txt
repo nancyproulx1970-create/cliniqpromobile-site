@@ -50,6 +50,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Switch to CliniQ Pro: import your patients (English)](https://www.cliniqpromobile.ca/en/switch-to-cliniq-pro-import-patients.html)
 - [Prélèvements à domicile](https://www.cliniqpromobile.ca/logiciel-prelevements-a-domicile.html)
 - [Mobile blood draws (English)](https://www.cliniqpromobile.ca/en/mobile-blood-draw.html)
+- [Diététiste-nutritionniste](https://www.cliniqpromobile.ca/logiciel-dietetiste-nutritionniste.html)
+- [Dietitians (English)](https://www.cliniqpromobile.ca/en/dietitian-software.html)
 - [Kinésiologie](https://www.cliniqpromobile.ca/logiciel-kinesiologie.html)
 - [Kinesiology (English)](https://www.cliniqpromobile.ca/en/kinesiology.html)
 - [Ostéopathie](https://www.cliniqpromobile.ca/logiciel-osteopathie.html)
