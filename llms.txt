@@ -38,6 +38,8 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Psychoeducation and special education (English)](https://www.cliniqpromobile.ca/en/psychoeducation-special-education.html)
 - [Kinésiologie](https://www.cliniqpromobile.ca/logiciel-kinesiologie.html)
 - [Kinesiology (English)](https://www.cliniqpromobile.ca/en/kinesiology.html)
+- [Ostéopathie](https://www.cliniqpromobile.ca/logiciel-osteopathie.html)
+- [Osteopathy (English)](https://www.cliniqpromobile.ca/en/osteopathy.html)
 - [Guide : choisir un logiciel santé à domicile au Québec et au Canada (2026)](https://www.cliniqpromobile.ca/choisir-logiciel-sante-domicile-quebec-canada.html)
 - [Guide: choosing home health software in Canada (2026)](https://www.cliniqpromobile.ca/en/choosing-home-health-software-canada.html)
 - [Bien démarrer avec CliniQ Pro](https://www.cliniqpromobile.ca/bien-demarrer.html)
