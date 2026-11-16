@@ -56,6 +56,7 @@ footer{background:#0E5E5C;color:#D8EEE9;font-size:14px}
 main.w>p:last-child{margin-bottom:60px}
 footer .w{padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:6px 26px}
 footer a{color:#FFFFFF;padding:10px 0}
+.calc input::placeholder{color:#9AA8AA;font-style:italic;opacity:1}.calc input{background:#FFFFFF !important}
 </style>
 <style>
 .calc{margin:36px 0;background:#FFFFFF;border:2px solid #0E5E5C;border-radius:18px;padding:20px 24px}
@@ -100,10 +101,10 @@ table.t th{background:#EEF6F4}
 <h2>Which trips count</h2>
 <p>Travel between home and your clinic or regular place of work is personal and does not count. Trips to patients' homes, between visits, or to a supplier for work do count. If your main office is in your home, the trip from home to a patient is a work trip.</p>
 <section class="calc" id="calculator"><h2>Free calculator</h2><form id="calc" onsubmit="return false">
-<label for="kt">Work kilometres in the year</label><input id="kt" inputmode="decimal" placeholder="12000">
-<label for="ka">Total kilometres in the year (from the odometer)</label><input id="ka" inputmode="decimal" placeholder="20000">
-<label for="dep">Vehicle expenses for the year ($): fuel, maintenance, insurance, registration, interest or lease</label><input id="dep" inputmode="decimal" placeholder="8000">
-<label for="sta">Parking paid for work ($)</label><input id="sta" inputmode="decimal" placeholder="0">
+<label for="kt">Work kilometres in the year</label><input id="kt" inputmode="decimal" placeholder="e.g. 12000">
+<label for="ka">Total kilometres in the year (from the odometer)</label><input id="ka" inputmode="decimal" placeholder="e.g. 20000">
+<label for="dep">Vehicle expenses for the year ($): fuel, maintenance, insurance, registration, interest or lease</label><input id="dep" inputmode="decimal" placeholder="e.g. 8000">
+<label for="sta">Parking paid for work ($)</label><input id="sta" inputmode="decimal" placeholder="e.g. 0">
 <div class="res" id="out" aria-live="polite"></div>
 <small>Estimate only, excluding depreciation. Your accountant always confirms the final amount. Nothing is sent: the calculation happens in your browser.</small></form></section><h2>With CliniQ Pro, the logbook keeps itself</h2><p>Your trips are calculated from your appointments. In the evening, you confirm the day at a glance. You photograph the odometer once a month. Your accountant receives your vehicle's business-use share already calculated, with your expenses sorted by tax-return line. <a href="automatic-mileage.html">See automatic mileage</a>.</p>
 <h2>Official sources</h2><p><a href="https://www.canada.ca/en/department-finance/news/2026/01/government-announces-the-2026-automobile-deduction-limits-and-expense-benefit-rates-for-businesses.html" rel="noopener">Finance Canada: 2026 automobile limits</a><br><a href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/small-businesses-self-employed-income/business-income-tax-reporting/business-expenses/motor-vehicle-expenses.html" rel="noopener">CRA: motor vehicle expenses</a><br><a href="https://www.revenuquebec.ca/en/citizens/income-tax-return/completing-your-income-tax-return/self-employed-persons-income-tax-return/self-employed-persons-determining-your-net-income/" rel="noopener">Revenu Québec: self-employed net income (vehicle expenses)</a></p><p style="font-size:15px;color:#56666A">Updated November 14, 2026. General information, not tax advice.</p>

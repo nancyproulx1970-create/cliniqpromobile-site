@@ -56,6 +56,7 @@ footer{background:#0E5E5C;color:#D8EEE9;font-size:14px}
 main.w>p:last-child{margin-bottom:60px}
 footer .w{padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:6px 26px}
 footer a{color:#FFFFFF;padding:10px 0}
+.calc input::placeholder{color:#9AA8AA;font-style:italic;opacity:1}.calc input{background:#FFFFFF !important}
 </style>
 <style>
 .calc{margin:36px 0;background:#FFFFFF;border:2px solid #0E5E5C;border-radius:18px;padding:20px 24px}
@@ -91,7 +92,7 @@ table.t th{background:#EEF6F4}
 <section class="calc" id="outil"><h2>Outil gratuit : exonéré ou taxable&nbsp;?</h2><form id="calc" onsubmit="return false">
 <label for="prov">Votre province ou territoire</label><select id="prov"><option value="">Choisir</option><option value="QC">Québec</option><option value="ON">Ontario</option><option value="NB">Nouveau-Brunswick</option><option value="NS">Nouvelle-Écosse</option><option value="PE">Île-du-Prince-Édouard</option><option value="NL">Terre-Neuve-et-Labrador</option><option value="MB">Manitoba</option><option value="SK">Saskatchewan</option><option value="AB">Alberta</option><option value="BC">Colombie-Britannique</option><option value="YT">Yukon</option><option value="NT">Territoires du Nord-Ouest</option><option value="NU">Nunavut</option></select>
 <label for="met">Votre service</label><select id="met"><option value="">Choisir</option><option value="inf">Soins infirmiers (infirmière ou infirmier, y compris auxiliaire)</option><option value="physio">Physiothérapie</option><option value="ergo">Ergothérapie</option><option value="ortho">Orthophonie</option><option value="psy">Psychologie (psychologue)</option><option value="ts">Travail social</option><option value="diet">Diététique (diététiste)</option><option value="masso">Massothérapie</option><option value="kin">Kinésiologie</option><option value="esth">Services esthétiques, sans but médical</option><option value="prod">Produits vendus (crèmes, accessoires, etc.)</option></select>
-<label for="mnt">Prix avant taxes ($), facultatif</label><input id="mnt" inputmode="decimal" placeholder="0">
+<label for="mnt">Prix avant taxes ($), facultatif</label><input id="mnt" inputmode="decimal" placeholder="Ex. 0">
 <div class="res" id="out" aria-live="polite"></div>
 <small>Règle générale seulement : votre situation dépend de votre profession, du service rendu et de votre province. À confirmer avec votre comptable. Rien n'est envoyé : le calcul se fait dans votre navigateur.</small></form></section>
 <h2>La règle en trois lignes</h2>

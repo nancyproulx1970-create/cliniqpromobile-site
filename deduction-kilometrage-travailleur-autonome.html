@@ -56,6 +56,7 @@ footer{background:#0E5E5C;color:#D8EEE9;font-size:14px}
 main.w>p:last-child{margin-bottom:60px}
 footer .w{padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:6px 26px}
 footer a{color:#FFFFFF;padding:10px 0}
+.calc input::placeholder{color:#9AA8AA;font-style:italic;opacity:1}.calc input{background:#FFFFFF !important}
 </style>
 <style>
 .calc{margin:36px 0;background:#FFFFFF;border:2px solid #0E5E5C;border-radius:18px;padding:20px 24px}
@@ -100,10 +101,10 @@ table.t th{background:#EEF6F4}
 <h2>Quels trajets comptent</h2>
 <p>L'aller-retour entre la maison et votre clinique ou votre lieu de travail habituel est personnel&nbsp;: il ne compte pas. Les déplacements vers vos patients à domicile, entre deux visites ou vers un fournisseur pour le travail comptent. Si votre bureau principal est chez vous, le trajet de la maison vers un patient est un trajet de travail.</p>
 <section class="calc" id="calculateur"><h2>Calculateur gratuit</h2><form id="calc" onsubmit="return false">
-<label for="kt">Kilomètres de travail dans l'année</label><input id="kt" inputmode="decimal" placeholder="12000">
-<label for="ka">Kilomètres totaux dans l'année (selon l'odomètre)</label><input id="ka" inputmode="decimal" placeholder="20000">
-<label for="dep">Dépenses du véhicule pour l'année ($) : essence, entretien, assurance, immatriculation, intérêts ou location</label><input id="dep" inputmode="decimal" placeholder="8000">
-<label for="sta">Stationnement payé pour le travail ($)</label><input id="sta" inputmode="decimal" placeholder="0">
+<label for="kt">Kilomètres de travail dans l'année</label><input id="kt" inputmode="decimal" placeholder="Ex. 12000">
+<label for="ka">Kilomètres totaux dans l'année (selon l'odomètre)</label><input id="ka" inputmode="decimal" placeholder="Ex. 20000">
+<label for="dep">Dépenses du véhicule pour l'année ($) : essence, entretien, assurance, immatriculation, intérêts ou location</label><input id="dep" inputmode="decimal" placeholder="Ex. 8000">
+<label for="sta">Stationnement payé pour le travail ($)</label><input id="sta" inputmode="decimal" placeholder="Ex. 0">
 <div class="res" id="out" aria-live="polite"></div>
 <small>Estimation seulement, sans l'amortissement. Votre comptable confirme toujours le montant final. Rien n'est envoyé : le calcul se fait dans votre navigateur.</small></form></section><h2>Avec CliniQ Pro, le registre se tient tout seul</h2><p>Vos trajets se calculent à partir de vos rendez-vous. Le soir, vous confirmez la journée d'un coup d'œil. Vous photographiez l'odomètre une fois par mois. Votre comptable reçoit la part de travail du véhicule déjà calculée, avec vos dépenses classées selon les lignes de la déclaration de revenus. <a href="kilometrage-automatique.html">Voir le kilométrage automatique</a>.</p>
 <h2>Sources officielles</h2><p><a href="https://www.canada.ca/en/department-finance/news/2026/01/government-announces-the-2026-automobile-deduction-limits-and-expense-benefit-rates-for-businesses.html" rel="noopener">Finances Canada : plafonds automobiles 2026</a><br><a href="https://www.revenuquebec.ca/fr/citoyens/declaration-de-revenus/produire-votre-declaration-de-revenus/travailleurs-autonomes-preparez-votre-declaration/travailleurs-autonomes-determinez-votre-revenu-net/" rel="noopener">Revenu Québec : revenu net du travailleur autonome (frais de véhicule)</a><br><a href="https://www.canada.ca/fr/agence-revenu/services/impot/entreprises/revenu-petites-entreprises-travailleurs-independants/impot-revenu-entreprises/depenses-entreprise/depenses-relatives-vehicules-a-moteur.html" rel="noopener">ARC : frais de véhicule à moteur</a></p><p style="font-size:15px;color:#56666A">Mis à jour le 14 novembre 2026. Information générale, pas un conseil fiscal.</p>

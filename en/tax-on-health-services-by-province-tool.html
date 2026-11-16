@@ -56,6 +56,7 @@ footer{background:#0E5E5C;color:#D8EEE9;font-size:14px}
 main.w>p:last-child{margin-bottom:60px}
 footer .w{padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:6px 26px}
 footer a{color:#FFFFFF;padding:10px 0}
+.calc input::placeholder{color:#9AA8AA;font-style:italic;opacity:1}.calc input{background:#FFFFFF !important}
 </style>
 <style>
 .calc{margin:36px 0;background:#FFFFFF;border:2px solid #0E5E5C;border-radius:18px;padding:20px 24px}
@@ -91,7 +92,7 @@ table.t th{background:#EEF6F4}
 <section class="calc" id="tool"><h2>Free tool: exempt or taxable?</h2><form id="calc" onsubmit="return false">
 <label for="prov">Your province or territory</label><select id="prov"><option value="">Choose</option><option value="AB">Alberta</option><option value="BC">British Columbia</option><option value="MB">Manitoba</option><option value="NB">New Brunswick</option><option value="NL">Newfoundland and Labrador</option><option value="NT">Northwest Territories</option><option value="NS">Nova Scotia</option><option value="NU">Nunavut</option><option value="ON">Ontario</option><option value="PE">Prince Edward Island</option><option value="QC">Quebec</option><option value="SK">Saskatchewan</option><option value="YT">Yukon</option></select>
 <label for="met">Your service</label><select id="met"><option value="">Choose</option><option value="inf">Nursing (RN, RPN or LPN)</option><option value="physio">Physiotherapy</option><option value="ergo">Occupational therapy</option><option value="ortho">Speech-language pathology</option><option value="psy">Psychology (psychologist)</option><option value="ts">Social work</option><option value="diet">Dietetics (dietitian)</option><option value="masso">Massage therapy (RMT)</option><option value="kin">Kinesiology</option><option value="esth">Cosmetic services with no medical purpose</option><option value="prod">Products sold (creams, accessories, etc.)</option></select>
-<label for="mnt">Price before tax ($), optional</label><input id="mnt" inputmode="decimal" placeholder="0">
+<label for="mnt">Price before tax ($), optional</label><input id="mnt" inputmode="decimal" placeholder="e.g. 0">
 <div class="res" id="out" aria-live="polite"></div>
 <small>General rule only: your situation depends on your profession, the service and your province. Confirm with your accountant. Nothing is sent: the calculation happens in your browser.</small></form></section>
 <h2>The rule in three lines</h2>

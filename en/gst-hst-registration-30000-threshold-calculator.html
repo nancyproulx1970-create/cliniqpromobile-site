@@ -56,6 +56,7 @@ footer{background:#0E5E5C;color:#D8EEE9;font-size:14px}
 main.w>p:last-child{margin-bottom:60px}
 footer .w{padding-top:44px;padding-bottom:44px;display:flex;flex-wrap:wrap;gap:6px 26px}
 footer a{color:#FFFFFF;padding:10px 0}
+.calc input::placeholder{color:#9AA8AA;font-style:italic;opacity:1}.calc input{background:#FFFFFF !important}
 </style>
 <style>
 .calc{margin:36px 0;background:#FFFFFF;border:2px solid #0E5E5C;border-radius:18px;padding:20px 24px}
@@ -90,11 +91,11 @@ table.t th{background:#EEF6F4}
 <p class="intro"><strong>Short answer:</strong> you must register for GST/HST (and QST in Quebec) once your <strong>taxable</strong> sales go over $30,000 in a single calendar quarter or over four calendar quarters in a row. Your exempt health care does not count. The free calculator below does the math and tells you when tax starts.</p>
 <section class="calc" id="calculator"><h2>Free calculator: the $30,000 threshold</h2><form id="calc" onsubmit="return false">
 <label for="fin">Your most recent quarter ends on</label><select id="fin"><option value="2">March 31</option><option value="5">June 30</option><option value="8">September 30</option><option value="11" selected>December 31</option></select>
-<label for="t1">Taxable sales ($), <span id="lt1">January to March</span></label><input id="t1" inputmode="decimal" placeholder="0">
-<label for="t2">Taxable sales ($), <span id="lt2">April to June</span></label><input id="t2" inputmode="decimal" placeholder="0">
-<label for="t3">Taxable sales ($), <span id="lt3">July to September</span></label><input id="t3" inputmode="decimal" placeholder="0">
-<label for="t4">Taxable sales ($), <span id="lt4">October to December</span> (most recent quarter)</label><input id="t4" inputmode="decimal" placeholder="0">
-<label for="exo">Exempt health care ($), total for the four quarters</label><input id="exo" inputmode="decimal" placeholder="0">
+<label for="t1">Taxable sales ($), <span id="lt1">January to March</span></label><input id="t1" inputmode="decimal" placeholder="e.g. 0">
+<label for="t2">Taxable sales ($), <span id="lt2">April to June</span></label><input id="t2" inputmode="decimal" placeholder="e.g. 0">
+<label for="t3">Taxable sales ($), <span id="lt3">July to September</span></label><input id="t3" inputmode="decimal" placeholder="e.g. 0">
+<label for="t4">Taxable sales ($), <span id="lt4">October to December</span> (most recent quarter)</label><input id="t4" inputmode="decimal" placeholder="e.g. 0">
+<label for="exo">Exempt health care ($), total for the four quarters</label><input id="exo" inputmode="decimal" placeholder="e.g. 0">
 <div class="res" id="out" aria-live="polite"></div>
 <small>Taxable sales: products sold, cosmetic services and other taxable services, before tax. Estimate only. Nothing is sent: the calculation happens in your browser.</small></form></section>
 <h2>How the threshold works</h2>
