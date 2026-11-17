@@ -9,14 +9,14 @@
     note: 'Please do not write any patient information here.',
     champ: 'Your question…', envoyer: 'Send', attente: 'One moment…',
     erreur: 'The assistant is not available right now. Write to us at support@cliniqpromobile.ca.',
-    ex: ['How much does it cost?', 'Is it for my profession?', 'Does it work outside Quebec?']
+    ex: ['How much does it cost?', 'Is it for my profession?', 'Does it work outside Quebec?', 'Is there a free trial?', 'Is my data secure?', 'Can I import my patients?', 'Does it work without a network?', 'How does mileage work?', 'What about receipts and taxes?', 'When does it launch?']
   } : {
     bulle: 'Une question sur CliniQ Pro ?', titre: 'Questions sur CliniQ Pro', fermer: 'Fermer',
     accueil: 'Bonjour ! Posez-moi vos questions sur les prix, l’essai gratuit, les fonctions ou votre métier.',
     note: 'N’écrivez aucun renseignement sur un patient ici.',
     champ: 'Votre question…', envoyer: 'Envoyer', attente: 'Un instant…',
     erreur: 'L’assistant n’est pas disponible pour le moment. Écrivez-nous à soutien@cliniqpromobile.ca.',
-    ex: ['Combien ça coûte ?', 'Est-ce pour mon métier ?', 'Ça marche hors du Québec ?']
+    ex: ['Combien ça coûte ?', 'Est-ce pour mon métier ?', 'Ça marche hors du Québec ?', 'Y a-t-il un essai gratuit ?', 'Mes données sont-elles protégées ?', 'Puis-je importer mes patients ?', 'Ça marche sans réseau ?', 'Comment marche le kilométrage ?', 'Et les reçus et les taxes ?', 'Quand est le lancement ?']
   };
   var URL = 'https://anzgkxmxkcetzbtjttuh.supabase.co/functions/v1/aide-site';
   var CLE = 'sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW';
@@ -66,20 +66,27 @@
     var d = document.createElement('div'); d.className = cls; lienifier(d, texte);
     m.appendChild(d); m.scrollTop = m.scrollHeight; return d;
   }
+  var poses = {};
+  function suggestions() {
+    var vieux = m.querySelector('.aq-ex'); if (vieux) vieux.remove();
+    var liste = T.ex.filter(function (q) { return !poses[q]; }).slice(0, 3);
+    if (!liste.length) return;
+    var ex = document.createElement('div'); ex.className = 'aq-ex';
+    liste.forEach(function (q) {
+      var e = document.createElement('button'); e.type = 'button'; e.textContent = q;
+      e.onclick = function () { poser(q); }; ex.appendChild(e);
+    });
+    m.appendChild(ex); m.scrollTop = m.scrollHeight;
+  }
   function demarrer() {
     if (m.childNodes.length) return;
     bulle('aq-r', T.accueil);
     var n = document.createElement('div'); n.className = 'aq-n'; n.textContent = T.note; m.appendChild(n);
-    var ex = document.createElement('div'); ex.className = 'aq-ex';
-    T.ex.forEach(function (q) {
-      var e = document.createElement('button'); e.type = 'button'; e.textContent = q;
-      e.onclick = function () { ex.remove(); poser(q); }; ex.appendChild(e);
-    });
-    m.appendChild(ex);
+    suggestions();
   }
   function poser(q) {
     q = (q || '').trim(); if (q.length < 2 || occupe) return;
-    occupe = true; bulle('aq-q', q); var att = bulle('aq-r aq-n', T.attente);
+    occupe = true; poses[q] = 1; var vx = m.querySelector('.aq-ex'); if (vx) vx.remove(); bulle('aq-q', q); var att = bulle('aq-r aq-n', T.attente);
     fetch(URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'apikey': CLE },
@@ -88,7 +95,7 @@
       att.remove(); var rep = d.reponse || d.message || T.erreur; bulle('aq-r', rep);
       hist.push({ role: 'user', texte: q }, { role: 'assistant', texte: rep });
     }).catch(function () { att.remove(); bulle('aq-r', T.erreur); })
-      .then(function () { occupe = false; });
+      .then(function () { occupe = false; suggestions(); });
   }
   function ouvrir() { p.classList.add('o'); b.style.display = 'none'; demarrer(); ta.focus(); }
   function fermer() { p.classList.remove('o'); b.style.display = ''; b.focus(); }
