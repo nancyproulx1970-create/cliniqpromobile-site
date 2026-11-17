@@ -9,14 +9,28 @@
     note: 'Please do not write any patient information here.',
     champ: 'Your question…', envoyer: 'Send', attente: 'One moment…',
     erreur: 'The assistant is not available right now. Write to us at support@cliniqpromobile.ca.',
-    ex: ['How much does it cost?', 'Is it for my profession?', 'Does it work outside Quebec?', 'Is there a free trial?', 'Is my data secure?', 'Can I import my patients?', 'Does it work without a network?', 'How does mileage work?', 'What about receipts and taxes?', 'When does it launch?']
+    autres: 'Other topics', retour: '← Topics',
+    cats: [
+      ['💲 Pricing and trial', ['How much does it cost?', 'Is there a free trial?', 'Can I cancel anytime?', 'When does it launch?']],
+      ['🩺 My profession', ['Is it for my profession?', 'Does it work for a clinic and home visits?', 'Does it work outside Quebec?']],
+      ['📱 Features', ['What does the app do?', 'How does mileage work?', 'What about receipts and taxes?', 'Does it work without a network?']],
+      ['🔒 Security', ['Is my data secure?', 'Where is my data hosted?', 'Does it help with privacy laws?']],
+      ['🚀 Getting started', ['Can I import my patients?', 'Does it work on iPhone and Android?', 'How do I get started?']]
+    ]
   } : {
     bulle: 'Une question sur CliniQ Pro ?', titre: 'Questions sur CliniQ Pro', fermer: 'Fermer',
     accueil: 'Bonjour ! Posez-moi vos questions sur les prix, l’essai gratuit, les fonctions ou votre métier.',
     note: 'N’écrivez aucun renseignement sur un patient ici.',
     champ: 'Votre question…', envoyer: 'Envoyer', attente: 'Un instant…',
     erreur: 'L’assistant n’est pas disponible pour le moment. Écrivez-nous à soutien@cliniqpromobile.ca.',
-    ex: ['Combien ça coûte ?', 'Est-ce pour mon métier ?', 'Ça marche hors du Québec ?', 'Y a-t-il un essai gratuit ?', 'Mes données sont-elles protégées ?', 'Puis-je importer mes patients ?', 'Ça marche sans réseau ?', 'Comment marche le kilométrage ?', 'Et les reçus et les taxes ?', 'Quand est le lancement ?']
+    autres: 'Autres sujets', retour: '← Sujets',
+    cats: [
+      ['💲 Prix et essai', ['Combien ça coûte ?', 'Y a-t-il un essai gratuit ?', 'Puis-je annuler quand je veux ?', 'Quand est le lancement ?']],
+      ['🩺 Mon métier', ['Est-ce pour mon métier ?', 'Ça marche pour une clinique et à domicile ?', 'Ça marche hors du Québec ?']],
+      ['📱 Les fonctions', ['Que fait l\u2019application ?', 'Comment marche le kilométrage ?', 'Et les reçus et les taxes ?', 'Ça marche sans réseau ?']],
+      ['🔒 La sécurité', ['Mes données sont-elles protégées ?', 'Où sont hébergées mes données ?', 'Ça m\u2019aide pour la Loi 25 ?']],
+      ['🚀 Pour commencer', ['Puis-je importer mes patients ?', 'Ça marche sur iPhone et Android ?', 'Comment commencer ?']]
+    ]
   };
   var URL = 'https://anzgkxmxkcetzbtjttuh.supabase.co/functions/v1/aide-site';
   var CLE = 'sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW';
@@ -66,23 +80,33 @@
     var d = document.createElement('div'); d.className = cls; lienifier(d, texte);
     m.appendChild(d); m.scrollTop = m.scrollHeight; return d;
   }
-  var poses = {};
-  function suggestions() {
+  var poses = {}, catCourante = -1;
+  function puces(liste) {
     var vieux = m.querySelector('.aq-ex'); if (vieux) vieux.remove();
-    var liste = T.ex.filter(function (q) { return !poses[q]; }).slice(0, 3);
-    if (!liste.length) return;
     var ex = document.createElement('div'); ex.className = 'aq-ex';
-    liste.forEach(function (q) {
-      var e = document.createElement('button'); e.type = 'button'; e.textContent = q;
-      e.onclick = function () { poser(q); }; ex.appendChild(e);
+    liste.forEach(function (it) {
+      var e = document.createElement('button'); e.type = 'button'; e.textContent = it[0];
+      e.onclick = it[1]; ex.appendChild(e);
     });
     m.appendChild(ex); m.scrollTop = m.scrollHeight;
   }
+  function categories() {
+    catCourante = -1;
+    puces(T.cats.map(function (c, i) { return [c[0], function () { questionsDe(i); }]; }));
+  }
+  function questionsDe(i) {
+    catCourante = i;
+    var l = T.cats[i][1].filter(function (q) { return !poses[q]; })
+      .map(function (q) { return [q, function () { poser(q); }]; });
+    if (!l.length) return categories();
+    l.push([T.retour, categories]); puces(l);
+  }
+  function suggestions() { if (catCourante >= 0) questionsDe(catCourante); else categories(); }
   function demarrer() {
     if (m.childNodes.length) return;
     bulle('aq-r', T.accueil);
     var n = document.createElement('div'); n.className = 'aq-n'; n.textContent = T.note; m.appendChild(n);
-    suggestions();
+    categories();
   }
   function poser(q) {
     q = (q || '').trim(); if (q.length < 2 || occupe) return;
