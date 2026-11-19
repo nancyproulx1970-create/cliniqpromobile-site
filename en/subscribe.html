@@ -72,6 +72,7 @@ Your subscription will be active in your account within a few moments. Your rece
 <p id="bonjour"></p>
 <div id="msg-offert" class="ok" hidden>Your account is complimentary: you have nothing to pay.</div>
 <div id="msg-actif" class="ok" hidden>Your subscription is active. <span id="prochain"></span><br>To change your card or cancel, write to <a href="mailto:support@cliniqpromobile.ca">support@cliniqpromobile.ca</a>.</div>
+<div id="msg-avant" class="ok" hidden>Subscriptions open on January&nbsp;1, 2027. Until then, you have nothing to pay: enjoy your free trial.</div>
 <div id="choix" hidden>
 <p id="msg-essai" class="avis" hidden></p>
 <p id="msg-termine" class="avis" hidden>Your trial has ended. Your records are still there: subscribe to keep adding appointments, notes and receipts.</p>
@@ -160,6 +161,8 @@ Your subscription will be active in your account within a few moments. Your rece
       if (etat.periode_fin) $('prochain').textContent = T.prochain(new Date(etat.periode_fin).toLocaleDateString(T.locale, { day: 'numeric', month: 'long', year: 'numeric' }));
       return;
     }
+    // Aucun paiement avant l'ouverture des abonnements (1er janvier 2027, heure du Québec).
+    if (Date.now() < Date.parse('2027-01-01T00:00:00-05:00')) { $('msg-avant').hidden = false; return; }
     $('choix').hidden = false;
     if (s === 'essai' && etat.peut_ecrire) { $('msg-essai').textContent = T.essai(etat.jours_restants || 0); $('msg-essai').hidden = false; }
     else { $('msg-termine').hidden = false; }

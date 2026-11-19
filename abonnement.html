@@ -72,6 +72,7 @@ Votre abonnement s'active dans votre compte d'ici quelques instants. Vous recevr
 <p id="bonjour"></p>
 <div id="msg-offert" class="ok" hidden>Votre compte vous est offert&nbsp;: vous n'avez rien à payer.</div>
 <div id="msg-actif" class="ok" hidden>Votre abonnement est actif. <span id="prochain"></span><br>Pour changer de carte ou annuler, écrivez à <a href="mailto:soutien@cliniqpromobile.ca">soutien@cliniqpromobile.ca</a>.</div>
+<div id="msg-avant" class="ok" hidden>Les abonnements ouvrent le 1<sup>er</sup>&nbsp;janvier 2027. D'ici là, vous n'avez rien à payer&nbsp;: profitez de votre essai gratuit.</div>
 <div id="choix" hidden>
 <p id="msg-essai" class="avis" hidden></p>
 <p id="msg-termine" class="avis" hidden>Votre essai est terminé. Vos dossiers sont toujours là&nbsp;: abonnez-vous pour continuer à ajouter des rendez-vous, des notes et des reçus.</p>
@@ -160,6 +161,8 @@ Votre abonnement s'active dans votre compte d'ici quelques instants. Vous recevr
       if (etat.periode_fin) $('prochain').textContent = T.prochain(new Date(etat.periode_fin).toLocaleDateString(T.locale, { day: 'numeric', month: 'long', year: 'numeric' }));
       return;
     }
+    // Aucun paiement avant l'ouverture des abonnements (1er janvier 2027, heure du Québec).
+    if (Date.now() < Date.parse('2027-01-01T00:00:00-05:00')) { $('msg-avant').hidden = false; return; }
     $('choix').hidden = false;
     if (s === 'essai' && etat.peut_ecrire) { $('msg-essai').textContent = T.essai(etat.jours_restants || 0); $('msg-essai').hidden = false; }
     else { $('msg-termine').hidden = false; }
