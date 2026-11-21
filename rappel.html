@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Rappeler – CliniQ Pro</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:480px;margin:40px auto;padding:0 20px;color:#15302F;background:#FBF9F6}
+h1{font-size:24px;margin:0 0 12px}
+p{font-size:18px;line-height:1.5}
+button{background:#0E5E5C;color:#fff;border:0;border-radius:14px;padding:18px 24px;font-size:20px;font-weight:700;width:100%;margin-top:8px}
+button:disabled{opacity:.6}
+</style>
+</head>
+<body>
+<h1 id="titre">Rappeler</h1>
+<p id="texte"></p>
+<form id="f" method="post" style="display:none"><button id="b" type="submit">Rappeler maintenant</button></form>
+<script>
+(function () {
+  var h = new URLSearchParams(location.hash.slice(1));
+  var titre = document.getElementById('titre'), texte = document.getElementById('texte');
+  var etat = h.get('etat');
+  function lisible(n) { var m = /^\+1(\d{3})(\d{3})(\d{4})$/.exec(n || ''); return m ? m[1] + ' ' + m[2] + '-' + m[3] : ''; }
+  if (etat === 'ok') { titre.textContent = 'Votre cellulaire va sonner'; texte.textContent = 'Répondez : vous serez reliée à la personne, qui verra le numéro de CliniQ Pro.'; return; }
+  if (etat === 'erreur') { titre.textContent = 'Oups'; texte.textContent = "L'appel n'a pas pu partir. Retournez au courriel et réessayez dans un instant."; return; }
+  if (etat === 'expire') { titre.textContent = 'Lien expiré'; texte.textContent = "Ce lien n'est plus valide. Rappelez la personne à partir du numéro indiqué dans le courriel."; return; }
+  var n = h.get('n'), t = h.get('t'), s = h.get('s');
+  if (!lisible(n) || !/^\d{13}$/.test(t || '') || !/^[0-9a-f]{20,}$/i.test(s || '')) { titre.textContent = 'Lien incomplet'; texte.textContent = 'Retournez au courriel et touchez de nouveau « Rappeler ».'; return; }
+  titre.textContent = 'Rappeler ' + lisible(n);
+  texte.textContent = 'Votre cellulaire va sonner. Répondez : la personne sera ensuite appelée et verra le numéro de CliniQ Pro.';
+  var f = document.getElementById('f');
+  f.action = 'https://anzgkxmxkcetzbtjttuh.supabase.co/functions/v1/boite-vocale?etape=rappeler&n=' + encodeURIComponent(n) + '&t=' + t + '&s=' + encodeURIComponent(s);
+  f.style.display = 'block';
+  f.addEventListener('submit', function () { var b = document.getElementById('b'); setTimeout(function () { b.disabled = true; b.textContent = 'Appel en cours…'; }, 0); });
+  history.replaceState(null, '', location.pathname);
+})();
+</script>
+</body>
