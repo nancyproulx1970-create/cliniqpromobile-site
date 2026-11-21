@@ -39,6 +39,7 @@
   var css = document.createElement('style');
   css.textContent =
     '#aq-b{position:fixed;right:16px;bottom:16px;z-index:50;background:#0E5E5C;color:#fff;border:0;border-radius:999px;padding:13px 18px;font:700 15px/1.2 "Plus Jakarta Sans",system-ui,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.18);cursor:pointer;min-height:48px}' +
+    '@media (max-width:760px){#aq-b .aq-t{display:none}#aq-b{padding:12px 15px;font-size:20px}}' +
     '#aq-b:focus-visible,#aq-p button:focus-visible,#aq-p textarea:focus-visible{outline:3px solid #F39C12;outline-offset:2px}' +
     '#aq-p{position:fixed;right:16px;bottom:16px;z-index:51;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100vh - 32px));background:#FBF9F6;border:1px solid #DCE8E5;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.22);display:none;flex-direction:column;overflow:hidden;font:16px/1.5 "Plus Jakarta Sans",system-ui,sans-serif;color:#15302F}' +
     '#aq-p.o{display:flex}#aq-h{display:flex;align-items:center;gap:8px;background:#0E5E5C;color:#fff;padding:12px 14px;font-weight:700}' +
@@ -56,7 +57,7 @@
   document.head.appendChild(css);
 
   var b = document.createElement('button');
-  b.id = 'aq-b'; b.type = 'button'; b.textContent = '💬 ' + T.bulle; b.setAttribute('aria-haspopup', 'dialog');
+  b.id = 'aq-b'; b.type = 'button'; b.textContent = '💬 '; var bt = document.createElement('span'); bt.className = 'aq-t'; bt.textContent = T.bulle; b.appendChild(bt); b.setAttribute('aria-label', T.bulle); b.setAttribute('aria-haspopup', 'dialog');
   var p = document.createElement('div');
   p.id = 'aq-p'; p.setAttribute('role', 'dialog'); p.setAttribute('aria-label', T.titre);
   p.innerHTML = '<div id="aq-h"><span>' + T.titre + '</span><button type="button" aria-label="' + T.fermer + '">×</button></div>' +

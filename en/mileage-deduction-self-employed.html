@@ -137,6 +137,6 @@ if(!kt||!ka){o.innerHTML=L?'Inscrivez vos kilomètres de travail et vos kilomèt
 if(kt>ka){o.innerHTML=L?'Les kilomètres de travail ne peuvent pas dépasser les kilomètres totaux.':'Work kilometres cannot be more than total kilometres.';return}
 var p=kt/ka,r=p*d+s;o.innerHTML=(L?'Part de travail du véhicule : ':'Business-use share of the vehicle: ')+'<strong>'+(p*100).toLocaleString(L?'fr-CA':'en-CA',{maximumFractionDigits:1})+'&nbsp;%</strong><br>'+(L?'Montant estimé à déduire : ':'Estimated deductible amount: ')+'<strong>'+m(r)+'</strong>'}
 f.addEventListener('input',go);go()})();</script>
-<script src="../js/aide.js?v=3" defer></script>
+<script src="../js/aide.js?v=4" defer></script>
 </body>
 </html>
