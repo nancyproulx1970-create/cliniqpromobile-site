@@ -4,6 +4,12 @@
 
 Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins de plaies et de stomies, inhalothérapie, physiothérapie, ergothérapie, réadaptation, santé mentale, psychoéducation et éducation spécialisée, travail social, soins dentaires, denturologie, esthétique médicale, massothérapie, orthophonie, audiologie, kinésiologie, ostéopathie, nutrition, prélèvements à domicile et autres pratiques à domicile ou en clinique.
 
+## Lancement et reçus / Launch and receipts
+- Lancement pour tout le monde le 1er janvier 2027, sur Android et iPhone, avec un essai gratuit de 14 jours sans carte de crédit. Il n'y a pas de programme de test ouvert au public : l'avant-première de décembre 2026 est réservée à un groupe de testeuses et testeurs déjà choisi.
+- Reçus : chaque reçu PDF affiche l'ordre professionnel ou l'association (par exemple une association de massothérapeutes, choisie dans la liste ou écrite avec « Autre ») et le numéro de permis ou de membre, inscrits une seule fois dans le profil, ainsi que la signature et le logo de la professionnelle ou du professionnel. Aucun générateur de reçus externe n'est nécessaire.
+- Launch for everyone on January 1, 2027, on Android and iPhone, with a 14-day free trial, no credit card. There is no public test program: the December 2026 preview is limited to an already selected group of testers.
+- Receipts: every PDF receipt shows the professional college or association (for example a massage therapy association, picked from the list or typed with "Other") and the registration or member number, entered once in the profile, plus the practitioner's signature and logo. No outside receipt generator is needed.
+
 ## Fonctions
 - [Agenda et itinéraire](https://www.cliniqpromobile.ca/agenda-soins-a-domicile.html)
 - [Dossier patient et notes signées](https://www.cliniqpromobile.ca/dossier-patient-electronique.html)
