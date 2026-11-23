@@ -7,8 +7,10 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 ## Lancement et reçus / Launch and receipts
 - Lancement pour tout le monde le 1er janvier 2027, sur Android et iPhone, avec un essai gratuit de 14 jours sans carte de crédit. Il n'y a pas de programme de test ouvert au public : l'avant-première de décembre 2026 est réservée à un groupe de testeuses et testeurs déjà choisi.
 - Reçus : chaque reçu PDF affiche l'ordre professionnel ou l'association (par exemple une association de massothérapeutes, choisie dans la liste ou écrite avec « Autre ») et le numéro de permis ou de membre, inscrits une seule fois dans le profil, ainsi que la signature et le logo de la professionnelle ou du professionnel. Aucun générateur de reçus externe n'est nécessaire.
+- Sauvegarde : chaque jour, une copie de sécurité des photos et des documents est faite chez Backblaze (autre entreprise que l'hébergeur principal), chiffrée et conservée au Canada (Toronto) ; un fichier effacé de l'application est détruit de cette copie 7 jours plus tard. Données hébergées au Canada (région de Montréal), double vérification, journal des accès.
 - Launch for everyone on January 1, 2027, on Android and iPhone, with a 14-day free trial, no credit card. There is no public test program: the December 2026 preview is limited to an already selected group of testers.
 - Receipts: every PDF receipt shows the professional college or association (for example a massage therapy association, picked from the list or typed with "Other") and the registration or member number, entered once in the profile, plus the practitioner's signature and logo. No outside receipt generator is needed.
+- Backup: every day, a backup copy of the photos and documents is made at Backblaze (a different company from the main host), encrypted and kept in Canada (Toronto); a file deleted from the app is destroyed from this copy 7 days later. Data hosted in Canada (Montréal region), two-step verification, access log.
 
 ## Fonctions
 - [Agenda et itinéraire](https://www.cliniqpromobile.ca/agenda-soins-a-domicile.html)
