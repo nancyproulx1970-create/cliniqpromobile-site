@@ -73,7 +73,7 @@ var T=EN?{
  accepte:'I have read and accept the cancellation conditions.', confirmer:'Confirm the appointment', garde:'This time is held for you for 10 minutes.',
  requis:'Please fill in this field.', invalide:'Please check this field.', plusLibre:'Sorry, this time was just taken. Please choose another one.',
  erreur:'Something went wrong. Please try again.', fini:'Your appointment is confirmed', recu:'A confirmation was sent to ', annuler:'You can cancel using the link in the email.',
- jours:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mois:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], pied:'Booking by CliniQ Pro', voirConsent:'Please answer the consents above.', limite:'Too many bookings with this contact information. Please call.'
+ jours:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mois:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], pied:'Booking by CliniQ Pro', autre:'Book for another person', voirConsent:'Please answer the consents above.', limite:'Too many bookings with this contact information. Please call.'
 }:{
  charge:'Chargement…', introuvable:'Cette page de rendez-vous n’est pas disponible.', offert:'Rendez-vous offerts à :', paiement:'Paiement après le soin.',
  conditions:'Conditions d’annulation', lieu:'1. Lieu', service:'2. Service', heure:'3. Date et heure', min:'min',
@@ -87,7 +87,7 @@ var T=EN?{
  accepte:'J’ai lu et j’accepte les conditions d’annulation.', confirmer:'Confirmer le rendez-vous', garde:'Cette heure vous est réservée pendant 10 minutes.',
  requis:'Remplissez ce champ.', invalide:'Vérifiez ce champ.', plusLibre:'Désolé, cette heure vient d’être prise. Choisissez-en une autre.',
  erreur:'Un problème est survenu. Réessayez.', fini:'Votre rendez-vous est confirmé', recu:'Une confirmation a été envoyée à ', annuler:'Vous pourrez annuler avec le lien reçu par courriel.',
- jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
+ jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', autre:'Réserver pour une autre personne', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
 };
 var app=document.getElementById('app'), voile=document.getElementById('voile'), fen=document.getElementById('fen');
 document.getElementById('chargement').textContent=T.charge;
@@ -194,6 +194,8 @@ function ouvrirFormulaire(){
   var corps=el('div');fen.appendChild(corps);
   function choisir(p){F.pour=p;bMoi.setAttribute('aria-pressed',String(p==='moi'));bProche.setAttribute('aria-pressed',String(p==='proche'));construire();}
   bMoi.onclick=function(){choisir('moi');};bProche.onclick=function(){choisir('proche');};
+  if(S.memo&&S.memo.pour==='proche'){choisir('proche');var mm=S.memo;
+    [['fNomR',mm.nomR],['fLien',mm.lien],['fTel',mm.tel],['fCourriel',mm.courriel]].forEach(function(x){var e=document.getElementById(x[0]);if(e)e.value=x[1]||'';});}
   fen.appendChild(el('button',{class:'second',type:'button',text:T.fermer,on:{click:fermer}}));
   ouvrir();
 
@@ -273,10 +275,12 @@ function ouvrirFormulaire(){
       p_retenue:F.retenue,p_autorise:F.pour==='proche'&&m.length?true:null};
     var envoi=DEMO?Promise.resolve({ok:true}):fetch(API+'/functions/v1/reservation',{method:'POST',headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify(corpsReq)}).then(function(r){return r.json();});
     var courrielEnvoye=val('fCourriel');
+    var memo={pour:F.pour,nomR:val('fNomR'),lien:val('fLien'),tel:val('fTel'),courriel:val('fCourriel'),rappel:F.rappel};
     envoi.then(function(r){
       if(r&&r.ok){S.retenue=null;fen.innerHTML='';fen.appendChild(el('div',{class:'fini'},[el('div',{class:'ico',text:'✓'}),el('h3',{id:'fenTitre',text:T.fini}),
         el('p',{class:'rappelh',text:jourLisible(S.jour)+' · '+heureLisible(S.heure)+' · '+S.lieu.nom}),el('p',{text:T.recu+courrielEnvoye+'. '+T.annuler})]));
-        fen.firstChild.appendChild(el('button',{class:'principal',type:'button',text:T.fermer,on:{click:function(){fermer();chargerHeures();}}}));return;}
+        fen.firstChild.appendChild(el('button',{class:'principal',type:'button',text:T.autre,on:{click:function(){S.memo=memo;fermer();chargerHeures();}}}));
+        fen.firstChild.appendChild(el('button',{class:'second',type:'button',text:T.fermer,on:{click:function(){S.memo=null;fermer();chargerHeures();}}}));return;}
       b.disabled=false;
       S.retenue=null;
       if(r&&r.motif==='plus_libre'){msg.textContent=T.plusLibre;setTimeout(function(){fermer();chargerHeures();},2200);}
