@@ -124,3 +124,6 @@ Métiers visés : soins infirmiers, soins podologiques (soins des pieds), soins 
 - [Tax on health services by province tool](https://www.cliniqpromobile.ca/en/tax-on-health-services-by-province-tool.html)
 - [Home visit rate calculator](https://www.cliniqpromobile.ca/en/home-visit-rate-calculator.html)
 - [Printable mileage log](https://www.cliniqpromobile.ca/en/printable-mileage-log.html)
+
+- Lois sur la vie privée en santé par province (FR) : https://www.cliniqpromobile.ca/lois-vie-privee-par-province.html
+- Health privacy laws by province (EN): https://www.cliniqpromobile.ca/en/privacy-laws-by-province.html
