@@ -1,0 +1,291 @@
+<!doctype html><html lang="fr-CA"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Prendre rendez-vous</title><link rel="icon" type="image/png" href="/img/logo.png">
+<style>
+@font-face{font-family:'Plus Jakarta Sans';src:url(/fonts/plus-jakarta-sans.woff2) format('woff2');font-weight:200 800;font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#FBF9F6;color:#15302F}
+main{max-width:560px;margin:0 auto;padding:20px 18px 60px}
+h1{font-size:24px;font-weight:800;margin:6px 0 2px;letter-spacing:-.3px}
+h2{font-size:18px;font-weight:800;margin:26px 0 10px}
+.sous{color:#56666A;margin:0 0 14px;font-size:16px}
+.avis{background:#fff;border:1px solid #DCE8E5;border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5}
+.avis b{color:#0E5E5C}
+.lienc{background:none;border:0;padding:0;color:#0E5E5C;font:600 15px inherit;text-decoration:underline;cursor:pointer;font-family:inherit}
+.choix{display:block;width:100%;text-align:left;background:#fff;border:2px solid #DCE8E5;border-radius:16px;padding:14px 16px;margin:8px 0;font:inherit;color:inherit;cursor:pointer}
+.choix .t{font-weight:700;font-size:17px}.choix .d{color:#56666A;font-size:14.5px;margin-top:2px}
+.choix[aria-pressed=true]{border-color:#0E5E5C;background:#EEF6F4}
+.jours{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.jour{flex:0 0 auto;min-width:72px;background:#fff;border:2px solid #DCE8E5;border-radius:14px;padding:8px 10px;text-align:center;font:inherit;color:inherit;cursor:pointer}
+.jour small{display:block;color:#56666A;font-size:12.5px}.jour b{font-size:16px}
+.jour[aria-pressed=true]{border-color:#0E5E5C;background:#EEF6F4}
+.heures{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;margin-top:12px}
+.heure{background:#fff;border:2px solid #0E5E5C;color:#0E5E5C;border-radius:12px;padding:11px 0;font:700 16px inherit;font-family:inherit;cursor:pointer}
+.vide{color:#56666A;font-size:15.5px;background:#fff;border:1px dashed #C9D8D4;border-radius:14px;padding:14px}
+button:focus-visible,input:focus-visible{outline:3px solid #F39C12;outline-offset:2px}
+/* Fenêtre */
+.voile{position:fixed;inset:0;background:rgba(21,48,47,.45);display:none;align-items:flex-end;justify-content:center;z-index:10}
+.voile.ouvert{display:flex}
+.fen{background:#FBF9F6;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:20px 18px 28px}
+@media(min-width:620px){.voile{align-items:center}.fen{border-radius:22px}}
+.fen h3{margin:0 0 4px;font-size:19px}
+.rappelh{color:#0E5E5C;font-weight:700;margin:0 0 14px}
+label{display:block;font-weight:600;font-size:14.5px;margin:12px 0 5px}
+input[type=text],input[type=tel],input[type=email]{width:100%;padding:13px 14px;border:1.5px solid #C9D8D4;border-radius:12px;font:16px inherit;font-family:inherit;background:#fff;color:inherit}
+input.err{border-color:#C0392B}
+.seg{display:flex;gap:8px}.seg button{flex:1;padding:12px;border:2px solid #DCE8E5;border-radius:12px;background:#fff;font:600 15.5px inherit;font-family:inherit;color:inherit;cursor:pointer}
+.seg button[aria-pressed=true]{border-color:#0E5E5C;background:#EEF6F4;color:#0E5E5C}
+.case{display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:15px;line-height:1.45}
+.case input{width:22px;height:22px;flex:0 0 auto;margin-top:1px;accent-color:#0E5E5C}
+.bloc{background:#fff;border:1px solid #DCE8E5;border-radius:16px;padding:12px 14px;margin-top:14px}
+.bloc .titre{font-weight:700;margin-bottom:4px}
+.oui-non{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:10px 0;font-size:15px}
+.oui-non .seg{flex:0 0 150px}
+.principal{display:block;width:100%;margin-top:18px;padding:16px;border:0;border-radius:999px;background:#0E5E5C;color:#fff;font:700 17px inherit;font-family:inherit;cursor:pointer}
+.principal:disabled{opacity:.55}
+.second{display:block;width:100%;margin-top:10px;padding:14px;border:0;background:none;color:#0E5E5C;font:600 16px inherit;font-family:inherit;cursor:pointer}
+.msg{color:#C0392B;font-size:14.5px;margin-top:8px;min-height:1em}
+.fini{text-align:center;padding:30px 6px}
+.fini .ico{font-size:44px}
+.pied{text-align:center;color:#8A9A9C;font-size:12.5px;margin-top:40px}
+</style></head><body><main id="app"><p class="sous" id="chargement"></p></main>
+
+<div class="voile" id="voile" role="dialog" aria-modal="true" aria-labelledby="fenTitre"><div class="fen" id="fen"></div></div>
+
+<script>
+(function(){
+'use strict';
+var API='https://anzgkxmxkcetzbtjttuh.supabase.co', CLE='sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW';
+var q=new URLSearchParams(location.search);
+var EN=(q.get('lang')||navigator.language||'fr').toLowerCase().indexOf('en')===0;
+document.documentElement.lang=EN?'en-CA':'fr-CA';
+var T=EN?{
+ charge:'Loading…', introuvable:'This booking page is not available.', offert:'Appointments offered at:', paiement:'Payment after the care.',
+ conditions:'Cancellation conditions', lieu:'1. Location', service:'2. Service', heure:'3. Date and time', min:'min',
+ aucune:'No openings at the moment at this location. Please try again later or call ', aucune2:'No openings this day.',
+ fermer:'Close', pourQui:'Who is the appointment for?', moi:'For me', proche:'For a relative', nomP:'Patient’s full name', nomMoi:'Your full name',
+ chambre:'Room number', vosCoord:'Your contact information', votreNom:'Your full name', lien:'Relationship (daughter, son, spouse…)',
+ tel:'Phone', courriel:'Email', rappel:'Reminder 24 h before', rCourriel:'By email', rTexto:'By text',
+ autorise:'I am the person authorized to consent for this person (mandatary, tutor, spouse, or close relative if no one else is).',
+ premiere:'First visit: to open the file, we need these consents. You will only fill them in once.',
+ cSoins:'I consent to the care and to the keeping of a file (required)', cPhotos:'Clinical photos of the feet, before and after care, kept in the record', cIA:'AI help to write the notes', oui:'Yes', non:'No',
+ accepte:'I have read and accept the cancellation conditions.', confirmer:'Confirm the appointment', garde:'This time is held for you for 10 minutes.',
+ requis:'Please fill in this field.', invalide:'Please check this field.', plusLibre:'Sorry, this time was just taken. Please choose another one.',
+ erreur:'Something went wrong. Please try again.', fini:'Your appointment is confirmed', recu:'A confirmation was sent to ', annuler:'You can cancel using the link in the email.',
+ jours:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mois:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], pied:'Booking by CliniQ Pro', voirConsent:'Please answer the consents above.', limite:'Too many bookings with this contact information. Please call.'
+}:{
+ charge:'Chargement…', introuvable:'Cette page de rendez-vous n’est pas disponible.', offert:'Rendez-vous offerts à :', paiement:'Paiement après le soin.',
+ conditions:'Conditions d’annulation', lieu:'1. Lieu', service:'2. Service', heure:'3. Date et heure', min:'min',
+ aucune:'Aucune place libre pour le moment à ce lieu. Réessayez plus tard ou appelez au ', aucune2:'Aucune place libre cette journée.',
+ fermer:'Fermer', pourQui:'Pour qui est le rendez-vous ?', moi:'Pour moi', proche:'Pour un proche', nomP:'Nom complet du patient', nomMoi:'Votre nom complet',
+ chambre:'Numéro de chambre', vosCoord:'Vos coordonnées', votreNom:'Votre nom complet', lien:'Lien (fille, fils, conjoint ou conjointe…)',
+ tel:'Téléphone', courriel:'Courriel', rappel:'Rappel 24 h avant', rCourriel:'Par courriel', rTexto:'Par texto',
+ autorise:'Je suis la personne autorisée à consentir pour elle (mandataire, tuteur ou tutrice, conjoint ou conjointe, ou proche parent si personne d’autre ne l’est).',
+ premiere:'Première visite : pour ouvrir le dossier, nous avons besoin de ces consentements. Vous ne les remplirez qu’une seule fois.',
+ cSoins:'Je consens aux soins et à la tenue d’un dossier (obligatoire)', cPhotos:'Photos cliniques des pieds, avant et après les soins, versées au dossier', cIA:'Aide de l’IA pour rédiger les notes', oui:'Oui', non:'Non',
+ accepte:'J’ai lu et j’accepte les conditions d’annulation.', confirmer:'Confirmer le rendez-vous', garde:'Cette heure vous est réservée pendant 10 minutes.',
+ requis:'Remplissez ce champ.', invalide:'Vérifiez ce champ.', plusLibre:'Désolé, cette heure vient d’être prise. Choisissez-en une autre.',
+ erreur:'Un problème est survenu. Réessayez.', fini:'Votre rendez-vous est confirmé', recu:'Une confirmation a été envoyée à ', annuler:'Vous pourrez annuler avec le lien reçu par courriel.',
+ jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
+};
+var app=document.getElementById('app'), voile=document.getElementById('voile'), fen=document.getElementById('fen');
+document.getElementById('chargement').textContent=T.charge;
+function el(t,a,k){var e=document.createElement(t);if(a)for(var x in a){if(x==='text')e.textContent=a[x];else if(x==='on')for(var v in a.on)e.addEventListener(v,a.on[v]);else e.setAttribute(x,a[x]);}(k||[]).forEach(function(c){if(c)e.appendChild(typeof c==='string'?document.createTextNode(c):c);});return e;}
+function rpc(nom,corps){return fetch(API+'/rest/v1/rpc/'+nom,{method:'POST',headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify(corps)}).then(function(r){if(!r.ok)throw r;return r.json();});}
+function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function heureLisible(h){var p=h.split(':');return EN?((+p[0]%12||12)+':'+p[1]+(+p[0]<12?' a.m.':' p.m.')):(+p[0]+' h'+(p[1]==='00'?'':' '+p[1]));}
+function prix(v){if(v==null)return '';return EN?('$'+Number(v).toFixed(2)):(Number(v).toFixed(2).replace('.',',')+' $');}
+function jourLisible(s){var d=new Date(s+'T12:00:00');return T.jours[d.getDay()]+' '+d.getDate()+' '+T.mois[d.getMonth()];}
+
+// Adresse : /rdv/<slug>/<lieu> (via 404.html) ou /rdv/?p=<slug>/<lieu>
+var chemin=(q.get('p')||location.pathname.replace(/^\/rdv\/?/,'')).replace(/^\/+|\/+$/g,'').toLowerCase().split('/');
+var slug=chemin[0]||'', lienLieu=chemin[1]||'';
+if(q.get('p')&&/^[a-z0-9-]+$/.test(slug))history.replaceState(null,'','/rdv/'+slug+(lienLieu?'/'+lienLieu:''));
+var DEMO=q.get('demo')==='1';
+var S={page:null,lieu:null,service:null,jour:null,heure:null,heures:{}};
+
+function demoPage(){return Promise.resolve({nom:'Nancy Proulx',titre:'Infirmière auxiliaire en soins podologiques',telephone:'438-341-5120',delai_annulation_heures:24,
+ conditions_fr:'Toute annulation doit être faite au moins 24 h à l’avance, en ligne avec le lien reçu par courriel ou par téléphone.',conditions_en:'Please cancel at least 24 hours in advance.',
+ lieux:[{id:'a',nom:'CHSLD Les Jardins',type:'chsld',ville:'Boucherville',lien_court:'jardins',services:[{id:'s1',nom:'Soins podologiques',duree:45,prix:60},{id:'s2',nom:'Coupe d’ongles',duree:30,prix:40}]},
+        {id:'b',nom:'Clinique Pieds Santé',type:'clinique',ville:'Varennes',lien_court:'clinique',services:[{id:'s1',nom:'Soins podologiques',duree:45,prix:60}]}]});}
+function demoHeures(){var o={},d=new Date();for(var i=1;i<14;i++){var x=new Date(d);x.setDate(d.getDate()+i);if(x.getDay()===2||x.getDay()===4)o[iso(x)]=['08:00','08:45','09:30','10:15','13:00','13:45'];}return Promise.resolve(o);}
+
+function charger(){
+  if(!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)&&!DEMO){return introuvable();}
+  (DEMO?demoPage():rpc('reservation_page',{p_slug:slug})).then(function(p){
+    if(!p||!p.lieux||!p.lieux.length)return introuvable();
+    S.page=p;
+    if(lienLieu)S.lieu=p.lieux.filter(function(l){return l.lien_court===lienLieu;})[0]||null;
+    if(!S.lieu&&p.lieux.length===1)S.lieu=p.lieux[0];
+    if(S.lieu&&S.lieu.services.length===1)S.service=S.lieu.services[0];
+    document.title=(EN?'Book with ':'Rendez-vous avec ')+p.nom;
+    dessiner(); if(S.service)chargerHeures();
+  }).catch(introuvable);
+}
+function introuvable(){app.innerHTML='';app.appendChild(el('h1',{text:T.introuvable}));}
+
+function dessiner(){
+  var p=S.page;app.innerHTML='';
+  app.appendChild(el('h1',{text:p.nom}));
+  if(p.titre)app.appendChild(el('p',{class:'sous',text:p.titre}));
+  var noms=p.lieux.map(function(l){return l.nom;}).join(', ');
+  app.appendChild(el('div',{class:'avis'},[el('b',{text:T.offert}),' '+noms+'.',el('br'),T.paiement+' ',
+    el('button',{class:'lienc',type:'button',text:T.conditions,on:{click:ouvrirConditions}})]));
+  // 1. Lieu
+  if(p.lieux.length>1){
+    app.appendChild(el('h2',{text:T.lieu}));
+    p.lieux.forEach(function(l){app.appendChild(el('button',{class:'choix',type:'button','aria-pressed':String(S.lieu===l),on:{click:function(){S.lieu=l;S.service=l.services.length===1?l.services[0]:null;S.jour=null;S.heures={};dessiner();if(S.service)chargerHeures();}}},
+      [el('div',{class:'t',text:l.nom}),l.ville?el('div',{class:'d',text:l.ville}):null]));});
+  }
+  if(!S.lieu)return pied();
+  // 2. Service
+  app.appendChild(el('h2',{text:p.lieux.length>1?T.service:T.service.replace(/^2/,'1')}));
+  S.lieu.services.forEach(function(s){app.appendChild(el('button',{class:'choix',type:'button','aria-pressed':String(S.service===s),on:{click:function(){S.service=s;S.jour=null;S.heures={};dessiner();chargerHeures();}}},
+    [el('div',{class:'t',text:s.nom}),el('div',{class:'d',text:s.duree+' '+T.min+(s.prix!=null?' · '+prix(s.prix):'')})]));});
+  if(!S.service)return pied();
+  // 3. Heure
+  app.appendChild(el('h2',{text:T.heure}));
+  var zone=el('div',{id:'zoneHeures'});app.appendChild(zone);dessinerHeures();pied();
+}
+function pied(){app.appendChild(el('p',{class:'pied',text:T.pied}));}
+function chargerHeures(){
+  var d=new Date();d.setDate(d.getDate());
+  (DEMO?demoHeures():rpc('reservation_heures_libres',{p_slug:slug,p_lieu:S.lieu.id,p_service:S.service.id,p_debut:iso(d)})).then(function(h){
+    S.heures=h||{};var j=Object.keys(S.heures).sort();S.jour=j[0]||null;dessinerHeures();
+  }).catch(function(){S.heures={};dessinerHeures();});
+}
+function dessinerHeures(){
+  var z=document.getElementById('zoneHeures');if(!z)return;z.innerHTML='';
+  var j=Object.keys(S.heures).sort();
+  if(!j.length){z.appendChild(el('p',{class:'vide',text:T.aucune+(S.page.telephone||'')+'.'}));return;}
+  var bande=el('div',{class:'jours'});
+  j.forEach(function(x){var d=new Date(x+'T12:00:00');bande.appendChild(el('button',{class:'jour',type:'button','aria-pressed':String(S.jour===x),on:{click:function(){S.jour=x;dessinerHeures();}}},
+    [el('small',{text:T.jours[d.getDay()]}),el('b',{text:d.getDate()+' '+T.mois[d.getMonth()]})]));});
+  z.appendChild(bande);
+  var g=el('div',{class:'heures'});
+  (S.heures[S.jour]||[]).forEach(function(h){g.appendChild(el('button',{class:'heure',type:'button',text:heureLisible(h),on:{click:function(){S.heure=h;ouvrirFormulaire();}}}));});
+  z.appendChild(g);
+}
+function ouvrir(){voile.classList.add('ouvert');document.body.style.overflow='hidden';var f=fen.querySelector('input,button');if(f)f.focus();}
+function fermer(){voile.classList.remove('ouvert');document.body.style.overflow='';}
+voile.addEventListener('click',function(e){if(e.target===voile)fermer();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
+function ouvrirConditions(){fen.innerHTML='';fen.appendChild(el('h3',{id:'fenTitre',text:T.conditions}));
+  fen.appendChild(el('p',{text:EN?S.page.conditions_en:S.page.conditions_fr}));fen.appendChild(el('p',{text:T.paiement}));
+  fen.appendChild(el('button',{class:'principal',type:'button',text:T.fermer,on:{click:fermer}}));ouvrir();}
+
+// Formulaire : pour qui → patient (+ chambre) → consentements manquants → coordonnées → confirmer
+function ouvrirFormulaire(){
+  var F={pour:null,consent:null,retenue:null};fen.innerHTML='';
+  if(!DEMO)rpc('reservation_retenir',{p_slug:slug,p_lieu:S.lieu.id,p_service:S.service.id,p_date:S.jour,p_heure:S.heure,p_retenue:S.retenue||null}).then(function(r){
+    if(r&&r.ok){F.retenue=r.retenue;S.retenue=r.retenue;}
+    else if(r&&r.motif==='plus_libre'){var m=document.getElementById('fMsg');fen.innerHTML='';fen.appendChild(el('p',{class:'rappelh',text:T.plusLibre}));
+      fen.appendChild(el('button',{class:'principal',type:'button',text:T.fermer,on:{click:function(){fermer();chargerHeures();}}}));}
+  }).catch(function(){});
+  var centre=S.lieu.type==='chsld'||S.lieu.type==='rpa';
+  fen.appendChild(el('h3',{id:'fenTitre',text:S.service.nom}));
+  fen.appendChild(el('p',{class:'rappelh',text:jourLisible(S.jour)+' · '+heureLisible(S.heure)+' · '+S.lieu.nom}));
+  fen.appendChild(el('p',{class:'sous',style:'margin:-8px 0 6px;font-size:14px',text:T.garde}));
+  fen.appendChild(el('label',{text:T.pourQui}));
+  var seg=el('div',{class:'seg'});
+  var bMoi=el('button',{type:'button','aria-pressed':'false',text:T.moi}), bProche=el('button',{type:'button','aria-pressed':'false',text:T.proche});
+  seg.appendChild(bMoi);seg.appendChild(bProche);fen.appendChild(seg);
+  var corps=el('div');fen.appendChild(corps);
+  function choisir(p){F.pour=p;bMoi.setAttribute('aria-pressed',String(p==='moi'));bProche.setAttribute('aria-pressed',String(p==='proche'));construire();}
+  bMoi.onclick=function(){choisir('moi');};bProche.onclick=function(){choisir('proche');};
+  fen.appendChild(el('button',{class:'second',type:'button',text:T.fermer,on:{click:fermer}}));
+  ouvrir();
+
+  function champ(lbl,type,id,auto){var i=el('input',{type:type,id:id,autocomplete:auto||'off'});return [el('label',{for:id,text:lbl}),i];}
+  function construire(){
+    corps.innerHTML='';
+    var proche=F.pour==='proche';
+    champ(proche?T.nomP:T.nomMoi,'text','fNomP',proche?'off':'name').forEach(function(x){corps.appendChild(x);});
+    if(centre)champ(T.chambre,'text','fChambre').forEach(function(x){corps.appendChild(x);});
+    var zoneC=el('div',{id:'zoneConsent'});corps.appendChild(zoneC);
+    // Vérification du dossier quand on quitte le nom ou la chambre (pas à chaque lettre).
+    var dernier=centre?'fChambre':'fNomP';
+    document.getElementById(dernier).addEventListener('blur',verifierDossier);
+    document.getElementById('fNomP').addEventListener('blur',verifierDossier);
+    if(proche){corps.appendChild(el('h3',{style:'margin-top:20px;font-size:16px',text:T.vosCoord}));
+      champ(T.votreNom,'text','fNomR','name').forEach(function(x){corps.appendChild(x);});
+      champ(T.lien,'text','fLien').forEach(function(x){corps.appendChild(x);});}
+    champ(T.tel,'tel','fTel','tel').forEach(function(x){corps.appendChild(x);});
+    champ(T.courriel,'email','fCourriel','email').forEach(function(x){corps.appendChild(x);});
+    corps.appendChild(el('label',{text:T.rappel}));
+    var sr=el('div',{class:'seg'}),r1=el('button',{type:'button','aria-pressed':'true',text:T.rCourriel}),r2=el('button',{type:'button','aria-pressed':'false',text:T.rTexto});
+    F.rappel='courriel';r1.onclick=function(){F.rappel='courriel';r1.setAttribute('aria-pressed','true');r2.setAttribute('aria-pressed','false');};
+    r2.onclick=function(){F.rappel='texto';r2.setAttribute('aria-pressed','true');r1.setAttribute('aria-pressed','false');};
+    sr.appendChild(r1);sr.appendChild(r2);corps.appendChild(sr);
+    corps.appendChild(el('label',{class:'case',style:'margin-bottom:2px'},[el('input',{type:'checkbox',id:'fCond'}),T.accepte]));
+    corps.appendChild(el('button',{class:'lienc',type:'button',style:'margin-left:32px',text:T.conditions,on:{click:function(e){e.preventDefault();alertCond();}}}));
+    corps.appendChild(el('button',{class:'principal',type:'button',id:'fOk',text:T.confirmer,on:{click:envoyer}}));
+    corps.appendChild(el('p',{class:'msg',id:'fMsg',role:'alert'}));
+  }
+  function alertCond(){var c=document.getElementById('zoneCondTexte');if(c){c.remove();return;}
+    var p=el('p',{id:'zoneCondTexte',class:'avis',text:EN?S.page.conditions_en:S.page.conditions_fr});document.getElementById('fCond').closest('label').nextSibling.after(p);}
+  function verifierDossier(){
+    var nom=(document.getElementById('fNomP')||{}).value||'', ch=centre?((document.getElementById('fChambre')||{}).value||''):'-';
+    if(nom.trim().length<3||!ch.trim())return;
+    // Le serveur répond seulement quels consentements manquent (jamais ce qu'il y a au dossier).
+    var p=DEMO?Promise.resolve({manquants:['soins','photos','ia']}):rpc('reservation_consentements_manquants',{p_slug:slug,p_lieu:S.lieu.id,p_nom:nom,p_chambre:centre?ch:null}).catch(function(){return {manquants:['soins','photos','ia']};});
+    return p.then(function(r){F.consent=r.manquants||[];dessinerConsent();});
+  }
+  function ouiNon(id,lbl){var w=el('div',{class:'oui-non'}),s=el('div',{class:'seg'}),o=el('button',{type:'button','aria-pressed':'false',text:T.oui}),n=el('button',{type:'button','aria-pressed':'false',text:T.non});
+    o.onclick=function(){F[id]=true;o.setAttribute('aria-pressed','true');n.setAttribute('aria-pressed','false');};n.onclick=function(){F[id]=false;n.setAttribute('aria-pressed','true');o.setAttribute('aria-pressed','false');};
+    s.appendChild(o);s.appendChild(n);w.appendChild(el('span',{text:lbl}));w.appendChild(s);return w;}
+  function dessinerConsent(){
+    var z=document.getElementById('zoneConsent');if(!z)return;z.innerHTML='';
+    var m=F.consent||[];if(!m.length&&F.pour!=='proche')return;
+    var b=el('div',{class:'bloc'});
+    if(m.length){b.appendChild(el('div',{class:'titre',text:T.premiere}));
+      if(F.pour==='proche')b.appendChild(el('label',{class:'case'},[el('input',{type:'checkbox',id:'cAutorise'}),T.autorise]));
+      if(m.indexOf('soins')>=0)b.appendChild(el('label',{class:'case'},[el('input',{type:'checkbox',id:'cSoins'}),T.cSoins]));
+      if(m.indexOf('photos')>=0)b.appendChild(ouiNon('cPhotos',T.cPhotos));
+      if(m.indexOf('ia')>=0)b.appendChild(ouiNon('cIA',T.cIA));}
+    if(b.childNodes.length)z.appendChild(b);
+  }
+  function val(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+  function marquer(id,ok){var e=document.getElementById(id);if(e)e.classList.toggle('err',!ok);return ok;}
+  function envoyer(){
+    var msg=document.getElementById('fMsg');msg.textContent='';
+    if(!F.pour){msg.textContent=T.pourQui;return;}
+    var ok=true;
+    ok=marquer('fNomP',val('fNomP').length>=3)&&ok;
+    if(centre)ok=marquer('fChambre',val('fChambre').length>=1)&&ok;
+    if(F.pour==='proche'){ok=marquer('fNomR',val('fNomR').length>=3)&&ok;ok=marquer('fLien',val('fLien').length>=2)&&ok;}
+    ok=marquer('fTel',val('fTel').replace(/\D/g,'').length>=10)&&ok;
+    ok=marquer('fCourriel',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('fCourriel')))&&ok;
+    if(!ok){msg.textContent=T.invalide;return;}
+    if(F.consent===null){var pv=verifierDossier();if(pv)pv.then(function(){if((F.consent||[]).length)msg.textContent=T.voirConsent;else envoyer();});return;}
+    var m=F.consent||[];
+    if(m.indexOf('soins')>=0&&!document.getElementById('cSoins').checked){msg.textContent=T.cSoins;return;}
+    if(F.pour==='proche'&&m.length&&!document.getElementById('cAutorise').checked){msg.textContent=T.autorise;return;}
+    if(!document.getElementById('fCond').checked){msg.textContent=T.accepte;return;}
+    var b=document.getElementById('fOk');b.disabled=true;
+    var corpsReq={p_slug:slug,p_lieu:S.lieu.id,p_service:S.service.id,p_date:S.jour,p_heure:S.heure,p_langue:EN?'en':'fr',
+      p_pour:F.pour,p_patient_nom:val('fNomP'),p_chambre:centre?val('fChambre'):null,
+      p_nom:F.pour==='proche'?val('fNomR'):val('fNomP'),p_lien:F.pour==='proche'?val('fLien'):null,
+      p_telephone:val('fTel'),p_courriel:val('fCourriel'),p_rappel:F.rappel,p_conditions_acceptees:true,
+      p_consent_soins:m.indexOf('soins')>=0?true:null,p_consent_photos:m.indexOf('photos')>=0?(F.cPhotos===undefined?null:F.cPhotos):null,
+      p_consent_ia:m.indexOf('ia')>=0?(F.cIA===undefined?null:F.cIA):null,
+      p_retenue:F.retenue,p_autorise:F.pour==='proche'&&m.length?true:null};
+    var envoi=DEMO?Promise.resolve({ok:true}):fetch(API+'/functions/v1/reservation',{method:'POST',headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify(corpsReq)}).then(function(r){return r.json();});
+    var courrielEnvoye=val('fCourriel');
+    envoi.then(function(r){
+      if(r&&r.ok){S.retenue=null;fen.innerHTML='';fen.appendChild(el('div',{class:'fini'},[el('div',{class:'ico',text:'✓'}),el('h3',{id:'fenTitre',text:T.fini}),
+        el('p',{class:'rappelh',text:jourLisible(S.jour)+' · '+heureLisible(S.heure)+' · '+S.lieu.nom}),el('p',{text:T.recu+courrielEnvoye+'. '+T.annuler})]));
+        fen.firstChild.appendChild(el('button',{class:'principal',type:'button',text:T.fermer,on:{click:function(){fermer();chargerHeures();}}}));return;}
+      b.disabled=false;
+      S.retenue=null;
+      if(r&&r.motif==='plus_libre'){msg.textContent=T.plusLibre;setTimeout(function(){fermer();chargerHeures();},2200);}
+      else if(r&&(r.motif==='consentement'||r.motif==='autorisation')){F.consent=null;verifierDossier();msg.textContent=T.voirConsent;}
+      else if(r&&r.motif==='limite')msg.textContent=T.limite;
+      else msg.textContent=T.erreur;
+    }).catch(function(){b.disabled=false;msg.textContent=T.erreur;});
+  }
+}
+charger();
+})();
+</script></body></html>

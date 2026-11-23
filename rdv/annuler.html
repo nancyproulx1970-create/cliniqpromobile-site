@@ -1,0 +1,42 @@
+<!doctype html><html lang="fr-CA"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Annuler un rendez-vous</title><link rel="icon" type="image/png" href="/img/logo.png">
+<style>@font-face{font-family:'Plus Jakarta Sans';src:url(/fonts/plus-jakarta-sans.woff2) format('woff2');font-weight:200 800;font-display:swap}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#FBF9F6;color:#15302F;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;text-align:center}
+main{max-width:440px;width:100%}h1{font-size:23px;font-weight:800}p{color:#56666A;font-size:17px;line-height:1.55}
+.rdv{color:#0E5E5C;font-weight:700}
+button{display:block;width:100%;margin:12px 0;padding:16px;border:0;border-radius:999px;background:#C0392B;color:#fff;font:700 17px 'Plus Jakarta Sans',system-ui,sans-serif;cursor:pointer}
+button:disabled{opacity:.6}button:focus-visible{outline:3px solid #F39C12;outline-offset:3px}</style></head>
+<body><main><h1 id="titre"></h1><p id="texte"></p><button id="b" hidden></button></main>
+<script>
+(function(){
+  var API='https://anzgkxmxkcetzbtjttuh.supabase.co/functions/v1/reservation', CLE='sb_publishable_18AM9kOIPqqjI1CZz9gqow_Z89LAGnW';
+  var h=location.hash.slice(1).split('&'), jeton=h[0]||'', EN=h.indexOf('en')>0||(navigator.language||'').toLowerCase().indexOf('en')===0&&h.indexOf('fr')<0;
+  document.documentElement.lang=EN?'en-CA':'fr-CA';
+  var T=EN?{t:'Cancel my appointment',q:'Do you want to cancel this appointment?',b:'Yes, cancel',ok:'Your appointment is cancelled.',okt:'Thank you for letting us know.',
+    tard:'It is too late to cancel online.',tardt:'Please call ',deja:'This appointment is already cancelled.',intr:'This link is no longer valid.',err:'Something went wrong. Please try again.',enCours:'Cancelling…'}
+    :{t:'Annuler mon rendez-vous',q:'Voulez-vous annuler ce rendez-vous ?',b:'Oui, annuler',ok:'Votre rendez-vous est annulé.',okt:'Merci de nous avoir avisés.',
+    tard:'Il est trop tard pour annuler en ligne.',tardt:'Appelez au ',deja:'Ce rendez-vous est déjà annulé.',intr:'Ce lien n’est plus valide.',err:'Un problème est survenu. Réessayez.',enCours:'Annulation…'};
+  var ti=document.getElementById('titre'),tx=document.getElementById('texte'),b=document.getElementById('b');
+  history.replaceState(null,'',location.pathname);
+  function appel(conf){return fetch(API,{method:'POST',headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify({action:'annuler',jeton:jeton,confirmer:conf})}).then(function(r){return r.json();});}
+  function heure(x){var p=(x||'').split(':');return EN?((+p[0]%12||12)+':'+p[1]+(+p[0]<12?' a.m.':' p.m.')):(+p[0]+' h'+(p[1]==='00'?'':' '+p[1]));}
+  function montrer(r){
+    if(r&&r.annulee){ti.textContent=T.ok;tx.textContent=T.okt;b.hidden=true;return;}
+    if(r&&r.apercu){ti.textContent=T.t;var d=new Date(r.date+'T12:00:00');
+      tx.innerHTML='';tx.appendChild(document.createTextNode(T.q+' '));var s=document.createElement('span');s.className='rdv';
+      s.textContent=d.toLocaleDateString(EN?'en-CA':'fr-CA',{weekday:'long',day:'numeric',month:'long'})+', '+heure(r.heure)+(r.lieu?' · '+r.lieu:'');tx.appendChild(s);
+      b.textContent=T.b;b.hidden=false;return;}
+    var m=r&&r.motif;
+    if(m==='trop_tard'){ti.textContent=T.tard;tx.textContent=r.telephone?T.tardt+r.telephone+'.':'';}
+    else if(m==='deja_annulee'){ti.textContent=T.deja;tx.textContent='';}
+    else if(m==='introuvable'){ti.textContent=T.intr;tx.textContent='';}
+    else{ti.textContent=T.err;tx.textContent='';}
+    b.hidden=true;
+  }
+  if(!/^[0-9a-f]{64}$/.test(jeton)){montrer({motif:'introuvable'});return;}
+  appel(false).then(montrer).catch(function(){montrer({});});
+  b.onclick=function(){b.disabled=true;b.textContent=T.enCours;appel(true).then(montrer).catch(function(){b.disabled=false;b.textContent=T.b;montrer({});});};
+})();
+</script></body></html>
