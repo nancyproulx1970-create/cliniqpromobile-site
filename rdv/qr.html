@@ -1,0 +1,69 @@
+<!doctype html><html lang="fr-CA"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Code QR | CliniQ Pro</title><link rel="icon" type="image/png" href="/img/logo.png">
+<style>@font-face{font-family:'Plus Jakarta Sans';src:url(/fonts/plus-jakarta-sans.woff2) format('woff2');font-weight:200 800;font-display:swap}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#FBF9F6;color:#15302F;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;text-align:center}
+main{max-width:420px;width:100%}
+img#apercu{width:100%;max-width:340px;border-radius:16px;box-shadow:0 2px 14px rgba(0,0,0,.08);background:#fff}
+p{color:#56666A;font-size:16px;line-height:1.5}
+button{display:block;width:100%;margin:12px 0;padding:16px;border:0;border-radius:999px;background:#0E5E5C;color:#fff;font:700 17px 'Plus Jakarta Sans',system-ui,sans-serif;cursor:pointer}
+button.second{background:#fff;color:#0E5E5C;border:2px solid #0E5E5C}
+button:focus-visible{outline:3px solid #F39C12;outline-offset:3px}
+#erreur{display:none}[hidden]{display:none!important}
+</style></head><body><main>
+<div id="contenu"><img id="apercu" alt=""><p id="lien"></p>
+<button id="telecharger"></button><button id="partager" class="second" hidden></button></div>
+<p id="erreur"></p>
+</main>
+<script src="/js/qrcode.js"></script>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var en = (q.get('lang') || navigator.language || 'fr').toLowerCase().indexOf('en') === 0;
+  var T = en ? {dl:'Download the QR code', sh:'Share or save', err:'This link is incomplete. Open it again from the CliniQ Pro app.'}
+             : {dl:'Télécharger le code QR', sh:'Partager ou enregistrer', err:'Ce lien est incomplet. Ouvrez-le de nouveau à partir de l’application CliniQ Pro.'};
+  document.documentElement.lang = en ? 'en-CA' : 'fr-CA';
+  var ok = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+  var s = (q.get('s') || '').toLowerCase(), l = (q.get('l') || '').toLowerCase(), n = (q.get('n') || '').slice(0, 80);
+  if (!ok.test(s) || (l && !ok.test(l))) {
+    document.getElementById('contenu').style.display = 'none';
+    var e = document.getElementById('erreur'); e.textContent = T.err; e.style.display = 'block'; return;
+  }
+  var url = 'https://cliniqpromobile.ca/rdv/' + s + (l ? '/' + l : '');
+  var qr = qrcode(0, 'M'); qr.addData(url); qr.make();
+  var mods = qr.getModuleCount(), marge = 4, taille = 1600, cell = Math.floor(taille / (mods + marge * 2));
+  var cote = cell * (mods + marge * 2), bas = n ? 260 : 0;
+  var c = document.createElement('canvas'); c.width = cote; c.height = cote + bas;
+  var x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); x.fillStyle = '#000';
+  for (var r = 0; r < mods; r++) for (var k = 0; k < mods; k++)
+    if (qr.isDark(r, k)) x.fillRect((k + marge) * cell, (r + marge) * cell, cell, cell);
+  function dessinerNom(){
+    if (!n) return;
+    var t = 110; x.font = '700 ' + t + 'px "Plus Jakarta Sans", system-ui, sans-serif';
+    while (x.measureText(n).width > cote - 120 && t > 40) { t -= 4; x.font = '700 ' + t + 'px "Plus Jakarta Sans", system-ui, sans-serif'; }
+    x.fillStyle = '#15302F'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText(n, cote / 2, cote + bas / 2 - 40);
+  }
+  var nomFichier = 'QR-' + (n ? n.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'') : s) + '.png';
+  function finir(){
+    dessinerNom();
+    document.getElementById('apercu').src = c.toDataURL('image/png');
+    document.getElementById('apercu').alt = n || url;
+    document.getElementById('lien').textContent = url.replace('https://', '');
+    preparerPartage();
+  }
+  (document.fonts && document.fonts.load ? document.fonts.load('700 40px "Plus Jakarta Sans"') : Promise.resolve()).then(finir, finir);
+  var bDl = document.getElementById('telecharger'); bDl.textContent = T.dl;
+  bDl.onclick = function(){
+    c.toBlob(function(b){ var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = nomFichier;
+      document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1000); }, 'image/png');
+  };
+  function preparerPartage(){ if (!navigator.canShare) return;
+    var bSh = document.getElementById('partager'); bSh.textContent = T.sh;
+    c.toBlob(function(b){
+      var f = new File([b], nomFichier, {type:'image/png'});
+      if (navigator.canShare({files:[f]})) { bSh.hidden = false; bSh.onclick = function(){ navigator.share({files:[f]}).catch(function(){}); }; }
+    }, 'image/png');
+  }
+})();
+</script></body></html>
