@@ -77,7 +77,7 @@ var T=EN?{
  accepte:'I have read and accept the cancellation conditions.', confirmer:'Confirm the appointment', garde:'This time is held for you for 10 minutes.',
  requis:'Please fill in this field.', invalide:'Please check this field.', plusLibre:'Sorry, this time was just taken. Please choose another one.',
  erreur:'Something went wrong. Please try again.', fini:'Your appointment is booked', rPour:'For', rQuand:'When', rOu:'Where', rService:'Service', rAvec:'With', rChambre:'room', rapTexto:'You will get a text reminder at {t}, 24 hours before.', rapCou:'You will get an email reminder 24 hours before.', capture:'Take a screenshot of this page to keep your appointment.', paye:'Payment after the care.', recu:'A confirmation was sent to ', annuler:'You can cancel using the link in the email.', annulerTel:'To cancel, please call ', famAvisee:'The family will receive a confirmation email.', famAviser:'The professional will let the family know.', facultatif:'(optional)',
- jours:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mois:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], pied:'Booking by CliniQ Pro', autre:'Book for another person', personnel:'I work at the centre', dejaPrevu:'This person already has an upcoming appointment. To change it, please call ', notePerso:'The professional will obtain the missing consents from the family.', voirConsent:'Please answer the consents above.', limite:'Too many bookings with this contact information. Please call.'
+ jours:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mois:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], pied:'Booking by CliniQ Pro', autre:'Book for another person', personnel:'I work at the centre', dejaPrevu:'This person already has an upcoming appointment. To change it, please call ', notePerso:'The professional will obtain the missing consents from the family.', accordFam:'The family (or the resident) agrees to this appointment.', accordFamMsg:'Please confirm that the family agrees.', famille:'For a first visit, the family books the appointment, because they must give the consents. Please let the family know they can call {tel} or book online on this same page.', familleSansTel:'For a first visit, the family books the appointment, because they must give the consents. Please let the family know they can book online on this same page.', voirConsent:'Please answer the consents above.', limite:'Too many bookings with this contact information. Please call.'
 }:{
  charge:'Chargement…', introuvable:'Cette page de rendez-vous n’est pas disponible.', offert:'Rendez-vous offerts à :', paiement:'Paiement après le soin.',
  conditions:'Conditions d’annulation', lieu:'1. Lieu', service:'2. Service', heure:'3. Date et heure', min:'min',
@@ -91,7 +91,7 @@ var T=EN?{
  accepte:'J’ai lu et j’accepte les conditions d’annulation.', confirmer:'Confirmer le rendez-vous', garde:'Cette heure vous est réservée pendant 10 minutes.',
  requis:'Remplissez ce champ.', invalide:'Vérifiez ce champ.', plusLibre:'Désolé, cette heure vient d’être prise. Choisissez-en une autre.',
  erreur:'Un problème est survenu. Réessayez.', fini:'Rendez-vous inscrit à l’agenda', rPour:'Pour', rQuand:'Quand', rOu:'Où', rService:'Service', rAvec:'Avec', rChambre:'chambre', rapTexto:'Vous recevrez un rappel par texto au {t}, 24 h avant le rendez-vous.', rapCou:'Vous recevrez un rappel par courriel 24 h avant le rendez-vous.', capture:'Faites une capture d’écran de cette page pour garder votre rendez-vous.', paye:'Paiement après le soin.', recu:'Une confirmation a été envoyée à ', annuler:'Vous pourrez annuler avec le lien reçu par courriel.', annulerTel:'Pour annuler, appelez au ', famAvisee:'La famille recevra un courriel de confirmation.', famAviser:'La professionnelle ou le professionnel avisera la famille.', facultatif:'(facultatif)',
- jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', autre:'Réserver pour une autre personne', personnel:'Je travaille au centre', dejaPrevu:'Cette personne a déjà un rendez-vous à venir. Pour le changer, appelez au ', notePerso:'La professionnelle ou le professionnel obtiendra les consentements manquants auprès de la famille.', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
+ jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', autre:'Réserver pour une autre personne', personnel:'Je travaille au centre', dejaPrevu:'Cette personne a déjà un rendez-vous à venir. Pour le changer, appelez au ', notePerso:'La professionnelle ou le professionnel obtiendra les consentements manquants auprès de la famille.', accordFam:'La famille (ou le résident) est d’accord pour ce rendez-vous.', accordFamMsg:'Confirmez que la famille est d’accord.', famille:'Pour une première visite, c’est la famille qui prend le rendez-vous, car elle doit donner les consentements. Informez la famille qu’elle peut appeler au {tel} ou réserver en ligne sur cette même page.', familleSansTel:'Pour une première visite, c’est la famille qui prend le rendez-vous, car elle doit donner les consentements. Informez la famille qu’elle peut réserver en ligne sur cette même page.', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
 };
 var app=document.getElementById('app'), voile=document.getElementById('voile'), fen=document.getElementById('fen');
 document.getElementById('chargement').textContent=T.charge;
@@ -256,6 +256,7 @@ function ouvrirFormulaire(){
     var r3=el('button',{type:'button','aria-pressed':'false',text:T.rAucun});
     F.rappel='courriel';[['courriel',r1],['texto',r2],['aucun',r3]].forEach(function(x){x[1].onclick=function(){F.rappel=x[0];etiqCourriel();[r1,r2,r3].forEach(function(b){b.setAttribute('aria-pressed',String(b===x[1]));});};});
     sr.appendChild(r1);sr.appendChild(r2);sr.appendChild(r3);corps.appendChild(sr);}
+    if(perso)corps.appendChild(el('label',{class:'case'},[el('input',{type:'checkbox',id:'fAccordFam'}),T.accordFam]));
     corps.appendChild(el('label',{class:'case',style:'margin-bottom:2px'},[el('input',{type:'checkbox',id:'fCond'}),T.accepte]));
     corps.appendChild(el('button',{class:'lienc',type:'button',style:'margin-left:32px',text:T.conditions,on:{click:function(e){e.preventDefault();alertCond();}}}));
     corps.appendChild(el('button',{class:'principal',type:'button',id:'fOk',text:T.confirmer,on:{click:envoyer}}));
@@ -265,12 +266,18 @@ function ouvrirFormulaire(){
     var p=el('p',{id:'zoneCondTexte',class:'avis',text:EN?S.page.conditions_en:S.page.conditions_fr});document.getElementById('fCond').closest('label').nextSibling.after(p);}
   function verifierDossier(){
     var nom=(document.getElementById('fNomP')||{}).value||'', ch=centre?((document.getElementById('fChambre')||{}).value||''):'-';
-    if(F.pour==='personnel'){F.consent=[];return Promise.resolve();}
-    if(nom.trim().length<3||!ch.trim())return;
+    if(nom.trim().length<3||!ch.trim())return F.pour==='personnel'?Promise.resolve():undefined;
+    // LOT 397 (Nancy 24/11) : le personnel du centre est arrêté tout de suite pour un nouveau résident
+    // (ou sans consentement aux soins) : c'est la famille qui réserve et donne les consentements.
+    if(F.pour==='personnel'){var q=DEMO?Promise.resolve({manquants:[]}):rpc('reservation_consentements_manquants',{p_slug:slug,p_lieu:S.lieu.id,p_nom:nom,p_chambre:centre?ch:null}).catch(function(){return {manquants:[]};});
+      return q.then(function(r){F.consent=[];arretFamille((r.manquants||[]).indexOf('soins')>=0);});}
     // Le serveur répond seulement quels consentements manquent (jamais ce qu'il y a au dossier).
     var p=DEMO?Promise.resolve({manquants:['soins','photos','ia']}):rpc('reservation_consentements_manquants',{p_slug:slug,p_lieu:S.lieu.id,p_nom:nom,p_chambre:centre?ch:null}).catch(function(){return {manquants:['soins','photos','ia']};});
     return p.then(function(r){F.consent=r.manquants||[];dessinerConsent();});
   }
+  function arretFamille(oui,tel){F.stop=!!oui;var z=document.getElementById('zoneConsent'),b=document.getElementById('fOk');if(!z)return;z.innerHTML='';
+    if(b)b.disabled=!!oui;if(!oui)return;var t=tel||S.page.telephone||'';
+    z.appendChild(el('p',{class:'avis',role:'alert',text:t?T.famille.replace('{tel}',t):T.familleSansTel}));}
   function ouiNon(id,lbl){var w=el('div',{class:'oui-non'}),s=el('div',{class:'seg'}),o=el('button',{type:'button','aria-pressed':'false',text:T.oui}),n=el('button',{type:'button','aria-pressed':'false',text:T.non});
     o.onclick=function(){F[id]=true;o.setAttribute('aria-pressed','true');n.setAttribute('aria-pressed','false');};n.onclick=function(){F[id]=false;n.setAttribute('aria-pressed','true');o.setAttribute('aria-pressed','false');};
     s.appendChild(o);s.appendChild(n);w.appendChild(el('span',{text:lbl}));w.appendChild(s);return w;}
@@ -299,10 +306,12 @@ function ouvrirFormulaire(){
     ok=marquer('fTel',val('fTel').replace(/\D/g,'').length>=10)&&ok;
     var cou=val('fCourriel');ok=marquer('fCourriel',(!cou&&F.rappel!=='courriel')||/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(cou))&&ok;
     if(!ok){msg.textContent=T.invalide;return;}
-    if(F.consent===null){var pv=verifierDossier();if(pv)pv.then(function(){if((F.consent||[]).length)msg.textContent=T.voirConsent;else envoyer();});return;}
+    if(F.stop)return;
+    if(F.consent===null){var pv=verifierDossier();if(pv)pv.then(function(){if(F.stop)return;if((F.consent||[]).length)msg.textContent=T.voirConsent;else envoyer();});return;}
     var m=F.consent||[];
     if(m.indexOf('soins')>=0&&!document.getElementById('cSoins').checked){msg.textContent=T.cSoins;return;}
     if(F.pour==='proche'&&m.length&&!document.getElementById('cAutorise').checked){msg.textContent=T.autorise;return;}
+    if(F.pour==='personnel'&&!document.getElementById('fAccordFam').checked){msg.textContent=T.accordFamMsg;return;}
     if(!document.getElementById('fCond').checked){msg.textContent=T.accepte;return;}
     var b=document.getElementById('fOk');b.disabled=true;
     var corpsReq={p_slug:slug,p_lieu:S.lieu.id,p_service:S.service.id,p_date:S.jour,p_heure:S.heure,p_langue:EN?'en':'fr',
@@ -311,7 +320,7 @@ function ouvrirFormulaire(){
       p_telephone:val('fTel'),p_courriel:val('fCourriel'),p_rappel:F.rappel,p_conditions_acceptees:true,
       p_consent_soins:m.indexOf('soins')>=0?true:null,p_consent_photos:m.indexOf('photos')>=0?(F.cPhotos===undefined?null:F.cPhotos):null,
       p_consent_ia:m.indexOf('ia')>=0?(F.cIA===undefined?null:F.cIA):null,
-      p_retenue:F.retenue,p_autorise:F.pour==='proche'&&m.length?true:null};
+      p_retenue:F.retenue,p_autorise:(F.pour==='proche'&&m.length)||F.pour==='personnel'?true:null};
     var envoi=DEMO?Promise.resolve({ok:true}):fetch(API+'/functions/v1/reservation',{method:'POST',headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify(corpsReq)}).then(function(r){return r.json();});
     var courrielEnvoye=val('fCourriel');
     var rec={patient:val('fNomP'),chambre:centre?val('fChambre'):'',tel:val('fTel'),rappel:F.rappel,perso:F.pour==='personnel'};
@@ -324,6 +333,7 @@ function ouvrirFormulaire(){
       S.retenue=null;
       if(r&&r.motif==='plus_libre'){msg.textContent=T.plusLibre;setTimeout(function(){fermer();chargerHeures();},2200);}
       else if(r&&(r.motif==='consentement'||r.motif==='autorisation')){F.consent=null;verifierDossier();msg.textContent=T.voirConsent;}
+      else if(r&&r.motif==='famille_requise')arretFamille(true,r.telephone);
       else if(r&&r.motif==='limite')msg.textContent=T.limite;
       else if(r&&r.motif==='deja_prevu')msg.textContent=T.dejaPrevu+(r.telephone||'')+'.';
       else if(r&&r.motif==='champs')msg.textContent=T.invalide;
