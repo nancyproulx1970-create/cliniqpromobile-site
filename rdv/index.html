@@ -91,7 +91,7 @@ var T=EN?{
  accepte:'J’ai lu et j’accepte les conditions d’annulation.', confirmer:'Confirmer le rendez-vous', garde:'Cette heure vous est réservée pendant 10 minutes.',
  requis:'Remplissez ce champ.', invalide:'Vérifiez ce champ.', plusLibre:'Désolé, cette heure vient d’être prise. Choisissez-en une autre.',
  erreur:'Un problème est survenu. Réessayez.', fini:'Rendez-vous inscrit à l’agenda', rPour:'Pour', rQuand:'Quand', rOu:'Où', rService:'Service', rAvec:'Avec', rChambre:'chambre', rapTexto:'Vous recevrez un rappel par texto au {t}, 24 h avant le rendez-vous.', rapCou:'Vous recevrez un rappel par courriel 24 h avant le rendez-vous.', capture:'Faites une capture d’écran de cette page pour garder votre rendez-vous.', paye:'Paiement après le soin.', recu:'Une confirmation a été envoyée à ', annuler:'Vous pourrez annuler avec le lien reçu par courriel.', annulerTel:'Pour annuler, appelez au ', facultatif:'(facultatif)',
- jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', autre:'Réserver pour une autre personne', personnel:'Je travaille au centre', dejaPrevu:'Cette personne a déjà un rendez-vous à venir. Pour le changer, appelez au ', fonction:'Votre fonction (infirmière, préposé·e…)', notePerso:'La professionnelle obtiendra les consentements manquants auprès de la famille.', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
+ jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', autre:'Réserver pour une autre personne', personnel:'Je travaille au centre', dejaPrevu:'Cette personne a déjà un rendez-vous à venir. Pour le changer, appelez au ', fonction:'Votre fonction (infirmière ou infirmier, préposée ou préposé…)', notePerso:'La professionnelle ou le professionnel obtiendra les consentements manquants auprès de la famille.', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
 };
 var app=document.getElementById('app'), voile=document.getElementById('voile'), fen=document.getElementById('fen');
 document.getElementById('chargement').textContent=T.charge;
@@ -248,7 +248,7 @@ function ouvrirFormulaire(){
       champ(perso?T.fonction:T.lien,'text','fLien').forEach(function(x){corps.appendChild(x);});}
     champ(T.tel,'tel','fTel','tel').forEach(function(x){corps.appendChild(x);});
     champ(T.courriel,'email','fCourriel','email').forEach(function(x){corps.appendChild(x);});
-    if(perso){F.rappel='aucun';corps.appendChild(el('p',{class:'sous',style:'margin-top:12px;font-size:14px',text:T.notePerso}));}
+    if(perso){F.rappel='aucun';setTimeout(etiqCourriel,0);corps.appendChild(el('p',{class:'sous',style:'margin-top:12px;font-size:14px',text:T.notePerso}));}
     else{corps.appendChild(el('label',{text:T.rappel}));
     var sr=el('div',{class:'seg'}),r1=el('button',{type:'button','aria-pressed':'true',text:T.rCourriel}),r2=el('button',{type:'button','aria-pressed':'false',text:T.rTexto});
     var r3=el('button',{type:'button','aria-pressed':'false',text:T.rAucun});
