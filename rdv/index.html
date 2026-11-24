@@ -109,7 +109,7 @@ function jourLisible(s){var d=new Date(s+'T12:00:00');return T.jours[d.getDay()]
 // Adresse : /rdv/<slug>/<lieu> (via 404.html) ou /rdv/?p=<slug>/<lieu>
 var chemin=(q.get('p')||location.pathname.replace(/^\/rdv\/?/,'')).replace(/^\/+|\/+$/g,'').toLowerCase().split('/');
 var slug=chemin[0]||'', lienLieu=chemin[1]||'';
-if(q.get('p')&&/^[a-z0-9-]+$/.test(slug))history.replaceState(null,'','/rdv/'+slug+(lienLieu?'/'+lienLieu:''));
+if(q.get('p')&&/^[a-z0-9-]+$/.test(slug))history.replaceState(null,'','/rdv/'+slug+(lienLieu?'/'+lienLieu:'')+(q.get('lang')?'?lang='+encodeURIComponent(q.get('lang')):''));
 var DEMO=q.get('demo')==='1';
 var S={page:null,lieu:null,service:null,jour:null,heure:null,heures:{}};
 
@@ -154,7 +154,7 @@ function dessiner(){
     [el('div',{class:'t',text:s.nom}),el('div',{class:'d',text:s.duree+' '+T.min+(s.prix!=null?' · '+prix(s.prix):'')})]));});
   if(!S.service)return pied();
   // 3. Heure
-  app.appendChild(el('h2',{text:T.heure}));
+  app.appendChild(el('h2',{text:p.lieux.length>1?T.heure:T.heure.replace(/^3/,'2')}));
   var zone=el('div',{id:'zoneHeures'});app.appendChild(zone);dessinerHeures();pied();
 }
 function pied(){app.appendChild(el('p',{class:'pied',text:T.pied}));}
