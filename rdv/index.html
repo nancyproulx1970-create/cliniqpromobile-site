@@ -188,7 +188,6 @@ function recap(rec,cou){var b=el('div',{class:'recap'});
   else if(rec.rappel==='courriel')x.appendChild(el('p',{text:T.rapCou}));
   x.appendChild(el('p',{text:T.paye}));
   x.appendChild(el('p',{text:cou?T.recu+cou+'. '+T.annuler:T.annulerTel+(S.page.telephone||'')+'.'}));
-  x.appendChild(el('p',{class:'sous',text:T.capture}));
   var w=el('div');w.appendChild(b);w.appendChild(x);return w;}
 function fermer(){voile.classList.remove('ouvert');document.body.style.overflow='';liberer();}
 // LOT 397 (Nancy 24/11) : fermer, reculer ou recharger rend l'heure retenue
