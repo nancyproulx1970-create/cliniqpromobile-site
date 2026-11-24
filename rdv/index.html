@@ -304,6 +304,7 @@ function ouvrirFormulaire(){
       else if(r&&(r.motif==='consentement'||r.motif==='autorisation')){F.consent=null;verifierDossier();msg.textContent=T.voirConsent;}
       else if(r&&r.motif==='limite')msg.textContent=T.limite;
       else if(r&&r.motif==='deja_prevu')msg.textContent=T.dejaPrevu+(r.telephone||'')+'.';
+      else if(r&&r.motif==='champs')msg.textContent=T.invalide;
       else msg.textContent=T.erreur;
     }).catch(function(){b.disabled=false;msg.textContent=T.erreur;});
   }
