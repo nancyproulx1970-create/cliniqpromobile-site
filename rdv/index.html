@@ -267,7 +267,8 @@ function ouvrirFormulaire(){
       champ(T.votreNom,'text','fNomR','name').forEach(function(x){corps.appendChild(x);});
       // LOT 397 (Nancy 24/11) : le personnel du centre donne seulement son nom et son téléphone.
       if(!perso)champ(T.lien,'text','fLien').forEach(function(x){corps.appendChild(x);});}
-    champ(perso?T.telPerso:T.tel,'tel','fTel','tel').forEach(function(x){corps.appendChild(x);});
+    // 24/11 (Nancy) : le personnel du centre ne donne pas de téléphone (on rejoint la famille, pas l'employée).
+    if(!perso)champ(T.tel,'tel','fTel','tel').forEach(function(x){corps.appendChild(x);});
     if(!perso)champ(T.courriel,'email','fCourriel','email').forEach(function(x){corps.appendChild(x);});
     if(perso){F.rappel='aucun';corps.appendChild(el('p',{class:'sous',id:'fNotePerso',style:'margin-top:12px;font-size:14px;display:none',text:T.notePerso}));}
     else{corps.appendChild(el('label',{text:T.rappel}));
@@ -324,7 +325,7 @@ function ouvrirFormulaire(){
     ok=marquer('fNomP',val('fNomP').length>=3)&&ok;
     if(centre)ok=marquer('fChambre',val('fChambre').length>=1)&&ok;
     if(F.pour!=='moi'){ok=marquer('fNomR',val('fNomR').length>=3)&&ok;if(F.pour==='proche')ok=marquer('fLien',val('fLien').length>=2)&&ok;}
-    ok=marquer('fTel',val('fTel').replace(/\D/g,'').length>=10)&&ok;
+    if(F.pour!=='personnel')ok=marquer('fTel',val('fTel').replace(/\D/g,'').length>=10)&&ok;
     var cou=val('fCourriel');ok=marquer('fCourriel',(!cou&&F.rappel!=='courriel')||/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(cou))&&ok;
     if(!ok){msg.textContent=T.invalide;return;}
     if(F.stop)return;
