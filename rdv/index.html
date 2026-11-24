@@ -76,7 +76,7 @@ var T=EN?{
  cSoins:'I consent to the care and to the keeping of a file (required)', cPhotos:'Clinical photos of the feet, before and after care, kept in the record', cIA:'AI help to write the notes', oui:'Yes', non:'No',
  accepte:'I have read and accept the cancellation conditions.', confirmer:'Confirm the appointment', garde:'This time is held for you for 10 minutes.',
  requis:'Please fill in this field.', invalide:'Please check this field.', plusLibre:'Sorry, this time was just taken. Please choose another one.',
- erreur:'Something went wrong. Please try again.', fini:'Your appointment is booked', rPour:'For', rQuand:'When', rOu:'Where', rService:'Service', rAvec:'With', rChambre:'room', rapTexto:'You will get a text reminder at {t}, 24 hours before.', rapCou:'You will get an email reminder 24 hours before.', capture:'Take a screenshot of this page to keep your appointment.', paye:'Payment after the care.', recu:'A confirmation was sent to ', annuler:'You can cancel using the link in the email.', annulerTel:'To cancel, please call ', facultatif:'(optional)',
+ erreur:'Something went wrong. Please try again.', fini:'Your appointment is booked', rPour:'For', rQuand:'When', rOu:'Where', rService:'Service', rAvec:'With', rChambre:'room', rapTexto:'You will get a text reminder at {t}, 24 hours before.', rapCou:'You will get an email reminder 24 hours before.', capture:'Take a screenshot of this page to keep your appointment.', paye:'Payment after the care.', recu:'A confirmation was sent to ', annuler:'You can cancel using the link in the email.', annulerTel:'To cancel, please call ', famAvisee:'The family will receive a confirmation email.', famAviser:'The professional will let the family know.', facultatif:'(optional)',
  jours:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mois:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], pied:'Booking by CliniQ Pro', autre:'Book for another person', personnel:'I work at the centre', dejaPrevu:'This person already has an upcoming appointment. To change it, please call ', notePerso:'The professional will obtain the missing consents from the family.', voirConsent:'Please answer the consents above.', limite:'Too many bookings with this contact information. Please call.'
 }:{
  charge:'Chargement…', introuvable:'Cette page de rendez-vous n’est pas disponible.', offert:'Rendez-vous offerts à :', paiement:'Paiement après le soin.',
@@ -90,7 +90,7 @@ var T=EN?{
  cSoins:'Je consens aux soins et à la tenue d’un dossier (obligatoire)', cPhotos:'Photos cliniques des pieds, avant et après les soins, versées au dossier', cIA:'Aide de l’IA pour rédiger les notes', oui:'Oui', non:'Non',
  accepte:'J’ai lu et j’accepte les conditions d’annulation.', confirmer:'Confirmer le rendez-vous', garde:'Cette heure vous est réservée pendant 10 minutes.',
  requis:'Remplissez ce champ.', invalide:'Vérifiez ce champ.', plusLibre:'Désolé, cette heure vient d’être prise. Choisissez-en une autre.',
- erreur:'Un problème est survenu. Réessayez.', fini:'Rendez-vous inscrit à l’agenda', rPour:'Pour', rQuand:'Quand', rOu:'Où', rService:'Service', rAvec:'Avec', rChambre:'chambre', rapTexto:'Vous recevrez un rappel par texto au {t}, 24 h avant le rendez-vous.', rapCou:'Vous recevrez un rappel par courriel 24 h avant le rendez-vous.', capture:'Faites une capture d’écran de cette page pour garder votre rendez-vous.', paye:'Paiement après le soin.', recu:'Une confirmation a été envoyée à ', annuler:'Vous pourrez annuler avec le lien reçu par courriel.', annulerTel:'Pour annuler, appelez au ', facultatif:'(facultatif)',
+ erreur:'Un problème est survenu. Réessayez.', fini:'Rendez-vous inscrit à l’agenda', rPour:'Pour', rQuand:'Quand', rOu:'Où', rService:'Service', rAvec:'Avec', rChambre:'chambre', rapTexto:'Vous recevrez un rappel par texto au {t}, 24 h avant le rendez-vous.', rapCou:'Vous recevrez un rappel par courriel 24 h avant le rendez-vous.', capture:'Faites une capture d’écran de cette page pour garder votre rendez-vous.', paye:'Paiement après le soin.', recu:'Une confirmation a été envoyée à ', annuler:'Vous pourrez annuler avec le lien reçu par courriel.', annulerTel:'Pour annuler, appelez au ', famAvisee:'La famille recevra un courriel de confirmation.', famAviser:'La professionnelle ou le professionnel avisera la famille.', facultatif:'(facultatif)',
  jours:['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'], mois:['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'], pied:'Réservation par CliniQ Pro', autre:'Réserver pour une autre personne', personnel:'Je travaille au centre', dejaPrevu:'Cette personne a déjà un rendez-vous à venir. Pour le changer, appelez au ', notePerso:'La professionnelle ou le professionnel obtiendra les consentements manquants auprès de la famille.', voirConsent:'Répondez aux consentements ci-dessus.', limite:'Trop de réservations avec ces coordonnées. Appelez, s’il vous plaît.'
 };
 var app=document.getElementById('app'), voile=document.getElementById('voile'), fen=document.getElementById('fen');
@@ -187,6 +187,7 @@ function recap(rec,cou){var b=el('div',{class:'recap'});
   if(rec.rappel==='texto')x.appendChild(el('p',{text:T.rapTexto.replace('{t}',rec.tel)}));
   else if(rec.rappel==='courriel')x.appendChild(el('p',{text:T.rapCou}));
   x.appendChild(el('p',{text:T.paye}));
+  if(rec.perso)x.appendChild(el('p',{text:rec.avise?T.famAvisee:T.famAviser}));
   x.appendChild(el('p',{text:cou?T.recu+cou+'. '+T.annuler:T.annulerTel+(S.page.telephone||'')+'.'}));
   var w=el('div');w.appendChild(b);w.appendChild(x);return w;}
 function fermer(){voile.classList.remove('ouvert');document.body.style.overflow='';liberer();}
@@ -313,10 +314,10 @@ function ouvrirFormulaire(){
       p_retenue:F.retenue,p_autorise:F.pour==='proche'&&m.length?true:null};
     var envoi=DEMO?Promise.resolve({ok:true}):fetch(API+'/functions/v1/reservation',{method:'POST',headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify(corpsReq)}).then(function(r){return r.json();});
     var courrielEnvoye=val('fCourriel');
-    var rec={patient:val('fNomP'),chambre:centre?val('fChambre'):'',tel:val('fTel'),rappel:F.rappel};
+    var rec={patient:val('fNomP'),chambre:centre?val('fChambre'):'',tel:val('fTel'),rappel:F.rappel,perso:F.pour==='personnel'};
     var memo={pour:F.pour==='moi'?null:F.pour,nomR:val('fNomR'),lien:val('fLien'),tel:val('fTel'),courriel:val('fCourriel'),rappel:F.rappel};
     envoi.then(function(r){
-      if(r&&r.ok){S.retenue=null;try{sessionStorage.removeItem('rdvRetenue');}catch(e){}fen.innerHTML='';fen.appendChild(el('div',{class:'fini'},[el('div',{class:'ico',text:'✓'}),el('h3',{id:'fenTitre',text:T.fini}),recap(rec,courrielEnvoye)]));
+      if(r&&r.ok){rec.avise=r.famille_avisee===true;S.retenue=null;try{sessionStorage.removeItem('rdvRetenue');}catch(e){}fen.innerHTML='';fen.appendChild(el('div',{class:'fini'},[el('div',{class:'ico',text:'✓'}),el('h3',{id:'fenTitre',text:T.fini}),recap(rec,courrielEnvoye)]));
         fen.firstChild.appendChild(el('button',{class:'principal',type:'button',text:T.autre,on:{click:function(){S.memo=memo;fermer();chargerHeures();}}}));
         fen.firstChild.appendChild(el('button',{class:'second',type:'button',text:T.fermer,on:{click:function(){S.memo=null;fermer();chargerHeures();}}}));return;}
       b.disabled=false;
