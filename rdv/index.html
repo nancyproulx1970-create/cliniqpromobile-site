@@ -203,7 +203,9 @@ function ouvrirFormulaire(){
   fen.appendChild(el('button',{class:'second',type:'button',text:T.fermer,on:{click:fermer}}));
   ouvrir();
 
-  function champ(lbl,type,id,auto){var i=el('input',{type:type,id:id,autocomplete:auto||'off'});return [el('label',{for:id,text:lbl}),i];}
+  function champ(lbl,type,id,auto){var i=el('input',{type:type,id:id,autocomplete:auto||'off'});if(type==='tel'){i.setAttribute('inputmode','tel');i.addEventListener('input',function(){i.value=formatTel(i.value);});}return [el('label',{for:id,text:lbl}),i];}
+  // LOT 397 (Nancy 24/11) : téléphone écrit comme dans l'app, (444) 555-8888.
+  function formatTel(v){var d=v.replace(/\D/g,'');if(d.length===11&&d[0]==='1')d=d.slice(1);if(d.length>10)return v;if(d.length<4)return d;if(d.length<7)return '('+d.slice(0,3)+') '+d.slice(3);return '('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);}
   function construire(){
     corps.innerHTML='';
     var proche=F.pour!=='moi', perso=F.pour==='personnel';
