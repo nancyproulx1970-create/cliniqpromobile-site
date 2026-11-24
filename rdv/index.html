@@ -73,7 +73,7 @@ document.documentElement.lang=EN?'en-CA':'fr-CA';
 var T=EN?{
  charge:'Loading…', introuvable:'This booking page is not available.', offert:'Appointments offered at:', paiement:'Payment after the care.',
  conditions:'Cancellation conditions', lieu:'1. Location', service:'2. Service', heure:'3. Date and time', min:'min',
- aucune:'No openings at the moment at this location. Please try again later or call ', aucune2:'No openings this day.', telLib:'Phone: ', auj:'No more online booking today. To find out if there is still room today, call ',
+ aucune:'No openings at the moment at this location. Please try again later or call ', aucune2:'No openings this day.', telLib:'Phone: ', telPerso:'Phone (your unit’s line or your own)', auj:'No more online booking today. To find out if there is still room today, call ',
  fermer:'Close', pourQui:'Who is the appointment for?', moi:'For me', proche:'For a relative', nomP:'Patient’s full name', nomMoi:'Your full name',
  chambre:'Room number', vosCoord:'Your contact information', votreNom:'Your full name', lien:'Relationship (daughter, son, spouse…)',
  tel:'Phone', courriel:'Email', rappel:'I agree to a reminder the day before', rAucun:'No thanks', rCourriel:'By email', rTexto:'By text',
@@ -87,7 +87,7 @@ var T=EN?{
 }:{
  charge:'Chargement…', introuvable:'Cette page de rendez-vous n’est pas disponible.', offert:'Rendez-vous offerts à :', paiement:'Paiement après le soin.',
  conditions:'Conditions d’annulation', lieu:'1. Lieu', service:'2. Service', heure:'3. Date et heure', min:'min',
- aucune:'Aucune place libre pour le moment à ce lieu. Réessayez plus tard ou appelez au ', aucune2:'Aucune place libre cette journée.', telLib:'Téléphone : ', auj:'Plus de réservation en ligne pour aujourd’hui. Pour savoir s’il reste de la place aujourd’hui, appelez au ',
+ aucune:'Aucune place libre pour le moment à ce lieu. Réessayez plus tard ou appelez au ', aucune2:'Aucune place libre cette journée.', telLib:'Téléphone : ', telPerso:'Téléphone (le poste de l’étage ou le vôtre)', auj:'Plus de réservation en ligne pour aujourd’hui. Pour savoir s’il reste de la place aujourd’hui, appelez au ',
  fermer:'Fermer', pourQui:'Pour qui est le rendez-vous ?', moi:'Pour moi', proche:'Pour un proche', nomP:'Nom complet du patient', nomMoi:'Votre nom complet',
  chambre:'Numéro de chambre', vosCoord:'Vos coordonnées', votreNom:'Votre nom complet', lien:'Lien (fille, fils, conjoint ou conjointe…)',
  tel:'Téléphone', courriel:'Courriel', rappel:'J’accepte un rappel la veille', rAucun:'Non merci', rCourriel:'Par courriel', rTexto:'Par texto',
@@ -267,7 +267,7 @@ function ouvrirFormulaire(){
       champ(T.votreNom,'text','fNomR','name').forEach(function(x){corps.appendChild(x);});
       // LOT 397 (Nancy 24/11) : le personnel du centre donne seulement son nom et son téléphone.
       if(!perso)champ(T.lien,'text','fLien').forEach(function(x){corps.appendChild(x);});}
-    champ(T.tel,'tel','fTel','tel').forEach(function(x){corps.appendChild(x);});
+    champ(perso?T.telPerso:T.tel,'tel','fTel','tel').forEach(function(x){corps.appendChild(x);});
     if(!perso)champ(T.courriel,'email','fCourriel','email').forEach(function(x){corps.appendChild(x);});
     if(perso){F.rappel='aucun';corps.appendChild(el('p',{class:'sous',id:'fNotePerso',style:'margin-top:12px;font-size:14px;display:none',text:T.notePerso}));}
     else{corps.appendChild(el('label',{text:T.rappel}));
