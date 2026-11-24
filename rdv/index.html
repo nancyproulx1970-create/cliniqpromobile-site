@@ -53,6 +53,7 @@ input.err{border-color:#C0392B}
 .recapx{text-align:left}
 .recapx p{margin:8px 0}
 .pied{text-align:center;color:#8A9A9C;font-size:12.5px;margin-top:40px}
+.langue{position:absolute;top:10px;right:12px;font-family:inherit;background:#fff;border:1px solid #cfd8dc;border-radius:16px;padding:5px 14px;font-size:14px;color:inherit;cursor:pointer;z-index:5}
 </style></head><body><main id="app"><p class="sous" id="chargement"></p></main>
 
 <div class="voile" id="voile" role="dialog" aria-modal="true" aria-labelledby="fenTitre"><div class="fen" id="fen"></div></div>
@@ -64,6 +65,9 @@ var API='https://anzgkxmxkcetzbtjttuh.supabase.co', CLE='sb_publishable_18AM9kOI
 var q=new URLSearchParams(location.search);
 var EN=(q.get('lang')||navigator.language||'fr').toLowerCase().indexOf('en')===0;
 document.documentElement.lang=EN?'en-CA':'fr-CA';
+// LOT 397 (Nancy 24/11) : bouton pour changer de langue (la page suit la langue du téléphone par défaut).
+(function(){var b=document.createElement('button');b.type='button';b.className='langue';b.textContent=EN?'Français':'English';b.setAttribute('lang',EN?'fr':'en');
+  b.onclick=function(){var u=new URL(location.href);u.searchParams.set('lang',EN?'fr':'en');location.replace(u.toString());};document.body.insertBefore(b,document.body.firstChild);})();
 var T=EN?{
  charge:'Loading…', introuvable:'This booking page is not available.', offert:'Appointments offered at:', paiement:'Payment after the care.',
  conditions:'Cancellation conditions', lieu:'1. Location', service:'2. Service', heure:'3. Date and time', min:'min',
