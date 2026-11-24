@@ -10,6 +10,7 @@ main{max-width:560px;margin:0 auto;padding:20px 18px 60px}
 h1{font-size:24px;font-weight:800;margin:6px 0 2px;letter-spacing:-.3px}
 h2{font-size:18px;font-weight:800;margin:26px 0 10px}
 .sous{color:#56666A;margin:0 0 14px;font-size:16px}
+.telpro{margin:-8px 0 14px;font-size:16px;color:#33474A}.telpro a{color:#115E59;font-weight:700;text-decoration:none}.vide a{color:#115E59;font-weight:700}
 .avis{background:#fff;border:1px solid #DCE8E5;border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5}
 .centre{background:#EAF3F1;border:2px solid #115E59;border-radius:16px;padding:14px 16px;margin:0 0 12px}.centre small{display:block;font-size:14px;color:#56666A;font-weight:600}.centre b{display:block;font-size:22px;font-weight:800;line-height:1.25;color:#0B3B37}.centre span{display:block;font-size:16px;color:#33474A}
 .avis b{color:#0E5E5C}
@@ -72,7 +73,7 @@ document.documentElement.lang=EN?'en-CA':'fr-CA';
 var T=EN?{
  charge:'Loading…', introuvable:'This booking page is not available.', offert:'Appointments offered at:', paiement:'Payment after the care.',
  conditions:'Cancellation conditions', lieu:'1. Location', service:'2. Service', heure:'3. Date and time', min:'min',
- aucune:'No openings at the moment at this location. Please try again later or call ', aucune2:'No openings this day.',
+ aucune:'No openings at the moment at this location. Please try again later or call ', aucune2:'No openings this day.', telLib:'Phone: ', auj:'No more online booking today. To find out if there is still room today, call ',
  fermer:'Close', pourQui:'Who is the appointment for?', moi:'For me', proche:'For a relative', nomP:'Patient’s full name', nomMoi:'Your full name',
  chambre:'Room number', vosCoord:'Your contact information', votreNom:'Your full name', lien:'Relationship (daughter, son, spouse…)',
  tel:'Phone', courriel:'Email', rappel:'I agree to a reminder the day before', rAucun:'No thanks', rCourriel:'By email', rTexto:'By text',
@@ -86,7 +87,7 @@ var T=EN?{
 }:{
  charge:'Chargement…', introuvable:'Cette page de rendez-vous n’est pas disponible.', offert:'Rendez-vous offerts à :', paiement:'Paiement après le soin.',
  conditions:'Conditions d’annulation', lieu:'1. Lieu', service:'2. Service', heure:'3. Date et heure', min:'min',
- aucune:'Aucune place libre pour le moment à ce lieu. Réessayez plus tard ou appelez au ', aucune2:'Aucune place libre cette journée.',
+ aucune:'Aucune place libre pour le moment à ce lieu. Réessayez plus tard ou appelez au ', aucune2:'Aucune place libre cette journée.', telLib:'Téléphone : ', auj:'Plus de réservation en ligne pour aujourd’hui. Pour savoir s’il reste de la place aujourd’hui, appelez au ',
  fermer:'Fermer', pourQui:'Pour qui est le rendez-vous ?', moi:'Pour moi', proche:'Pour un proche', nomP:'Nom complet du patient', nomMoi:'Votre nom complet',
  chambre:'Numéro de chambre', vosCoord:'Vos coordonnées', votreNom:'Votre nom complet', lien:'Lien (fille, fils, conjoint ou conjointe…)',
  tel:'Téléphone', courriel:'Courriel', rappel:'J’accepte un rappel la veille', rAucun:'Non merci', rCourriel:'Par courriel', rTexto:'Par texto',
@@ -139,6 +140,8 @@ function dessiner(){
   var p=S.page;app.innerHTML='';
   app.appendChild(el('h1',{text:p.nom}));
   if(p.titre)app.appendChild(el('p',{class:'sous',text:p.titre}));
+  // 24/11 (Nancy) : téléphone sous le titre, touchable.
+  if(p.telephone)app.appendChild(el('p',{class:'telpro'},[T.telLib,el('a',{href:'tel:'+p.telephone.replace(/[^0-9+]/g,''),text:p.telephone})]));
   var noms=p.lieux.map(function(l){return l.nom;}).join(', ');
   // 24/11 (Nancy) : un seul centre -> son nom en gros, pour voir tout de suite si c'est celui du parent.
   if(p.lieux.length===1){var l1=p.lieux[0];
@@ -168,7 +171,7 @@ function pied(){app.appendChild(el('p',{class:'pied',text:T.pied}));}
 function chargerHeures(){
   var d=new Date();d.setDate(d.getDate());
   (DEMO?demoHeures():rpc('reservation_heures_libres',{p_slug:slug,p_lieu:S.lieu.id,p_service:S.service.id,p_debut:iso(d)})).then(function(h){
-    S.heures=h||{};var j=Object.keys(S.heures).sort();S.jour=j[0]||null;dessinerHeures();
+    S.heures=h||{};var j=Object.keys(S.heures).sort();S.jour=j.filter(function(x){return (S.heures[x]||[]).length;})[0]||j[0]||null;dessinerHeures();
   }).catch(function(){S.heures={};dessinerHeures();});
 }
 function dessinerHeures(){
@@ -180,6 +183,8 @@ function dessinerHeures(){
     [el('small',{text:T.jours[d.getDay()]}),el('b',{text:d.getDate()+' '+T.mois[d.getMonth()]})]));});
   z.appendChild(bande);
   var g=el('div',{class:'heures'});
+  // 24/11 (Nancy) : aujourd'hui sans heure en ligne -> inviter à appeler.
+  if(!(S.heures[S.jour]||[]).length){var tel=S.page.telephone||'';z.appendChild(el('p',{class:'vide'},[T.auj,tel?el('a',{href:'tel:'+tel.replace(/[^0-9+]/g,''),text:tel}):'','.']));return;}
   (S.heures[S.jour]||[]).forEach(function(h){g.appendChild(el('button',{class:'heure',type:'button',text:heureLisible(h),on:{click:function(){S.heure=h;ouvrirFormulaire();}}}));});
   z.appendChild(g);
 }
