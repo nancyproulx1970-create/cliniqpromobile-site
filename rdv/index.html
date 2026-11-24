@@ -11,6 +11,7 @@ h1{font-size:24px;font-weight:800;margin:6px 0 2px;letter-spacing:-.3px}
 h2{font-size:18px;font-weight:800;margin:26px 0 10px}
 .sous{color:#56666A;margin:0 0 14px;font-size:16px}
 .avis{background:#fff;border:1px solid #DCE8E5;border-radius:16px;padding:14px 16px;font-size:15.5px;line-height:1.5}
+.centre{background:#EAF3F1;border:2px solid #115E59;border-radius:16px;padding:14px 16px;margin:0 0 12px}.centre small{display:block;font-size:14px;color:#56666A;font-weight:600}.centre b{display:block;font-size:22px;font-weight:800;line-height:1.25;color:#0B3B37}.centre span{display:block;font-size:16px;color:#33474A}
 .avis b{color:#0E5E5C}
 .lienc{background:none;border:0;padding:0;color:#0E5E5C;font:600 15px inherit;text-decoration:underline;cursor:pointer;font-family:inherit}
 .choix{display:block;width:100%;text-align:left;background:#fff;border:2px solid #DCE8E5;border-radius:16px;padding:14px 16px;margin:8px 0;font:inherit;color:inherit;cursor:pointer}
@@ -139,6 +140,12 @@ function dessiner(){
   app.appendChild(el('h1',{text:p.nom}));
   if(p.titre)app.appendChild(el('p',{class:'sous',text:p.titre}));
   var noms=p.lieux.map(function(l){return l.nom;}).join(', ');
+  // 24/11 (Nancy) : un seul centre -> son nom en gros, pour voir tout de suite si c'est celui du parent.
+  if(p.lieux.length===1){var l1=p.lieux[0];
+    app.appendChild(el('div',{class:'centre'},[el('small',{text:T.offert}),el('b',{text:l1.nom}),l1.ville?el('span',{text:l1.ville}):null]));
+    app.appendChild(el('div',{class:'avis'},[T.paiement+' ',
+      el('button',{class:'lienc',type:'button',text:T.conditions,on:{click:ouvrirConditions}})]));
+  } else
   app.appendChild(el('div',{class:'avis'},[el('b',{text:T.offert}),' '+noms+'.',el('br'),T.paiement+' ',
     el('button',{class:'lienc',type:'button',text:T.conditions,on:{click:ouvrirConditions}})]));
   // 1. Lieu
