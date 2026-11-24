@@ -113,7 +113,8 @@ function demoHeures(){var o={},d=new Date();for(var i=1;i<14;i++){var x=new Date
 
 function charger(){
   if(!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)&&!DEMO){return introuvable();}
-  (DEMO?demoPage():rpc('reservation_page',{p_slug:slug})).then(function(p){
+  var ancienne=null;try{ancienne=sessionStorage.getItem('rdvRetenue');}catch(e){}
+  (ancienne?liberer(ancienne):Promise.resolve()).then(function(){return DEMO?demoPage():rpc('reservation_page',{p_slug:slug});}).then(function(p){
     if(!p||!p.lieux||!p.lieux.length)return introuvable();
     S.page=p;
     if(lienLieu)S.lieu=p.lieux.filter(function(l){return l.lien_court===lienLieu;})[0]||null;
@@ -168,7 +169,13 @@ function dessinerHeures(){
   z.appendChild(g);
 }
 function ouvrir(){voile.classList.add('ouvert');document.body.style.overflow='hidden';var f=fen.querySelector('input,button');if(f)f.focus();}
-function fermer(){voile.classList.remove('ouvert');document.body.style.overflow='';}
+function fermer(){voile.classList.remove('ouvert');document.body.style.overflow='';liberer();}
+// LOT 397 (Nancy 24/11) : fermer, reculer ou recharger rend l'heure retenue
+// tout de suite (sinon elle restait cachée 10 minutes, même pour la personne).
+function liberer(id){id=id||S.retenue;S.retenue=null;try{sessionStorage.removeItem('rdvRetenue');}catch(e){}
+  if(!id||DEMO)return Promise.resolve();
+  return fetch(API+'/rest/v1/rpc/reservation_liberer',{method:'POST',keepalive:true,headers:{apikey:CLE,'Content-Type':'application/json'},body:JSON.stringify({p_retenue:id})}).catch(function(){});}
+window.addEventListener('pagehide',function(){liberer();});
 voile.addEventListener('click',function(e){if(e.target===voile)fermer();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer();});
 function ouvrirConditions(){fen.innerHTML='';fen.appendChild(el('h3',{id:'fenTitre',text:T.conditions}));
@@ -179,7 +186,7 @@ function ouvrirConditions(){fen.innerHTML='';fen.appendChild(el('h3',{id:'fenTit
 function ouvrirFormulaire(){
   var F={pour:null,consent:null,retenue:null};fen.innerHTML='';
   if(!DEMO)rpc('reservation_retenir',{p_slug:slug,p_lieu:S.lieu.id,p_service:S.service.id,p_date:S.jour,p_heure:S.heure,p_retenue:S.retenue||null}).then(function(r){
-    if(r&&r.ok){F.retenue=r.retenue;S.retenue=r.retenue;}
+    if(r&&r.ok){F.retenue=r.retenue;S.retenue=r.retenue;try{sessionStorage.setItem('rdvRetenue',r.retenue);}catch(e){}}
     else if(r&&r.motif==='plus_libre'){var m=document.getElementById('fMsg');fen.innerHTML='';fen.appendChild(el('p',{class:'rappelh',text:T.plusLibre}));
       fen.appendChild(el('button',{class:'principal',type:'button',text:T.fermer,on:{click:function(){fermer();chargerHeures();}}}));}
   }).catch(function(){});
@@ -285,7 +292,7 @@ function ouvrirFormulaire(){
     var courrielEnvoye=val('fCourriel');
     var memo={pour:F.pour==='moi'?null:F.pour,nomR:val('fNomR'),lien:val('fLien'),tel:val('fTel'),courriel:val('fCourriel'),rappel:F.rappel};
     envoi.then(function(r){
-      if(r&&r.ok){S.retenue=null;fen.innerHTML='';fen.appendChild(el('div',{class:'fini'},[el('div',{class:'ico',text:'✓'}),el('h3',{id:'fenTitre',text:T.fini}),
+      if(r&&r.ok){S.retenue=null;try{sessionStorage.removeItem('rdvRetenue');}catch(e){}fen.innerHTML='';fen.appendChild(el('div',{class:'fini'},[el('div',{class:'ico',text:'✓'}),el('h3',{id:'fenTitre',text:T.fini}),
         el('p',{class:'rappelh',text:jourLisible(S.jour)+' · '+heureLisible(S.heure)+' · '+S.lieu.nom}),el('p',{text:T.recu+courrielEnvoye+'. '+T.annuler})]));
         fen.firstChild.appendChild(el('button',{class:'principal',type:'button',text:T.autre,on:{click:function(){S.memo=memo;fermer();chargerHeures();}}}));
         fen.firstChild.appendChild(el('button',{class:'second',type:'button',text:T.fermer,on:{click:function(){S.memo=null;fermer();chargerHeures();}}}));return;}
