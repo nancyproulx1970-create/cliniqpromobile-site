@@ -1,0 +1,547 @@
+Dernière mise à jour : 26 novembre 2026
+
+PRÉAMBULE
+
+La société 18325006 Canada Inc, société par actions régie par la Loi Canadienne sur les Sociétés par Actions et immatriculée au Registre des Entreprises du Québec sous le numéro d’entreprise 1182687351, dont le siège social est situé au 142, rue de la Gabelle, Varennes (Québec), J3X 2A9 représentée par sa Présidente, Madame Nancy Proulx (ci-après « CliniQ Pro » ou « Nous »), édite et exploite une plateforme destinée aux professionnels de santé exerçant à leur compte au Canada, elle n’est pas conçue pour la pratique médicale (médecins).
+
+- Contact : soutien@cliniqpromobile.ca
+
+- Responsable de la Protection des Renseignements Personnels : rprp@cliniqpromobile.ca.
+
+CliniQ Pro est une solution logicielle offerte en mode SaaS (« Software as a Service »), accessible par abonnement, permettant aux professionnels de la santé de gérer notamment leurs rendez-vous, dossiers patients, notes cliniques et activités de facturation.
+
+Sous réserve des fonctionnalités faisant appel à des fournisseurs situés hors du Canada identifiées aux présentes et dans la Politique de confidentialité, les Contenus de l’Utilisateur et les copies de sécurité sont hébergés au Canada.
+
+Lorsque CliniQ Pro s’adjoint un tiers dans le cadre de l’exécution du Service et que ce tiers est susceptible d’avoir accès aux Contenus de l’Utilisateur, CliniQ Pro en avise l’Utilisateur conformément aux exigences de la LRSSS et veille à ce que ce tiers soit assujetti aux obligations applicables en matière de confidentialité, de sécurité, d’utilisation et de destruction des renseignements.
+
+ARTICLE 1 — OBJET
+
+Les présentes conditions générales d’utilisation (les « CGU ») ont pour objet de définir les conditions dans lesquelles CliniQ Pro met la plateforme à disposition de l’Utilisateur, ainsi que les droits et obligations respectifs des Parties au titre de cette mise à disposition.
+
+L’application CliniQ Pro est un outil de gestion de pratique : agenda, rappels de rendez-vous, dossiers, notes, reçus et factures, dépenses, kilométrage, registres.
+
+Elle ne pose aucun diagnostic, ne recommande aucun traitement et ne remplace pas votre jugement professionnel.
+
+Ce n’est ni un instrument médical ni un service d’urgence.
+
+Nous ne vérifions pas le contenu de vos dossiers.
+
+Les calculs de taxes, de kilométrage et les sommaires pour votre comptable sont des aides : vous les vérifiez, avec votre comptable au besoin, avant de vous en servir.
+
+Les rappels par texto ou par courriel passent par des services externes : nous ne pouvons pas garantir qu’un patient les recevra.
+
+ARTICLE 2 — DÉFINITIONS
+
+Les termes ci-après, employés avec une majuscule, ont la signification suivante, au singulier comme au pluriel :
+
+Compte : l’espace personnel nominatif permettant à un Utilisateur d’accéder à la Plateforme.
+
+Contenus de l’Utilisateur : l’ensemble des données, documents, fichiers, photographies, prescriptions, informations administratives et Données de Santé saisis, importés ou générés par l’Utilisateur au moyen de la Plateforme.
+
+Données de Santé : renseignements de santé et de services sociaux concernant la santé des patients de l’Utilisateur au sens de l’article 2 de la Loi sur les renseignements de santé et de services sociaux (LRSSS) applicable au Québec ou toute autre loi relative à la protection des renseignements personnels et de santé applicable.
+
+Parties : désignent collectivement CliniQ Pro et l’Utilisateur.
+
+Plateforme ou Service : l’ensemble applicatif édité par CliniQ Pro, accessible en mode SaaS via application mobile (Android et iPhone, téléphone et tablette) incluant les modules suivants : agenda par lieu, dossier patient, notes cliniques, plan thérapeutique infirmier (PTI), reçus et factures, dépenses, kilométrage, rapports de taxes, registre de stérilisation et réservation en ligne, ainsi que leurs mises à jour successives.
+
+Utilisateur ou Vous : le professionnel de la santé exerçant à son compte qui souscrit un abonnement à CliniQ Pro, crée un Compte et utilise la Plateforme.
+
+ARTICLE 3 — ACCEPTATION ET OPPOSABILITÉ
+
+La création de votre compte Utilisateur et l’accès à la Plateforme supposent l’acceptation préalable, pleine et sans réserve des présentes CGU. Cette acceptation résulte de la case à cocher présentée lors de la création du Compte ou de la première connexion à la Plateforme.
+
+L’Utilisateur reconnaît que cette acceptation a la même valeur qu’une signature manuscrite.
+
+Convention de preuve. Les Parties conviennent que les journaux de connexion, traces techniques et enregistrements conservés par CliniQ Pro dans ses systèmes constituent des preuves recevables entre elles des connexions, opérations et acceptations réalisées sur la Plateforme, et font foi jusqu’à preuve contraire.
+
+L’Utilisateur peut à tout moment en demander communication par écrit en adressant un courriel à l’adresse suivante : soutien@cliniqpromobile.ca
+
+ARTICLE 4 — CONDITIONS D’ÉLIGIBILITÉ
+
+L’accès à la Plateforme est réservé aux professionnels de santé (à l’exclusion des médecins) légalement autorisés à exercer au Canada et dans les provinces qui le composent, régulièrement inscrits au tableau de leur ordre professionnel lorsque celui-ci existe, et titulaires d’un numéro d’identification/ de membre lié à l’exercice de leur profession en cours de validité.
+
+L’Utilisateur garantit à CliniQ Pro, pendant toute la durée de l’abonnement :
+
+• l’exactitude de son identité professionnelle, de son numéro d’identification/ de membre;
+
+• qu’il n’est frappé d’aucune interdiction, suspension ou radiation d’exercer;
+
+• qu’il informe CliniQ Pro sans délai de toute modification affectant l’un de ces éléments.
+
+CliniQ Pro se réserve le droit de solliciter tout justificatif et, à défaut de production dans un délai de quinze (15) jours, de suspendre l’accès dans les conditions de l’article 13.
+
+ARTICLE 5 — COMPTE, CONFIDENTIALITÉ ET SÉCURITÉ
+
+5.1 Création
+
+Le Compte est nominatif et strictement personnel. La création d’un Compte suppose la fourniture d’informations exactes, complètes et à jour.
+
+En ouvrant un compte, vous déclarez que :
+
+- Vous êtes majeur(e);
+
+- Vous avez le droit d’exercer votre profession, avec un permis en règle si votre profession en exige un;
+
+- Vous utilisez CliniQ Pro pour votre pratique professionnelle, et non à des fins personnelles.
+
+5.2 Confidentialité des accès
+
+L’Utilisateur est seul responsable de la conservation et de la confidentialité de ses identifiants, mots de passe, facteurs d’authentification. Toute opération réalisée au moyen de ses identifiants est réputée effectuée par lui.
+
+La double authentification est obligatoire.
+
+5.3 Incident
+
+Toute perte, vol, divulgation ou utilisation non autorisée d’un identifiant ou des Contenus de l’Utilisateur doit être signalé à CliniQ Pro sans délai à soutien@cliniqpromobile.ca, afin de permettre le blocage du Compte.
+
+De même que CliniQ Pro avise sans retard le responsable de la protection des renseignements personnels de l’Utilisateur de toute violation ou tentative de violation par toute personne de l’une des obligations relatives à la protection des Contenus de l’Utilisateur.
+
+ARTICLE 6 — DESCRIPTION ET PÉRIMÈTRE DU SERVICE
+
+6.1 Abonnement
+
+Essai, abonnement et paiement.
+
+Essai. L’essai est gratuit pendant 14 jours et une seule fois par personne. Aucune carte de paiement n’est requise.
+
+Si vous avez ouvert votre compte avant le 1er janvier 2027, l’accès est gratuit jusqu’au 31 janvier 2027.
+
+À la fin de l’essai, il n’y a pas de transformation automatique en abonnement.
+
+Prix. 44,95 $ par mois ou 449,50 $ par année, en dollars canadiens. Les taxes s’ajoutent selon votre province.
+
+Paiement. L’abonnement se paie d’avance. Le paiement est traité par le fournisseur Stripe.
+
+CliniQ Pro n’a pas connaissance des informations concernant votre carte de paiement et n’en conserve aucune copie.
+
+Renouvellement. L’abonnement se renouvelle par tacite reconduction à l’échéance de votre abonnement mensuel ou annuel initial ou renouvelé.
+
+Nous vous envoyons un avis de renouvellement trente (30) jours avant la date automatique de renouvellement d’un abonnement annuel.
+
+Arrêt. Vous pouvez arrêter votre abonnement à tout moment via la Plateforme « gérer mon abonnement ». Vous gardez l’accès à la Plateforme uniquement jusqu’à la fin de la période payée.
+
+Toute période mensuelle ou annuelle commencée n’est pas remboursée, sauf si une loi s’applique à l’Utilisateur et lui donne ce droit.
+
+Paiement refusé. Si un paiement est refusé, CliniQ Pro vous en informe.
+
+Si l’abonnement mensuel ou annuel n’est pas réglé à son échéance, l’abonnement prend fin et l’article 14 des CGU s’applique.
+
+Changement de prix. Nous vous avisons par courriel au moins trente (30) jours à l’avance. Le nouveau prix s’applique à votre prochain renouvellement.
+
+Rabais. Un rabais (parrainage, code promotionnel) réduit le prix d’une période mensuelle ou annuelle ; il n’est jamais versé en argent. Un seul rabais à la fois, un seul usage par personne, non transférable.
+
+Les modalités sont affichées sur le site web www.cliniqpromobile.ca.
+
+6.2 Fonctionnalités
+
+La Plateforme met à disposition les principales fonctionnalités suivantes :
+
+• organisation de l’agenda et de l’horaire selon les tournées et plannings de soins (kilométrage automatique et odomètre);
+
+• constitution et consultation du dossier de soins du patient, incluant historique des changements au bilan de santé et bilan de santé, antécédents et médication, photographies avant et après;
+
+• Rappels des rendez-vous par texto;
+
+• Consentements du patient datés au dossier;
+
+• Fonctionnalité de demande et de transmission de plan thérapeutique infirmier (PTI)
+
+CliniQ Pro met à la disposition de certains Utilisateurs une fonctionnalité permettant à une infirmière auxiliaire de transmettre de manière sécurisée à une infirmière une demande de plan thérapeutique infirmier (« PTI »), ainsi que les renseignements nécessaires à son traitement, notamment les renseignements relatifs à la visite, les notes cliniques et les photographies qui y sont associées. L’infirmière destinataire peut, par l’intermédiaire de CliniQ Pro, consulter la demande, rédiger et signer le PTI et le transmettre à l’infirmière auxiliaire en demande.
+
+L’Utilisateur qui initie la demande demeure responsable d’obtenir tout consentement requis du patient préalablement à la communication de ses renseignements. À cette fin, CliniQ Pro exige que l’infirmière auxiliaire confirme avoir obtenu le consentement requis avant de permettre la transmission de la demande de PTI. Cette confirmation ne constitue pas une validation par CliniQ Pro de la suffisance, de la portée ou de la validité du consentement obtenu.
+
+Lorsque l’infirmière destinataire ne détient pas encore de Compte CliniQ Pro, elle reçoit une invitation par courriel ne contenant aucun renseignement permettant d’identifier le patient. Elle peut alors créer un accès lui permettant de recevoir, de rédiger, de signer et de transmettre des PTI sans abonnement payant.
+
+L’accès à une demande de PTI est assujetti à la vérification préalable du permis d’exercice de l’infirmière destinataire auprès du registre de son ordre professionnel. Cette vérification doit être effectuée par l’Utilisateur avant toute demande de PTI.
+
+Une demande qui n’a pas été ouverte dans les trente (30) jours suivant sa transmission expire automatiquement. L’infirmière auxiliaire peut également annuler une demande conformément aux fonctionnalités offertes dans CliniQ Pro.
+
+• aide à la rédaction des notes : l’assistant vous aide à mettre en forme votre note à partir de ce que vous lui écrivez ou dictez et des photos prises lors de la consultation avec le patient.
+
+Ce contenu est envoyé à OpenAI, aux États-Unis.
+
+Avant chaque envoi, notre serveur retire les Données de Santé qu’il reconnaît (nom, prénom, adresse, téléphone, courriel, date de naissance) et bloque l’envoi s’il en reste. Cependant, ce système n’est pas fiable à 100% et il est possible que certaines données, par exemple le prénom d’un proche, le nom d’une résidence ou un détail sur une photo, ne soient pas retirées. Il ne s’agit donc pas d’une anonymisation automatique des Contenus de l’Utilisateur et seul l’Utilisateur demeure responsable de l’utilisation de l’assistant de rédaction.
+
+Si vous utilisez l’assistant, vous vous engagez donc à ne rien mettre dans l’outil qui permette d’identifier directement ou indirectement un patient, et ce, de manière irréversible, que ce soit dans le texte dicté que dans les photos transmises (visage, tatouage, bijou, document, lieu reconnaissable).
+
+Vous devez minimiser les informations transmises et n’envoyer que ce qui est utile à la rédaction de la note.
+
+Il est de votre responsabilité de vérifier auprès de votre ordre professionnel et selon les lois en vigueur qui s’appliquent à vous si vous pouvez utiliser un tel outil d’intelligence artificielle pour la rédaction de vos notes de consultation.
+
+Une relecture, correction et signature des notes rédigées via l’outil est obligatoire. Vous en demeurez seul(e) responsable.
+
+L’assistant rédige un texte, il ne pose aucun diagnostic et ne suggère aucun traitement.
+
+Vous devez avoir obtenu au préalable le consentement de votre patient pour utiliser l’outil de rédaction.
+
+• Registre de stérilisation (si vous stérilisez);
+
+• Reçus PDF avec votre numéro de permis, suivi des dépenses, tableau de bord (revenus du mois et de l’année, montant à encaisser), rapports de revenus en PDF (moyenne par facture, TPS, TVQ ou TVH perçues), sommaire de fin d’année pour le comptable;
+
+• Export des dossiers complets en PDF, liste des patients et documents reçus;
+
+ • Import de votre liste de patients;
+
+D’autres fonctions utilisent aussi OpenAI : la lecture des photos de reçus de dépenses et d’odomètre, et les réponses de l’Aide. N’y inscrivez aucun renseignement personnel ou de santé sur un patient.
+
+6.3 Responsabilité professionnelle
+
+L’Utilisateur demeure seul responsable des soins qu’il dispense, des actes qu’il réalise, de leur indication, de leur facturation, ainsi que du contenu du dossier de soins.
+
+Les propositions d’itinéraire, de planification ou de rédaction des notes générées par la Plateforme constituent des aides indicatives que l’Utilisateur doit contrôler avant validation.
+
+6.4 Évolutions
+
+CliniQ Pro peut faire évoluer les fonctionnalités de la Plateforme, notamment pour tenir compte des évolutions législatives et réglementaires.
+
+CliniQ Pro s’engage à ne pas dégrader substantiellement, en cours d’abonnement, les fonctionnalités essentielles de la Plateforme.
+
+6.5 Rabais, promotions et offres spéciales
+
+CliniQ Pro peut, de temps à autre et à sa discrétion, offrir des rabais, codes promotionnels, tarifs préférentiels ou autres offres promotionnelles, notamment à certains groupes d’utilisateurs, aux membres d’associations, ou dans le cadre d’offres de lancement.
+
+Chaque promotion est assujettie aux conditions particulières communiquées ou affichées au moment de la publication de l’offre, lesquelles peuvent notamment préciser le montant ou le pourcentage du rabais, les critères d’admissibilité, la période de validité, la date d’expiration et toute limite d’utilisation, notamment une utilisation unique par personne ou par compte.
+
+Sauf indication contraire au moment de l’offre :
+
+a) une seule promotion ou un seul rabais peut être appliqué à une même transaction ou à un même abonnement, et les promotions et rabais ne sont pas cumulables;
+
+b) toute promotion doit être utilisée pendant sa période de validité et conformément aux conditions qui lui sont applicables;
+
+c) les promotions et rabais n’ont aucune valeur monétaire, ne peuvent être échangés contre de l’argent et ne peuvent être appliqués rétroactivement à des sommes déjà payées; et
+
+d) CliniQ Pro peut modifier, suspendre ou mettre fin à une promotion en tout temps et sans préavis, sous réserve des droits déjà acquis par un utilisateur conformément aux conditions applicables à cette promotion et des exigences de la loi.
+
+En cas de divergence entre les présentes CGU et les conditions particulières d’une promotion, les conditions particulières de la promotion prévalent à l’égard de celle-ci.
+
+ARTICLE 7 — OBLIGATIONS DE L’UTILISATEUR
+
+L’Utilisateur s’engage :
+
+- à utiliser la Plateforme conformément à sa destination professionnelle, aux présentes CGU, aux règles déontologiques de sa profession et à la réglementation applicable, notamment en matière de protection des renseignements de santé et de services sociaux et autres lois applicables en matière de protection des renseignements personnels;
+
+- à informer ses patients et à obtenir leur consentement à l’utilisation de la Plateforme et à la communication de leurs renseignements de santé et de services sociaux, dans les conditions prévues par la Loi sur les renseignements de santé et de services sociaux (LRSSS) applicable dans la province de Québec ou toute autre loi applicable au Canada et tenir à jour le registre des produits et services technologiques utilisés si applicable;
+
+- à saisir des données exactes, complètes et à jour des données des patients;
+
+- à répondre aux demandes de vos patients (accès, rectification, retrait d’un consentement);
+
+- à disposer à ses frais du matériel (téléphone) et de la connexion internet nécessaire et en assurer la sécurité (verrouillage, chiffrement, antivirus, mises à jour);
+
+- à exporter les dossiers de ses patients selon les options offertes par la Plateforme et à en assurer la sécurité, la confidentialité et l’intégrité.
+
+ARTICLE 8 — USAGES INTERDITS
+
+Sont notamment interdits :
+
+• la mise à disposition de la Plateforme à des tiers non habilités ou l’exploitation de la Plateforme pour le compte de tiers;
+
+• le partage d’un Compte entre plusieurs personnes physiques;
+
+• toute tentative d’accès non autorisé, d’atteinte à l’intégrité, d’extraction massive automatisée ou de contournement des mesures techniques de protection;
+
+• l’introduction de code malveillant ou de contenu illicite;
+
+• la saisie de Données de Santé concernant des personnes que l’Utilisateur ne prend pas en charge ou la consultation de dossiers en dehors de toute prise en charge;
+
+• l’ouverture de plusieurs comptes pour bénéficier à plusieurs reprises de l’essai gratuit ou obtenir un rabais.
+
+ARTICLE 9 — DISPONIBILITÉ, MAINTENANCE ET SÉCURITÉ
+
+9.1 Disponibilité
+
+CliniQ Pro met en œuvre les moyens raisonnables pour assurer l’accessibilité de la Plateforme 24 heures sur 24 et 7 jours sur 7, sans promettre qu’elle sera toujours disponible ni sans erreur.
+
+CliniQ Pro n’est pas responsable d’un retard ou d’une interruption causée par un événement hors de notre contrôle (panne d’un fournisseur, panne d’Internet ou d’électricité, sinistre, décision d’une autorité gouvernementale ou institutionnelle).
+
+Le soutien se fait par écrit, via la Plateforme « écrire au soutien » ou par courriel soutien@cliniqpromobile.ca.
+
+La demande doit être suffisamment précise et doit indiquer en objet, lorsque nécessaire, le caractère urgent de la demande.
+
+CliniQ Pro se réserve le droit de réévaluer le caractère d’urgence indiqué dans la demande de l’Utilisateur si les circonstances le justifient.
+
+Les demandes urgentes sont traitées au plus tard le jour ouvrable suivant la demande de soutien.
+
+9.2 Maintenance
+
+CliniQ Pro peut interrompre l’accès pour des opérations de maintenance. Les opérations programmées sont, dans la mesure du possible, annoncées avec un préavis raisonnable et réalisées en dehors des plages d’usage intensif. Les interventions correctives urgentes peuvent intervenir sans préavis.
+
+9.3 Mode dégradé
+
+La Plateforme peut proposer un fonctionnement partiel hors connexion. L’Utilisateur reconnaît que les données saisies en mode hors connexion ne sont pas synchronisées, et donc sauvegardées à distance, qu’au rétablissement de la connexion.
+
+9.4 Sécurité
+
+CliniQ Pro met en œuvre des mesures techniques et organisationnelles appropriées à la sensibilité des Contenus de l’Utilisateur et renseignements personnels recueillis et hébergés, notamment le chiffrement des données en transit et au repos, la gestion des habilitations, la journalisation des accès et des sauvegardes régulières conformément aux règles de gouvernance des renseignements visées à l’article 90 de la LRSSS et aux règles particulières définies par le dirigeant réseau de l’information de l’article 97 de la LRSSS.
+
+L’Utilisateur est autorisé à effectuer toute vérification ou toute enquête relative à la protection des Contenus de l’Utilisateur.
+
+9.5 Hébergement
+
+Les Contenus de l’Utilisateur sont hébergés au Canada (Montréal) par la société Supabase.
+
+Certaines fonctions, seulement si vous les utilisez, font appel à des fournisseurs hors du Canada : l’assistant de rédaction, les rappels par texto et par courriel, le calcul des trajets. La liste de ces fournisseurs figure dans la politique de confidentialité de CliniQ Pro.
+
+ARTICLE 10 — CONTENUS DE L’UTILISATEUR
+
+10.1 Traitements pour le compte de l’Utilisateur
+
+S’agissant des Contenus de l’Utilisateur traités au moyen de la Plateforme, l’Utilisateur agit en qualité de responsable de ces Contenus de l’Utilisateur et CliniQ Pro en qualité de fournisseur de services au sens de l’article 18.3 de la Loi sur la Protection des Renseignements Personnels dans le Secteur Privé (LPRPSP) ou de l’article 77 de la Loi sur les Renseignements de Santé et de Services Sociaux (LRSSS) selon la situation pertinente ou toute autre loi applicable.
+
+CliniQ Pro n’acquiert aucun droit sur ces Contenus de l’Utilisateur. CliniQ Pro les héberge et les traite seulement pour vous fournir la Plateforme, en qualité de fournisseur de services.
+
+10.2 Traitements pour le compte propre de CliniQ Pro
+
+S’agissant des renseignements relatifs à la gestion de la relation client, à la facturation, à la sécurité de la Plateforme et à la prospection, CliniQ Pro agit en qualité de responsable de renseignement, dans les conditions décrites par sa politique de confidentialité accessible à l’adresse www.cliniqpromobile.ca/confidentialite.html.
+
+10.3 Confidentialité
+
+CliniQ Pro s’engage à ce que les membres de son personnel et ses sous-traitants susceptibles d’accéder aux Contenus de l’Utilisateur soient soumis à une obligation de confidentialité contractuelle appropriée et sensibilisés à la confidentialité de tels renseignements pendant toute la durée d’exécution du Service.
+
+CliniQ Pro s’engage à transmettre à l’Utilisateur, avant toute communication, un engagement de confidentialité complété par toute personne à laquelle le Contenu de l’Utilisateur peut être communiqué ou utilisé.
+
+Les accès aux Contenus de l’Utilisateur par le personnel de CliniQ Pro sont strictement limités aux besoins de l’exécution du contrat.
+
+ARTICLE 11 — PROPRIÉTÉ INTELLECTUELLE
+
+11.1 Droits de CliniQ Pro
+
+La Plateforme et son site Web www.cliniqpromobile.ca, ses composants logiciels, son architecture, ses bases de données, ses interfaces, sa documentation, ses marques, logos et noms de domaine sont et demeurent la propriété exclusive de CliniQ Pro.
+
+Aucune disposition du contrat n’emporte transfert de droit de propriété intellectuelle au profit de l’Utilisateur.
+
+11.2 Licence concédée
+
+CliniQ Pro concède à l’Utilisateur, pour la durée de l’abonnement souscrit et pour le monde entier, un droit d’utilisation personnel, non exclusif, non cessible et non sous-licenciable de la Plateforme, strictement limité aux besoins de son activité professionnelle. Ce droit s’éteint de plein droit à la cessation de l’abonnement.
+
+11.3 Contenus de l’Utilisateur
+
+L’Utilisateur conserve l’intégralité de ses droits sur ses Contenus de l’Utilisateur. Il concède à CliniQ Pro, pour la seule durée de l’abonnement et aux seules fins d’exécution du Service fourni par CliniQ Pro, un droit d’hébergement, de reproduction, d’adaptation technique et de représentation à l’exclusion de toute autre exploitation.
+
+11.4 Retours et suggestions
+
+Les suggestions, remontées d’anomalies et propositions d’amélioration communiquées par l’Utilisateur peuvent être librement exploitées par CliniQ Pro, sans contrepartie, sans que cela n’emporte de droit sur les Contenus de l’Utilisateur.
+
+11.5 Garantie d’éviction
+
+CliniQ Pro garantit l’Utilisateur contre toute action fondée sur une atteinte, par la Plateforme, à un droit de propriété intellectuelle d’un tiers, sous réserve que l’Utilisateur
+
+(i) l’en informe sans délai,
+
+(ii) lui laisse la conduite de la défense et des négociations, et
+
+(iii) lui apporte son concours.
+
+CliniQ Pro pourra, à son choix, obtenir le droit de poursuivre l’utilisation, modifier ou remplacer l’élément litigieux, ou à défaut, résilier le contrat avec remboursement au prorata temporis. Cette garantie est exclue si l’action résulte d’une modification non autorisée, d’un usage non conforme ou de la combinaison avec des éléments non fournis par CliniQ Pro.
+
+ARTICLE 12 — RESPONSABILITÉ
+
+12.1 Nature des obligations
+
+CliniQ Pro est tenue d’une obligation de moyens au titre de la fourniture, de la disponibilité et de la sécurité de la Plateforme. Elle met en œuvre à cet effet la diligence et le savoir-faire attendus d’un fournisseur technologique.
+
+12.2 Exclusions
+
+CliniQ Pro ne saurait être tenue responsable :
+
+• des conséquences d’une saisie erronée, incomplète ou tardive par l’Utilisateur ou d’une facturation non conforme;
+
+• des contrôles ou sanctions prononcés par le Ministère de la Santé, l’ordre professionnel auquel appartient l’Utilisateur ou d’autres organismes habilités à effectuer des contrôles ou prendre des sanctions;
+
+• de l’indisponibilité des réseaux de communication électronique, du téléphone de l’Utilisateur, du matériel non fourni par CliniQ Pro;
+
+• de l’usage de la Plateforme non conforme aux CGU, à la documentation ou aux règles déontologiques;
+
+• des dommages résultant du fait d’un tiers ou de la perte de données imputables à une faute ou négligence de l’Utilisateur.
+
+12.3 Dommages indirects
+
+CliniQ Pro ne répond pas des dommages indirects, tels que la perte de chiffre d’affaires, la perte de clientèle ou l’atteinte à l’image.
+
+12.4 Plafond
+
+La responsabilité globale et cumulée de CliniQ Pro au titre du service rendu, toutes causes confondues, est limitée au montant hors taxes des sommes effectivement payées par l’Utilisateur au titre des douze (12) mois précédant le fait générateur.
+
+12.5 Responsabilité de l’Utilisateur
+
+L’Utilisateur garantit CliniQ Pro contre toute réclamation, action ou condamnation résultant d’un manquement de sa part aux articles 4, 7, 8 et 10, notamment de la part d’un patient, d’un ordre professionnel ou d’une autorité de contrôle.
+
+ARTICLE 13 — SUSPENSION ET BLOCAGE
+
+CliniQ Pro peut suspendre l’accès à la Plateforme, immédiatement et sans indemnité, en cas :
+
+• de risque avéré ou sérieusement suspecté pour la sécurité de la Plateforme, l’intégrité ou la confidentialité des Contenus de l’Utilisateur :
+
+• de non-paiement de l’abonnement mensuel ou annuel;
+
+• de manquement grave aux articles 4, 7 ou 8;
+
+• d’injonction d’une autorité administrative ou judiciaire.
+
+Sauf urgence ou interdiction légale, la suspension est précédée d’une mise en demeure restée sans effet pendant dix (10) jours. CliniQ Pro informe l’Utilisateur du motif et des mesures à prendre pour rétablir l’accès.
+
+La suspension ne suspend pas l’exigibilité du prix, sauf lorsqu’elle est imputable à CliniQ Pro.
+
+Continuité des soins. Même en période de suspension, CliniQ Pro maintient à l’Utilisateur, sur demande écrite, un accès en lecture seule et en export des Contenus de l’Utilisateur, afin de ne pas compromettre la continuité et la sécurité des soins ainsi que la tenue du dossier patient.
+
+ARTICLE 14 — DURÉE ET FIN DU CONTRAT
+
+Les présentes CGU s’appliquent pendant toute la durée de l’abonnement, dont les conditions de durée, de reconduction et de résiliation qui sont définies à l’article 6.1 des présentes.
+
+À la cessation, quelle qu’en soit la cause, l’accès à la Plateforme est fermé et les conditions de restitution et de suppression des Contenus de l’Utilisateur sont celles prévues ci-dessous.
+
+CliniQ Pro se réserve le droit de mettre fin au service (mise à disposition de la Plateforme) moyennant un préavis de trente (30) jours adressé par avis à l’adresse courriel de l’Utilisateur. Si l’Utilisateur n’est pas en faute, CliniQ Pro remboursera la partie payée d’avance et non utilisée.
+
+Si CliniQ Pro cesse ses activités, un avis sera adressé à l’adresse courriel de l’Utilisateur moyennant le respect d’un préavis de quatre-vingt-dix (90) jours de la cessation des services de CliniQ Pro.
+
+14.1 Fin de l’essai ou de l’abonnement
+
+À la cessation de l’abonnement ou de l’essai, l’accès aux fonctionnalités actives de la Plateforme prend fin. L’Utilisateur conserve toutefois, pendant quatre-vingt-dix (90) jours, un accès restreint en lecture seule lui permettant de consulter et d’exporter les dossiers de ses patients conformément au présent article.
+
+Si Vous vous réabonnez pendant ce délai, Vous retrouvez tous vos dossiers patient immédiatement.
+
+CliniQ Pro vous adressera deux avis de rappel sur l’adresse courriel de l’Utilisateur avant l’expiration du délai des quatre-vingt-dix (90) jours.
+
+À la fin des quatre-vingt-dix (90) jours, nous mettrons à votre disposition, par un moyen sécurisé et sans frais :
+
+- vos dossiers patients en PDF, un par patient;
+
+- un fichier de sauvegarde chiffré de votre compte.
+
+Ce fichier sert seulement à remettre vos dossiers dans CliniQ Pro si vous vous réabonnez. Il ne peut pas être ouvert autrement, ni par une autre personne.
+
+14.2 Destruction des Contenus de l’Utilisateur
+
+Vos Contenus de l’Utilisateur seront ensuite détruits de nos serveurs de façon sécuritaire.
+
+Les copies de sauvegarde disparaissent définitivement d’elles-mêmes selon leur cycle, au plus tard 30 jours après l’expiration du délai de quatre-vingt-dix (90) jours.
+
+Sur demande écrite adressée à rprp@cliniqpromobile.ca, CliniQ Pro confirmera par écrit à l’Utilisateur la destruction de ses Contenus de l’Utilisateur.
+
+14.3 Fermeture du compte
+
+Vous pouvez demander la fermeture de votre compte directement sur la Plateforme.
+
+Vous pouvez aussi demander la remise de vos dossiers et la destruction de vos Contenus de l’Utilisateur sans attendre la fin des quatre-vingt-dix (90) jours.
+
+La remise des Contenus de l’Utilisateur se fait par l’export desdits contenus depuis la Plateforme sur demande de l’Utilisateur et ce en tout temps.
+
+La demande de destruction des Contenus de l’Utilisateur, avant le délai de quatre-vingt-dix (90) jours, se fait par écrit à soutien@cliniqpromobile.ca, ou par la page « Fermer mon compte » sur la Plateforme.
+
+14.4 Conservation
+
+Après la remise de vos Contenus de l’Utilisateur, Vous seul(e) conservez vos dossiers pendant la durée qu’exigent la loi applicable et votre ordre professionnel, et vous répondez aux demandes de vos patients à partir de votre copie.
+
+CliniQ Pro ne conserve que les renseignements sur votre abonnement et vos paiements, et la preuve de votre acceptation de ces conditions, pendant la durée exigée par la loi.
+
+Les articles 11, 12 et 17 survivent à la cessation du contrat.
+
+ARTICLE 15 — MODIFICATION DES CGU
+
+CliniQ Pro peut modifier les présentes CGU, notamment pour tenir compte des évolutions légales, réglementaires, techniques ou fonctionnelles.
+
+Toute modification substantielle est notifiée à l’Utilisateur par courriel et par message dans la Plateforme, au moins trente (30) jours avant son entrée en vigueur.
+
+À défaut d’acceptation, l’Utilisateur peut résilier son abonnement sans frais ni indemnité jusqu’à la date d’entrée en vigueur, la résiliation prenant effet à cette date. La poursuite de l’utilisation au-delà de cette date vaut acceptation.
+
+Les modifications imposées par une évolution législative ou réglementaire d’application immédiate peuvent entrer en vigueur sans ce délai, l’Utilisateur en étant informé dans les meilleurs délais.
+
+ARTICLE 16 — CESSION DE CLIENTÈLE ET TRANSFERT DE DOSSIERS
+
+16.1 Fichier de sauvegarde
+
+Le fichier de sauvegarde généré par CliniQ Pro est destiné à permettre à l’Utilisateur, titulaire du Compte, de conserver une copie de ses Contenus de l’Utilisateur conformément à ses obligations légales et professionnelles. Il est associé à son Compte et ne peut être utilisé pour permettre à un autre Utilisateur d’accéder aux dossiers, de les importer dans son propre compte ou de poursuivre la prise en charge de la clientèle.
+
+Tout transfert de dossiers à un autre Utilisateur, notamment dans le cadre d’un départ à la retraite, d’une cessation d’exercice, d’une vente ou d’une cession de clientèle, doit être effectué exclusivement au moyen de la procédure officielle de transfert offerte par CliniQ Pro et décrite ci-dessous.
+
+16.2 Procédure de transfert
+
+Sous réserve des lois, règlements et règles déontologiques applicables, l’Utilisateur qui souhaite céder ses Contenus à un autre Utilisateur doit initier elle-même une demande de transfert à partir de son Compte CliniQ Pro.
+
+Le transfert est assujetti aux conditions suivantes :
+
+a) la demande doit être initiée à partir du Compte de l’Utilisateur qui cède ses Contenus;
+
+b) l’Utilisateur appelé à recevoir les Contenus doit détenir un compte CliniQ Pro avec un abonnement actif et accepter la demande de transfert à partir de son propre Compte;
+
+c) L’Utilisateur qui cède ses Contenus procède à la vérification du permis d’exercice de l’Utilisateur appelé à recevoir les Contenus auprès de l’ordre professionnel pertinent;
+
+d) les Utilisateurs (cédant et cessionnaire) doivent conclure une entente écrite de cession ou de transfert entre elles;
+
+e) une fois la demande acceptée et les conditions applicables satisfaites, un délai de sécurité de sept (7) jours doit s’écouler avant que le transfert soit réalisé. Un avis relatif au transfert est transmis à l’Utilisateur qui cède ses Contenus pendant cette période; et
+
+f) une fois réalisé, le transfert est consigné dans le journal de traçabilité de CliniQ Pro, notamment afin de permettre de retracer l’opération et les Comptes concernés.
+
+CliniQ Pro peut suspendre ou refuser d’exécuter un transfert lorsque les renseignements ou documents requis sont incomplets, lorsque les vérifications requises ne peuvent être effectuées ou lorsque les conditions prévues au présent article ne sont pas satisfaites.
+
+16.3 Décès ou inaptitude
+
+En cas de décès ou d’inaptitude d’un Utilisateur l’empêchant d’initier elle-même la procédure prévue ci-dessus, aucun transfert ne peut être effectué sur la seule demande d’un tiers, y compris un membre de la famille de l’Utilisateur, un représentant, un acquéreur de la pratique ou un autre Utilisateur.
+
+Dans une telle situation, CliniQ Pro procédera au transfert des Contenus de l’Utilisateur uniquement sur réception d’un document officiel ou d’une instruction émanant de l’ordre professionnel concerné, permettant d’identifier la personne ou l’Utilisateur autorisé à recevoir ou à prendre en charge les dossiers concernés, sous réserve de toute autre exigence légale applicable.
+
+16.4 Responsabilité des Utilisateurs
+
+La procédure de transfert offerte par CliniQ Pro constitue un mécanisme technologique sécurisé de transfert des dossiers. Elle ne dispense pas les Utilisateurs concernés de leurs obligations légales, réglementaires, déontologiques ou contractuelles relativement à la cession de leur pratique ou de leur clientèle, à la conservation et au transfert des Contenus de l’Utilisateur, à la continuité des soins ou services, à l’information des patients et, lorsque requis, à l’obtention de leur consentement.
+
+Chaque Utilisateur demeure responsable de s’assurer qu’il est légalement autorisé à céder ou à recevoir les Contenus de l’Utilisateur concernés et que toute entente de cession ou de transfert respecte les exigences qui lui sont applicables.
+
+16.5 Absence de transfert automatique
+
+La vente d’une pratique, la cessation des activités d’un Utilisateur, la résiliation ou l’expiration d’un abonnement CliniQ Pro, de même que la fermeture d’un Compte, n’entraînent aucun transfert automatique des dossiers ou de la clientèle.
+
+Un transfert ne sera effectué que conformément à la procédure prévue au présent article ou, en cas de décès ou d’inaptitude, conformément aux instructions officielles de l’ordre professionnel compétent et aux exigences légales applicables.
+
+ARTICLE 17 — DISPOSITIONS DIVERSES
+
+17.1 Nullité partielle
+
+Si une stipulation était déclarée nulle ou inapplicable, elle serait réputée non écrite, les autres stipulations conservant leur pleine force. Les Parties s’efforceraient de lui substituer une stipulation valable d’effet équivalent.
+
+17.2 Non-renonciation
+
+Le fait pour une Partie de ne pas se prévaloir d’un manquement ne saurait valoir renonciation à s’en prévaloir ultérieurement.
+
+17.3 Indépendance
+
+Les Parties sont des contractants indépendants. Les présentes CGU n’emportent ni société, ni mandat, ni relation de travail, ni exclusivité.
+
+17.4 Références commerciales
+
+CliniQ Pro ne pourra citer le nom de l’Utilisateur ou reproduire ses signes distinctifs à titre de référence commerciale qu’avec son accord écrit préalable, révocable à tout moment.
+
+17.5 Communications
+
+Sauf disposition contraire, les avis et notifications sont valablement effectués à l’adresse courriel de votre compte ou dans la Plateforme. Les messages liés au service (compte, paiement, sécurité, fin d’essai, modifications) font partie du service offert par CliniQ Pro.
+
+CliniQ Pro ne vous envoie des nouvelles ou des offres que si vous avez accepté d’en recevoir ; chaque message indique comment se désabonner.
+
+17.6 Clauses obligatoires
+
+Si Vous avez obtenu la Plateforme par Google Play ou par l’App Store, les présentes CGU s’appliquent seulement à la relation contractuelle entre CliniQ Pro et l’Utilisateur.
+
+Apple et Google ne sont pas responsables de la Plateforme et de son contenu. CliniQ Pro est seule responsable de la maintenance et du support technique de la Plateforme et des réclamations qui la concernent.
+
+Apple et Google ainsi que leurs filiales respectives sont des tiers bénéficiaires des CGU et sont en droit de les faire appliquer contre l’Utilisateur.
+
+17.7 Langue
+
+Ces CGU sont rédigées en français. Une version anglaise est également offerte.
+
+En cas de contradiction ou de différence entre les deux versions, la version française prévaut.
+
+17.8 Cession
+
+Vous ne pouvez céder, transférer ou autrement disposer de votre compte Utilisateur, de votre abonnement ou de vos droits et obligations aux termes des présentes CGU sans le consentement écrit préalable de CliniQ Pro.
+
+CliniQ Pro peut céder ou transférer ses obligations au titre des présentes CGU, notamment dans le cadre d’une vente, d’une réorganisation ou d’un transfert de tout ou partie des activités de CliniQ Pro.
+
+17.9 Droit applicable
+
+Ces conditions sont régies par les lois du Québec et les lois du Canada qui s’y appliquent.
+
+Tout litige est soumis aux tribunaux du Québec, district de Richelieu.
+
+17.10 Intégralité de l’entente
+
+Les présentes conditions, ainsi que tout document qui y est expressément incorporé par référence, constituent l’intégralité de l’entente entre l’Utilisateur et CliniQ Pro relativement à son objet et remplace toute entente, convention, négociation, communication, déclaration ou représentation antérieure ou contemporaine, écrite ou verbale, ayant le même objet.
